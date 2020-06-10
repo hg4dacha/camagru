@@ -1,0 +1,131 @@
+body{
+    background-color: whitesmoke;
+}
+
+#central{
+    display: flex;
+    justify-content: center;
+    margin-top: 140px;
+}
+
+#bloc{
+    margin-top: 76px;
+}
+
+#connexion_frame{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px rgb(200, 200, 200) solid;
+    width: 360px;
+    height: 445px;
+}
+
+#logo{
+    width: 285px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 90px;
+}
+
+#phrase{
+    margin-top: -50px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgb(142, 142, 142);
+    font-family: Trebuchet MS;
+    font-size:15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#first{
+    margin-bottom: 9px;
+}
+
+#second{
+    margin-bottom: 21px;
+}
+
+input{
+    background-color: whitesmoke;
+    width: 290px;
+    height: 40px;
+    border: 1px rgb(200, 200, 200) solid;
+    padding-left: 11px;
+    font-size: 13px;
+    font-family:Trebuchet MS;
+    font-weight:bold;
+    border-radius: 4px;
+}
+
+button{
+    width: 303px;
+    height: 33px;
+    border: 1px rgb(200, 200, 200) solid;
+    background-color: #b33939;
+    font-size: 15px;
+    color: white;
+    font-family:Trebuchet MS;
+    font-weight:bold;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 0;
+    margin-bottom: 20px;
+}
+
+button:active {
+    background-color: #ee928b;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(0, 149, 246);
+}
+
+#f_pass{
+    font-weight: normal;
+    color: rgb(0, 55, 107);
+}
+
+#inscription_frame{
+    background-color: white;
+    width: 360px;
+    height: 65px;
+    border: 1px rgb(200, 200, 200) solid;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inscription{
+    margin: 0;
+    font-size: 14px;
+}
+
+#poster{
+    width: 390px;
+    height: 515px;
+    margin-top: 75px;
+    margin-left: 35px;
+}
+
+p{
+    font-family:Trebuchet MS;
+    font-size: 13px;
+}
+
+footer{
+    font-family: 'JAi_';
+    color: rgb(142,142,142);
+    font-size: 14px;
+    font-family:Trebuchet MS;
+}
