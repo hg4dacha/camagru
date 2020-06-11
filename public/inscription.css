@@ -21,7 +21,7 @@ body{
 }
 
 #phrase{
-    margin-top: -50px;
+    margin-top: -65px;
     margin-bottom: 15px;
     text-align: center;
     color: rgb(142, 142, 142);
@@ -48,27 +48,11 @@ input{
     border-radius: 4px;
 }
 
-#first{
+.row{
     margin-bottom: 9px;
 }
 
-#second{
-    margin-bottom: 9px;
-}
-
-#three{
-    margin-bottom: 9px;
-}
-
-#for{
-    margin-bottom: 9px;
-}
-
-#five{
-    margin-bottom: 9px;
-}
-
-#six{
+#last{
     margin-bottom: 21px;
 }
 
@@ -100,4 +84,55 @@ a{
     text-decoration: none;
     font-weight: bold;
     color: rgb(0, 149, 246);
+}
+
+footer{
+    font-family: 'JAi_';
+    color: rgb(142,142,142);
+    font-size: 14px;
+    font-family:Trebuchet MS;
+}
+
+@media all and (max-width: 500px)
+{
+    #frame
+    {
+        width: 300px;
+        height: 600px;
+        margin-top: 30px;
+    }
+
+    #logo
+    {
+        width: 240px;
+    }
+    
+    #phrase
+    {
+        font-size:12px;
+    }
+    
+    input
+    {
+        width: 245px;
+        height: 35px;
+        font-size: 11px;
+    }
+
+    button
+    {
+        width: 258px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    p
+    {
+        font-size: 12px;
+    }
+
+    footer
+    {
+        font-size: 10px;
+    }
 }

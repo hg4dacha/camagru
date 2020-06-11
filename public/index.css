@@ -37,7 +37,7 @@ body{
 }
 
 #phrase{
-    margin-top: -50px;
+    margin-top: -65px;
     margin-bottom: 15px;
     text-align: center;
     color: rgb(142, 142, 142);
@@ -144,4 +144,65 @@ footer{
         display: none;
     }
 
+}
+
+@media all and (max-width: 500px)
+{
+
+    #central
+    {
+        margin-top: 0px;
+    }
+    
+    #connexion_frame
+    {
+        width: 300px;
+        height: 410px;
+    }
+
+    #f_pass
+    {
+        font-size: 12px;
+    }
+
+    #inscription_frame
+    {
+        width: 300px;
+        height: 50px;
+    }
+
+    #inscription
+    {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    #logo
+    {
+        width: 240px;
+    }
+    
+    #phrase
+    {
+        font-size:12px;
+    }
+    
+    input
+    {
+        width: 245px;
+        height: 35px;
+        font-size: 11px;
+    }
+
+    button
+    {
+        width: 258px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    footer
+    {
+        font-size: 10px;
+    }
 }
