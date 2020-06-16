@@ -152,6 +152,21 @@ footer{
 }
 
 
+@media all and (max-width: 850px)
+{
+    #central
+    {
+        padding-top: 40px;
+    }
+
+    #rights
+    {
+        padding-left: 0px;
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
 @media all and (max-width: 700px)
 {
 
@@ -172,7 +187,7 @@ footer{
 
     #central
     {
-        margin-top: 0px;
+        padding-top: 0px;
     }
     
     #connexion_frame
@@ -222,13 +237,9 @@ footer{
         font-size: 12px;
     }
 
-    footer
-    {
-        left: 0px;
-    }
-
     #rights
     {
+        padding-left: 0px;
         text-align: center;
         font-size: 12px;
     }
