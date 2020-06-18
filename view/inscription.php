@@ -1,3 +1,7 @@
+<?php
+require('../controller/submit_inscription.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,25 +18,33 @@
                 <img id="logo" src="../public/pictures/Camagru.png" alt="logo"/>    
                 <p id="phrase">Inscrivez-vous pour pouvoir commenter,<br/>
                 liker ou poster des images.</p>
-                <form method="post" action="inscription.html">
+                <form method="post" action="inscription.php">
                     <input class="row" type="text" name="lastname" id="lastname"
                     placeholder="Nom (ex : Dupont)" 
-                    size="30" maxlength="75"/>
-                    <input class="row" type="text" name="name" id="name"
+                    size="30" maxlength="250"/>
+                    <input class="row" type="text" name="firstname" id="name"
                     placeholder="Prénom (ex : Jean)" 
-                    size="30" maxlength="75"/>
-                    <input class="row" type="text" name="email" id="email"
+                    size="30" maxlength="250"/>
+                    <input class="row" type="email" name="email" id="email"
                     placeholder="Adresse e-mail (jean.dupont@exemple.com)" 
-                    size="30" maxlength="75"/>
+                    size="30" maxlength="250"/>
                     <input class="row" type="text" name="username" id="username"
                     placeholder="Nom d'utilisateur (pseudonyme)" 
-                    size="30" maxlength="75"/>
+                    size="30" maxlength="250"/>
                     <input class="row" type="password" name="password" id="password"
-                    placeholder="Mot de passe" size="30" maxlength="75"/>
+                    placeholder="Mot de passe" size="30" maxlength="250"/>
                     <input id="last" type="password" name="password2" id="password2"
-                    placeholder="Confirmez le mot de passe" size="30" maxlength="75"/>
-                    <button type="submit">S'inscrire</button>
+                    placeholder="Confirmez le mot de passe" size="30" maxlength="250"/>
+                    <button type="submit" name="submit_inscription">S'inscrire</button>
                     <p>Vous avez déjà un compte ? <a href="../index.html">Connectez-vous</a></p>
+                    <p id="error">
+                        <?php
+                        if (isset($error))
+                        {
+                            echo $error;
+                        }
+                        ?>
+                    </p>
                 </form>
             </div>
         </div>
