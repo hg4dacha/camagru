@@ -22,17 +22,22 @@ require('../controller/submit_inscription.php');
                     <input class="row" type="text" name="lastname" id="lastname"
                     placeholder="Nom (ex : Dupont)" 
                     size="30" maxlength="250" value="<?php if(isset($lastname)) { echo $lastname; } ?>"/>
+                    <small id="error"><?php if(isset($error_lastname)) { echo $error_lastname; } ?></small>
                     <input class="row" type="text" name="firstname" id="firstname"
                     placeholder="Prénom (ex : Jean)" 
                     size="30" maxlength="250" value="<?php if(isset($firstname)) { echo $firstname; } ?>"/>
+                    <small id="error"><?php if(isset($error_firstname)) { echo $error_firstname; } ?></small>
                     <input class="row" type="email" name="email" id="email"
                     placeholder="Adresse e-mail (jean.dupont@exemple.com)" 
                     size="30" maxlength="250" value="<?php if(isset($email)) { echo $email; } ?>"/>
+                    <small id="error"><?php if(isset($error_email)) { echo $error_email; } ?></small>
                     <input class="row" type="text" name="username" id="username"
                     placeholder="Nom d'utilisateur (pseudonyme)" 
                     size="30" maxlength="250" value="<?php if(isset($username)) { echo $username; } ?>"/>
+                    <small id="error"><?php if(isset($error_username)) { echo $error_username; } ?></small>
                     <input class="row" type="password" name="password" id="password"
                     placeholder="Mot de passe" size="30" maxlength="250"/>
+                    <small id="error"><?php if(isset($error_password)) { echo $error_password; } ?></small>
                     <input id="last" type="password" name="password2" id="password2"
                     placeholder="Confirmez le mot de passe" size="30" maxlength="250"/>
                     <button type="submit" name="submit_inscription">S'inscrire</button>
