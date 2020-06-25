@@ -17,25 +17,25 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         {
             $error = "Tous les champs doivent être complétés !";
         }
-        if(!(preg_match(, $lastname))
+        if(!(preg_match("#^.{1,30}$#", $lastname))
         {
-            $error_lastname = "Le nom ne doit contenir que des lettres et 75 caractères au maximum";
+            $error_lastname = "Le nom doit contenir 30 caractères maximum";
         }
-        if(!(preg_match(, $firstname))
+        if(!(preg_match("#^.{1,30}$#", $firstname))
         {
-            $error_firstname = "Le prénom ne doit contenir que des lettres et 75 caractères au maximum";
+            $error_firstname = "Le prénom doit contenir 30 caractères maximum";
         }
         if(!(filter_var($email, FILTER_VALIDATE_EMAIL)))
         {
             $error_email = "L'adresse e-mail n'est pas valide";
         }
-        if(!(preg_match(, $username_length))
+        if(!(preg_match("#^[a-zA-Z0-9._-]{1,15}$#", $username_length))
         {
-            $error_username = "";
+            $error_username = "Le nom d’utilisateur ne peut contenir que des lettres sans accents, des chiffres, des tirets du bat ou du haut, des points et 15 caractères maximum";
         }
-        if(!(preg_match(, $password_length))
+        if(!(preg_match("#^(A-Z)+(a-z)+(0-9)+$#", $password_length))
         {
-            $error_password = "";
+            $error_password = "Le mot de passe doit au moins contenir 1 minuscule, 1 masujcule, un chiffre et ne pas dépasser 30 caractères maximum";
         }
         if($password == $password2)
         {
