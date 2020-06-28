@@ -19,30 +19,31 @@ require('../controller/submit_inscription.php');
                 <p id="phrase">Inscrivez-vous pour pouvoir commenter,<br/>
                 liker ou poster des images.</p>
                 <form method="post" action="inscription.php">
-                    <input class="row" type="text" name="lastname" id="lastname"
-                    placeholder="Nom (ex : Dupont)" 
+                    <input type="text" name="lastname" id="lastname"
+                    placeholder="Nom" 
                     size="30" maxlength="250" value="<?php if(isset($lastname)) { echo $lastname; } ?>"/>
                     <small id="error"><?php if(isset($error_lastname)) { echo $error_lastname; } ?></small>
                     <input class="row" type="text" name="firstname" id="firstname"
-                    placeholder="Prénom (ex : Jean)" 
+                    placeholder="Prénom" 
                     size="30" maxlength="250" value="<?php if(isset($firstname)) { echo $firstname; } ?>"/>
                     <small id="error"><?php if(isset($error_firstname)) { echo $error_firstname; } ?></small>
                     <input class="row" type="email" name="email" id="email"
-                    placeholder="Adresse e-mail (jean.dupont@exemple.com)" 
+                    placeholder="Adresse e-mail" 
                     size="30" maxlength="250" value="<?php if(isset($email)) { echo $email; } ?>"/>
                     <small id="error"><?php if(isset($error_email)) { echo $error_email; } ?></small>
                     <input class="row" type="text" name="username" id="username"
-                    placeholder="Nom d'utilisateur (pseudonyme)" 
+                    placeholder="Nom d'utilisateur" 
                     size="30" maxlength="250" value="<?php if(isset($username)) { echo $username; } ?>"/>
                     <small id="error"><?php if(isset($error_username)) { echo $error_username; } ?></small>
                     <input class="row" type="password" name="password" id="password"
                     placeholder="Mot de passe" size="30" maxlength="250"/>
                     <small id="error"><?php if(isset($error_password)) { echo $error_password; } ?></small>
-                    <input id="last" type="password" name="password2" id="password2"
+                    <input class="row" type="password" name="password2" id="password2"
                     placeholder="Confirmez le mot de passe" size="30" maxlength="250"/>
+                    <small id="error"><?php if(isset($error_password2)) { echo $error_password2; } ?></small>
                     <button type="submit" name="submit_inscription">S'inscrire</button>
                     <p>Vous avez déjà un compte ? <a href="../index.html">Connectez-vous</a></p>
-                    <p id="error">
+                    <p id="error2">
                         <?php
                         if (isset($error))
                         {
