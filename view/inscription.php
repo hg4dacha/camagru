@@ -1,5 +1,7 @@
 <?php
-require('../controller/submit_inscription.php');
+
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_inscription.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +44,7 @@ require('../controller/submit_inscription.php');
                     placeholder="Confirmez le mot de passe" size="30" maxlength="250"/>
                     <small id="error"><?php if(isset($error_password2)) { echo $error_password2; } ?></small>
                     <button type="submit" name="submit_inscription">S'inscrire</button>
-                    <p>Vous avez déjà un compte ? <a href="../index.html">Connectez-vous</a></p>
+                    <p>Vous avez déjà un compte ? <a href="../index.php">Connectez-vous</a></p>
                     <p id="error2">
                         <?php
                         if (isset($error))

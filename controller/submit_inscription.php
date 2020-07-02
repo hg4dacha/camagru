@@ -1,6 +1,6 @@
 <?php
 
-$bdd = new PDO ('mysql:host=localhost;dbname=camagru', 'root', 'MAMP93', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sql_functions.php");
 
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
@@ -31,13 +31,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             {
                 $error_firstname = "Le prénom doit contenir 30 caractères maximum.";
             }
-            if(!(filter_var($email, FILTER_VALIDATE_EMAIL)) || !(preg_match("#^.{5,254}$#")))
+            if(!(filter_var($email, FILTER_VALIDATE_EMAIL)) || !(preg_match("#^.{5,254}$#", $email)))
             {
                 $error_email = "L'adresse e-mail n'est pas valide.";
             }
             if(!(preg_match("#^[a-zA-Z0-9._-]{1,15}$#", $username)))
             {
-                $error_username = "Le nom d’utilisateur ne peut contenir que des lettres sans accents, des chiffres, des tirets, des points. (15 caractères maximum)";
+                $error_username = "Le nom d’utilisateur ne peut contenir que des lettres (sans accents), des chiffres, des tirets et des points. (Pas d'espaces | 15 caractères max.)";
             }
             if(!(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9\W]).{6,255}$#", $password)))
             {
@@ -46,31 +46,34 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             
             if(empty($error_lastname) && empty($error_firstname) && empty($error_email) && empty($error_username) && empty($error_password) && empty($error))
             {
-                if($password != $password2)
+                if($password == $password2)
+                {
+                    $usernameExist = UsrCheckExist(strtolower($username));
+                    if($usernameExist != 0)
+                    {
+                        $error_username = "Le nom d'utilisateur est déjà utilisé. Veuillez insérer un autre nom d'utilisateur.";
+                    }
+    
+                    $emailExist = MailCheckExist($email);
+                    if($emailExist != 0)
+                    {
+                        $error_email = "L'adresse e-mail est déjà utilisée. Veuillez insérer une autre adresse e-mail.";
+                    }
+    
+                    if(empty($error_username) && empty($error_email))
+                    {
+                        $lastname = ucfirst(strtolower($lastname));
+                        $firstname = ucfirst(strtolower($firstname));
+                        $email = strtolower($email);
+                        $password = password_hash($password, PASSWORD_DEFAULT);
+                        insertMbr($lastname, $firstname, $email, $username, $password);
+                    }
+                }
+                else
                 {
                     $error_password2 = "Les mots de passe ne correspondent pas";
                 }
 
-                $requsername = $bdd->prepare('SELECT username FROM users WHERE username = ?');
-                $requsername->execute(array($username));
-                $usernameExist = $requsername->rowcount();
-                if($usernameExist == 0)
-                {
-                }
-                else
-                {
-                    $error_username = "Le nom d'utilisateur est déjà utilisé. Veuillez insérer un autre nom d'utilisateur";
-                }
-                $reqmail = $bdd->prepare('SELECT email FROM users WHERE email = ?');
-                $reqmail->execute(array($email));
-                $emailExist = $reqmail->rowcount();
-                if($emailExist == 0)
-                {
-                }
-                else
-                {
-                    $error_email = "L'adresse e-mail est déjà utilisée. Veuillez insérer une autre adresse e-mail";
-                }
             }
         }
         else

@@ -187,10 +187,19 @@ footer{
         font-size: 11px;
     }
 
+    small{
+        max-width: 270px;
+    }
+
     button
     {
         width: 258px;
         height: 28px;
+        font-size: 12px;
+    }
+
+    #error2{
+        max-width: 258px;
         font-size: 12px;
     }
 
