@@ -21,9 +21,9 @@ body{
 }
 
 #poster{
-    width: 327px;
-    height: 537px;
-    margin-top: 68px;
+    width: 340px;
+    height: 565px;
+    margin-top: 64px;
     margin-right: 3px;
 }
 
@@ -38,7 +38,7 @@ body{
     align-items: center;
     border: 1px rgb(200, 200, 200) solid;
     width: 360px;
-    height: 445px;
+    height: 465px;
 }
 
 #logo{
@@ -141,7 +141,7 @@ p{
     font-size: 13px;
     text-align: center;
     color: red;
-    max-width: 290px;
+    max-width: 330px;
 }
 
 footer{
@@ -244,6 +244,11 @@ footer{
         width: 258px;
         height: 28px;
         font-size: 12px;
+    }
+
+    #error{
+        max-width: 300px;
+        font-size: 11px;
     }
 
     #rights

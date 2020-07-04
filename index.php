@@ -22,22 +22,22 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/connexion.php");
                     <img id="logo" src="public/pictures/Camagru.png" alt="logo"/>    
                     <p id="phrase">Connectez-vous pour commenter,<br/>liker ou poster des images.</p>
                     <form method="post" action="index.php">
-                        <input id="first" type="text" name="username" id="username"
+                        <input id="first" type="text" name="identification" id="identification"
                         placeholder="Adresse e-mail ou nom d'utilisateur" 
-                        size="30" maxlength="75" value="<?php if(isset($username)) { echo $username; } ?>"/>
+                        size="30" maxlength="75" value="<?php if(isset($identification)) { echo $identification; } ?>"/>
                         <input id="second" type="password" name="password" id="password"
                         placeholder="Mot de passe" size="30" maxlength="75" value="<?php if(isset($password)) { echo $password; } ?>"/>
                         <button type="submit" name="submit_connexion">Connexion</button>
                         <p><a id="f_pass" href="view/password.html">Mot de passe oublié ?</a></p>
-                    </form>
-                    <p id="error">
+                        <p id="error">
                         <?php
                         if (isset($error))
                         {
                             echo $error;
                         }
                         ?>
-                    </p>
+                        </p>
+                    </form>
                 </div>
                 <div id="inscription_frame">
                     <p id="inscription">Vous n'avez pas de compte ? <a href="view/inscription.php">Inscrivez-vous</a></p>
