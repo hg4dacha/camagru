@@ -9,16 +9,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         if(!(empty($_POST['identification']))) $identification = htmlspecialchars($_POST['identification']);
         if(!(empty($_POST['password']))) $password = htmlspecialchars($_POST['password']);
 
+        $error = NULL;
         if(!(empty($_POST['identification'])) && !(empty($_POST['password'])))
         {
-            $error = NULL;
-            $pswrdVerif = NULL;
-
             $usernameExist = UsrCheckExist(strtolower($identification));
-            $emailExist = MailCheckExist($identification);
+            $emailExist = MailCheckExist(strtolower($identification));
             if($usernameExist != 0)
             {
-                if(pswrd_ctrlU(strtolower($identification), $password))
+                $pswrdVerif = pswrd_ctrlU(strtolower($identification));
+                password_verify($password, $pswrdVerif);
+                if($pswrdVerif === TRUE)
                 {
                     echo "COOL!";
                 }
@@ -29,7 +29,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             }
             else if($emailExist != 0)
             {
-                if(pswrd_ctrlM(strtolower($identifiant), $password))
+                $pswrdVerif = pswrd_ctrlM(strtolower($identification));
+                password_verify($password, $pswrdVerif);
+                if($pswrdVerif === TRUE)
                 {
                     echo "COOL!";
                 }
@@ -42,6 +44,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             {
                 $error = "L'identifiant et le mot de passe ne correspondent pas. Veuillez vérifier et réessayer.";
             }
+        }
+        else
+        {
+            $error = "Tous les champs doivent être complétés !";
         }
     }
 }

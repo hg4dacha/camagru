@@ -32,22 +32,20 @@ function insertMbr($lastname, $firstname, $email, $username, $passwordUsr)
     $reqIns->execute();
 }
 
-function pswrd_ctrlU($idf, $pswrdVerif)
+function pswrd_ctrlU($idf)
 {
     $dbc = db_connex();
     $reqCtrl = $dbc->prepare("SELECT passwordUsr FROM users WHERE LOWER(username) = :idf");
     $reqCtrl->bindValue(':idf', $idf, PDO::PARAM_STR);
-    $pswrdRet = $reqCtrl->execute();
-    return password_verify($pswrdVerif, $pswrdRet);
+    return $reqCtrl->execute();
 }
 
-function pswrd_ctrlM($idf, $pswrdVerif)
+function pswrd_ctrlM($idf)
 {
     $dbc = db_connex();
-    $reqCtrl = $dbc->prepare("SELECT passwordUsr FROM users WHERE email = :idf");
+    $reqCtrl = $dbc->prepare("SELECT passwordUsr FROM users WHERE LOWER(email) = :idf");
     $reqCtrl->bindValue(':idf', $idf, PDO::PARAM_STR);
-    $pswrdRet = $reqCtrl->execute();
-    return password_verify($pswrdVerif, $pswrdRet);
+    return $reqCtrl->execute();
 }
 
 ?>
