@@ -23,9 +23,15 @@ nav{
     padding-left: 20px;
 }
 
+@font-face{
+    font-family: 'GrandHotel';
+    src: url('/camagru/public/polices/GrandHotel-Regular.otf');
+}
+
 ul{
     list-style-type: none;
-    font-size: 30px;
+    font-size: 35px;
+    font-family: 'GrandHotel';
 }
 
 a{
