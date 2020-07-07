@@ -113,7 +113,7 @@ small{
     margin: 0;
     font-size: 11px;
     text-align: center;
-    color: red;
+    color: #EA2027;
 }
 
 #error2{
@@ -121,7 +121,7 @@ small{
     margin: 0;
     font-size: 13px;
     text-align: center;
-    color: red;
+    color: #EA2027;
     max-width: 290px;
 }
 
