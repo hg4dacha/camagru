@@ -123,8 +123,13 @@ a{
     cursor: pointer;
 }
 
+.first{
+    color: rgba(59, 56, 56, 1);
+}
+
 .this{
     color: #b33939;
+    margin-top: 20px;
 }
 
 .other{
