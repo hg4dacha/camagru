@@ -109,7 +109,7 @@ ul{
 
 li{
     padding-top: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     margin-top: 15px;
 }
 
@@ -125,6 +125,7 @@ a{
 
 .first{
     color: rgba(59, 56, 56, 1);
+    padding-top: 20px;
 }
 
 .this{
