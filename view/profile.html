@@ -39,27 +39,29 @@
         <section>
             <div id="profileInfo">
                 <h1>Informations personelles</h1>
-                <div class="firstLine">
-                    <label for="lastname">Nom :</label>
-                    <input type="text" id="lastname" value="Lastname" disabled="disabled">
-                    <label for="firstname" id="firstnameLabel">Prénom :</label>
-                    <input type="text" id="firstname" value="Firstname" disabled="disabled">
+                <p id="expl">Informations d'utilisateur de votre compte Camagru</p>
+                <div id="line1">
+                    <p class="label">Nom</p>
+                    <p id="lastname">Lastname-01234567890123456789</p>
+                </div>                    
+                <div class="lineOther">
+                    <p class="label">Prénom</p>
+                    <p id="firstname">Firstname-01234567890123456789</p>
                 </div>
-                <div id="secondLine">
-                <label for="pseudo">Nom d'utilisateur :</label>                
-                <input type="text" id="pseudo" value="Username" disabled="disabled">
+                <div class="lineOther">
+                    <p class="label">Nom d'utilisateur</p>                
+                    <p id="pseudo">Username-934000</p>
                 </div>
-                <div id="thirdLine">
-                <label for="email">E-mail :</label>                
-                <input type="text" id="email" value="E-mail" disabled="disabled">
+                <div class="lineOther">
+                    <p class="label">E-mail</p>                
+                    <p id="email">e-mail@exemple.com</p>
                 </div>
-                <div id="fourthLine">
-                <label for="notif">Notification de commentaire :</label>
-                <input id="radio1" type="radio" value="yes" checked/>
-                <label class="labelRadio" for="yes">Activée</label>
-                <input id="radio2" type="radio" value="no" disabled="disabled">
-                <label class="labelRadio" for="no">Désactivée</label>
-                <!-- <input type="text" id="notif" value="Activée" disabled="disabled"> -->
+                <div id="lineLast">
+                    <p class="label">Notification de commentaire</p>
+                    <input id="radio1" type="checkbox" value="yes" checked disabled="disabled"/>
+                    <label class="labelRadio" for="yes">Activée</label>
+                    <input id="radio2" type="checkbox" value="no" disabled="disabled">
+                    <label class="labelRadio" for="no">Désactivée</label>
                 </div>
                 <div id="butt">
                     <a href="/camagru/view/change_password.html">
