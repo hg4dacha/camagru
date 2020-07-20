@@ -124,7 +124,7 @@ a{
 }
 
 .first{
-    color: rgba(59, 56, 56, 1);
+    color: #1e272e;
     padding-top: 20px;
 }
 
@@ -134,7 +134,7 @@ a{
 }
 
 .other{
-    color: rgba(59, 56, 56, 1);
+    color: #1e272e;
     margin-top: 20px;
 }
 
@@ -204,12 +204,12 @@ h1{
 .label{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(142,142,142);
-    font-size: 18px;
+    font-size: 16px;
     margin: 0px;
 }
 
 #line1{
-    margin-top: 75px;
+    margin-top: 65px;
     margin-left: 70px;
     margin-right: 90px;
     padding-bottom: 10px;
@@ -241,7 +241,7 @@ h1{
 #lastname{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #1e272e;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     margin-top: 2px;
     margin-left: 210px;
@@ -250,34 +250,34 @@ h1{
 #firstname{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #1e272e;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     margin-top: 2px;
-    margin-left: 185px;
+    margin-left: 189px;
 }
 
 #pseudo{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #1e272e;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     margin-top: 2px;
-    margin-left: 110px;
+    margin-left: 121px;
 }
 
 #email{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #1e272e;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     margin-top: 2px;
-    margin-left: 197px;
+    margin-left: 199px;
 }
 
 #radio1{
     width: 15px;
     height: 15px;
-    margin-left: 17px;
+    margin-left: 38px;
 }
 
 #radio2{
@@ -298,7 +298,7 @@ h1{
 }
 
 #butt{
-    margin-top: 55px;
+    margin-top: 45px;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -507,7 +507,7 @@ footer{
     
     .labelRadio
     {
-        font-size: 14px;
+        font-size: 13px;
     }
     
     #radio1
@@ -545,7 +545,16 @@ footer{
         height: 46px;
         margin-left: 120px;
         margin-top: -35px;
+        margin-bottom: 0px;
+    }
+
+    #marginA1{
         margin-bottom: 12px;
+        width: 0px;
+    }
+
+    #marginA2{
+        width: 0px;
     }
     
     #buttTwo1
@@ -789,12 +798,21 @@ footer{
         width: 203px;
         height: 35px;
         margin-left: 77px;
-        margin-bottom: 13px;
+        margin-bottom: 0px;
     }
 
     #buttOne2
     {
         font-size: 11px;
+    }
+
+    #marginA1{
+        margin-bottom: 13px;
+        width: 0px;
+    }
+
+    #marginA2{
+        width: 0px;
     }
 
     #settings
