@@ -170,7 +170,6 @@ section{
     padding-left: 0px;
     text-align: -moz-center;
     text-align: -webkit-center;
-
 }
 
 #profileInfo{
@@ -277,7 +276,7 @@ h1{
 #radio1{
     width: 15px;
     height: 15px;
-    margin-left: 38px;
+    margin-left: 126px;
 }
 
 #radio2{
@@ -396,6 +395,7 @@ footer{
     #profileInfo
     {
         margin-left: 26px;
+        margin-top: 30px;
     }
 }
 
@@ -473,6 +473,7 @@ footer{
 
     #profileInfo
     {
+        margin-top: 80px;
         margin-left: 111px;
     }
     
@@ -794,10 +795,10 @@ footer{
 
     #buttOne1
     {
-        padding-left: 8px;
-        width: 203px;
+        padding-left: 17px;
+        width: 193px;
         height: 35px;
-        margin-left: 77px;
+        margin-left: 78px;
         margin-bottom: 0px;
     }
 
