@@ -271,8 +271,21 @@ footer{
 {
     #logo
     {
-        display: none;
+        width: 90px;
+        padding-top: 0px;
+        padding-right: 0px;
     }
+
+    #logoDiv
+    {
+        display: flex;
+        justify-content: right;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+    }
+
     header
     {
         height: 65px;
