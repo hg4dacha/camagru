@@ -173,7 +173,7 @@ section{
     width: 855px;
     height: 940px;
     margin-top: 38px;
-    margin-left: 111px;
+    margin-left: 150px;
     border: 1px solid rgb(165, 165, 165);
     border-radius: 2px;
     box-shadow: 0px 0px 2px rgb(165, 165, 165);
@@ -200,6 +200,7 @@ label{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #2980b9;
     font-size: 17px;
+    text-align: left;
 }
 
 #notifComm{
@@ -207,30 +208,30 @@ label{
     color: #2980b9;
     font-size: 17px;
     margin: 0px;
+    text-align: left;
+}
+
+.columnWidth
+{
+    text-align: left;
 }
 
 input{
     background-color: white;
     height: 37px;
     font-size: 18px;
-    padding-left: 25px;
+    padding-left: 15px;
     margin-left: 20px;
-    border-bottom: 2px rgb(200, 200, 200) solid;
+    border-bottom: 1px rgb(200, 200, 200) dashed;
     border-top: 0;
     border-left: 0;
     border-right: 0;
     outline: 0;
 }
 
-.lines{
-    border-bottom: 1px #b33939 dashed;
-    margin-top: 25px;
-    width: 100px;
-}
-
 .pen{
-    width: 21px;
-    height: 21px;
+    width: 18px;
+    height: 18px;
 }
 
 
@@ -250,7 +251,7 @@ input{
 .lineBlocOth{
     display: flex;
     flex-direction: column;
-    margin-top: 22px;
+    margin-top: 30px;
     margin-left: 40px;
 }
 
@@ -276,6 +277,7 @@ input{
     font-size: 13px;
     margin-top: 5px;
     margin-left: 40px;
+    text-align: left;
 }
 
 #comment2{
@@ -284,6 +286,7 @@ input{
     font-size: 13px;
     margin-top: 5px;
     margin-left: 40px;
+    text-align: left;
 }
 
 #yes{
@@ -306,6 +309,7 @@ input{
 
 #radioAyn{
     padding-top: 15px;
+    text-align: left;
 }
 
 #butt{
@@ -329,6 +333,10 @@ input{
     flex-direction: row;
     width: 225px;
     height: 45px;
+}
+
+#buttOne1:active {
+    background-color:#ee928b;
 }
 
 #buttOne2{
@@ -385,6 +393,11 @@ footer{
         padding-left: 180px;
         text-align: initial;
     }
+
+    #profileInfo
+    {
+        margin-left: 111px;
+    }
 }
 
 @media all and (max-width: 1150px)
@@ -400,14 +413,13 @@ footer{
     #profileInfo
     {
         width: 761px;
-        height: 555px;
+        height: 875px;
         margin-top: 0px;
         margin-left: 65px;
     }
 
     #formBloc
     {
-        margin-top: 17px;
         margin-left: 75px;
     }
 
@@ -497,48 +509,74 @@ footer{
     #profileInfo
     {
         width: 552px;
-        height: 585px;
+        height: 790px;
         margin-top: 6px;
         margin-left: 1px;
     }
 
     h1
     {
-        font-size: 21px;
+        font-size: 19px;
+    }
+
+    #expl
+    {
+        font-size: 12px;
     }
 
     #formBloc
     {
-        margin-left: 20px;
+        margin-top: 60px;
+        margin-left: 25px;
     }
 
     label
     {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     #firstLine
     {
-        width: 298px;
-        margin-left: 48px;
+        width: 371px;
+        margin-left: 15px;
+        font-size: 17px;
     }
 
     #secondLine
     {
-        width: 298px;
-        margin-left: 30px;
+        width: 371px;
+        margin-left: 15px;
+        font-size: 17px;
     }
 
     #thirdLine
     {
-        width: 296px;
-        margin-left: 39px;
+        width: 371px;
+        margin-left: 15px;
+        font-size: 17px;
+    }
+
+    #fourthLine
+    {
+        width: 371px;
+        margin-left: 15px;
+        font-size: 17px;
     }
 
     .pen
     {
-        width: 17px;
-        height: 17px;
+        width: 15px;
+        height: 15px;
+    }
+
+    #comment1
+    {
+        font-size: 10px;
+    }
+
+    #comment2
+    {
+        font-size: 10px;
     }
 
     #butt
@@ -594,7 +632,7 @@ footer{
     #logoDiv
     {
         display: flex;
-        justify-content: right;
+        justify-content: flex-end;
         width: 100%;
         position: absolute;
         bottom: 0;
@@ -691,8 +729,8 @@ footer{
 
     section
     {
-        padding-left: 85px;
-        padding-bottom: 60px;
+        padding-left: 76px;
+        padding-bottom: 25px;
         padding-top: 70px;
     }
 
@@ -700,9 +738,9 @@ footer{
     {
         background-color: whitesmoke;
         width: 279px;
-        height: 585px;
-        margin-top: -3px;
-        margin-left: -8px;
+        height: 635px;
+        margin-top: 0px;
+        margin-left: 0px;
         border: initial;
         border-radius: initial;
         box-shadow: initial;
@@ -710,16 +748,35 @@ footer{
 
     h1
     {
-        font-size: 16px;
+        font-size: 13px;
         text-align: left;
-        margin-top: 25px;
-        margin-left: 8px;
+        margin-top: 7px;
+        margin-left: 5px;
+    }
+
+    #expl
+    {
+        font-size: 10px;
+        margin-top: -10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #formBloc
+    {
+        margin-top: 30px;
+        margin-left: 20px;
     }
 
     label
     {
-        font-size: 13px;
+        font-size: 11px;
         text-align: left;
+    }
+
+    #notifComm
+    {
+        font-size: 11px;
     }
 
     #thLabel
@@ -730,11 +787,14 @@ footer{
     #lineBlocTh
     {
         flex-direction: column;
+        margin-left: 0px;
     }
 
     .lineBlocOth
     {
         flex-direction: column;
+        margin-left: 0px;
+        margin-top: 25px;
     }
 
     .columnWidth
@@ -747,38 +807,87 @@ footer{
     #firstLine
     {
         width: 195px;
+        height: 25px;
         margin-left: 10px;
         margin-top: -30px;
         background-color: whitesmoke;
+        font-size: 13px;
     }
 
     #secondLine
     {
         width: 195px;
+        height: 25px;
         margin-left: 10px;
         margin-top: -30px;
         background-color: whitesmoke;
+        font-size: 13px;
     }
 
     #thirdLine
     {
         width: 195px;
+        height: 25px;
         margin-left: 10px;
         margin-top: -30px;
         background-color: whitesmoke;
+        font-size: 13px;
+    }
+
+    #fourthLine
+    {
+        width: 195px;
+        height: 25px;
+        margin-left: 10px;
+        margin-top: -30px;
+        background-color: whitesmoke;
+        font-size: 13px;
     }
 
     .pen
     {
-        width: 15px;
-        height: 15px;
-        margin-top: -7px;
+        width: 11px;
+        height: 11px;
+        margin-top: -22px;
         margin-left: 5px;
+    }
+
+    #comment1
+    {
+        margin-left: 9px;
+    }
+
+    br
+    {
+        display: none;
+    }
+
+    #comment2
+    {
+        margin-left: 9px;
+    }
+
+    .labelRadio
+    {
+        font-size: 13px;
+    }
+
+    #yes
+    {
+        width: 11px;
+        height: 13px;
+        margin-left: 10px;
+    }
+
+    #no
+    {
+        width: 11px;
+        height: 13px;
     }
 
     #butt
     {
-        margin-top: 55px;
+        margin-top: 45px;
     }
 
     #buttOne1
@@ -805,7 +914,7 @@ footer{
     #retHome
     {
         font-size: 11px;
-        margin-top: 74px;
+        margin-top: 65px;
     }
 
     footer
