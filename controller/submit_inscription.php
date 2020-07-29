@@ -66,7 +66,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         $firstname = ucfirst(strtolower($firstname));
                         $email = strtolower($email);
                         $password = password_hash($password, PASSWORD_BCRYPT);
-                        insertMbr($lastname, $firstname, $email, $username, $password);
+                        $notif = 1;
+                        insertMbr($lastname, $firstname, $email, $username, $password, $notif);
                     }
                 }
                 else

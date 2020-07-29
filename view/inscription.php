@@ -20,7 +20,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_inscription.p
                 <img id="logo" src="../public/pictures/Camagru.png" alt="logo"/>    
                 <p id="phrase">Inscrivez-vous pour pouvoir commenter,<br/>
                 liker ou poster des images.</p>
-                <form method="post" action="inscription.php">
+                <form method="post" action="/camagru/view/inscription.php">
                     <input type="text" name="lastname" id="lastname"
                     placeholder="Nom" 
                     size="30" maxlength="250" value="<?php if(isset($lastname)) { echo $lastname; } ?>"/>

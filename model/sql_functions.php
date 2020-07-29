@@ -20,15 +20,16 @@ function MailCheckExist($mail)
     return $reqField->rowCount();
 }
 
-function insertMbr($lastname, $firstname, $email, $username, $passwordUsr)
+function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $notif)
 {
     $dbc = db_connex();
-    $reqIns = $dbc->prepare("INSERT INTO users (lastname, firstname, email, username, passwordUsr) VALUES (:lastname, :firstname, :email, :username, :passwordUsr)");
+    $reqIns = $dbc->prepare("INSERT INTO users (lastname, firstname, email, username, passwordUsr, notif) VALUES (:lastname, :firstname, :email, :username, :passwordUsr, :notif)");
     $reqIns->bindValue(':lastname', $lastname, PDO::PARAM_STR);
     $reqIns->bindValue(':firstname', $firstname, PDO::PARAM_STR);
     $reqIns->bindValue(':email', $email, PDO::PARAM_STR);
     $reqIns->bindValue(':username', $username, PDO::PARAM_STR);
     $reqIns->bindValue(':passwordUsr', $passwordUsr, PDO::PARAM_STR);
+    $reqIns->bindValue(':notif', $notif, PDO::PARAM_STR);
     $reqIns->execute();
 }
 
