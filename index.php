@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/connexion.php");
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="public/index.css" />
+    <link rel="stylesheet" href="/camagru/public/css/index.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="public/pictures/logo_camagru.png" />
     <title>Camagru</title>

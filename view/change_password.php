@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/camagru/public/change_password.css" />
+    <link rel="stylesheet" href="/camagru/public/css/change_password.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/camagru/public/pictures/logo_camagru.png" />
+    <link rel="icon" type="image/png" href="/camagru/public/css/pictures/logo_camagru.png" />
     <title>Modification du mot de passe - Camagru</title>
 </head>
 <body>

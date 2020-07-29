@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/camagru/public/camera.css" />
+    <link rel="stylesheet" href="/camagru/public/css/camera.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/camagru/public/pictures/logo_camagru.png" />
     <title>Camera - Camagru</title>
