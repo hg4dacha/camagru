@@ -9,30 +9,16 @@
 </head>
 <body>
     <div id="contenu">
-        <header>
-            <div id="userDiv">
-                <div id="top">
-                    <img id="user" src="/camagru/public/pictures/user.png" alt="Utilisateur">
-                    <p id="username">User-93400</p>
-                </div>
-                <div id="bottom">
-                    <img id="logout" src="/camagru/public/pictures/logout.png" alt="Déconnexion">
-                    <p id="deconnex">Se déconnecter</p>
-                </div>
-            </div>
-            <div id="logoDiv">
-                <img id="logo" src="/camagru/public/pictures/Camagru.png" alt="logo">
-            </div>
-        </header>
+        <?php include("includes/header.php") ?>
         <nav>
             <ul>
-                <li class="this"><a href="/camagru/view/home.html" class="this"><img id="home" src="/camagru/public/pictures/home_red.png" alt="Acceuil">Acceuil</a></li>
+                <li class="this"><a href="/camagru/view/home.php" class="this"><img id="home" src="/camagru/public/pictures/home_red.png" alt="Acceuil">Acceuil</a></li>
                 <div class="border"></div>
-                <li class="other"><a href="/camagru/view/gallery.html" class="other"><img id="gallery" src="/camagru/public/pictures/gallery_black.png" alt="Galerie">Galerie</a></li>
+                <li class="other"><a href="/camagru/view/gallery.php" class="other"><img id="gallery" src="/camagru/public/pictures/gallery_black.png" alt="Galerie">Galerie</a></li>
                 <div class="border"></div>
-                <li class="other"><a href="/camagru/view/camera.html" class="other"><img id="camera" src="/camagru/public/pictures/camera_black.png" alt="Camera">Camera</a></li>
+                <li class="other"><a href="/camagru/view/camera.php" class="other"><img id="camera" src="/camagru/public/pictures/camera_black.png" alt="Camera">Camera</a></li>
                 <div class="border"></div>
-                <li class="other"><a href="/camagru/view/profile.html" class="other"><img id="profile" src="/camagru/public/pictures/profile_black.png" alt="Profile">Profil</a></li>
+                <li class="other"><a href="/camagru/view/profile.php" class="other"><img id="profile" src="/camagru/public/pictures/profile_black.png" alt="Profile">Profil</a></li>
                 <div class="border"></div>
             </ul>
         </nav>
@@ -50,9 +36,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
         </section>
-        <footer>
-            <p id="rights">© 2020 CAMAGRU BY HG4DACHA</p>
-        </footer>
+        <?php include("includes/footer.php") ?>
     </div>
 </body>
 </html>
