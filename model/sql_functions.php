@@ -29,7 +29,7 @@ function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $noti
     $reqIns->bindValue(':email', $email, PDO::PARAM_STR);
     $reqIns->bindValue(':username', $username, PDO::PARAM_STR);
     $reqIns->bindValue(':passwordUsr', $passwordUsr, PDO::PARAM_STR);
-    $reqIns->bindValue(':notif', $notif, PDO::PARAM_STR);
+    $reqIns->bindValue(':notif', $notif, PDO::PARAM_BOOL);
     $reqIns->execute();
 }
 

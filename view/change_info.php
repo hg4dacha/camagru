@@ -69,7 +69,7 @@
                         <small id="comment2">Recevez un e-mail lorsqu'une de vos photos est commentée par un autre utilisateur.</small>
                     </div>
                     <div id="butt">
-                        <a href="/camagru/view/change_password.html">
+                        <a href="/camagru/view/profile.php">
                             <div id="buttOne1">
                                 <img id="lock" src="/camagru/public/pictures/lock.png">
                                 <p id="buttOne2">Actualiser mes informations</p>
