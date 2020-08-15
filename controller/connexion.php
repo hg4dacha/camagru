@@ -14,26 +14,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         {
             $usernameExist = UsrCheckExist(strtolower($identification));
             $emailExist = MailCheckExist(strtolower($identification));
-            if($usernameExist != 0)
+            if($usernameExist != 0 || $emailExist != 0)
             {
+                $identification = strtolower($identification);
                 $pswrdVerif = pswrd_ctrlU(strtolower($identification));
                 password_verify($password, $pswrdVerif);
                 if($pswrdVerif === TRUE)
                 {
-                    echo "COOL!";
-                }
-                else
-                {
-                    $error = "L'identifiant et le mot de passe ne correspondent pas. Veuillez vérifier et réessayer.";
-                }
-            }
-            else if($emailExist != 0)
-            {
-                $pswrdVerif = pswrd_ctrlM(strtolower($identification));
-                password_verify($password, $pswrdVerif);
-                if($pswrdVerif === TRUE)
-                {
-                    echo "COOL!";
+                    $userinfo = NULL;
+                    if($usernameExist != 0)
+                    {
+                        $userinfo = recupUsrInfo_mail($identification);
+                        print_r($userinfo);
+                    }
+                    else if ($emailExist != 0)
+                    {
+                        $userinfo = recupUsrInfo_mail($identification);
+                        print_r($userinfo);
+                    }
                 }
                 else
                 {
