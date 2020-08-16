@@ -18,6 +18,10 @@
         flex-direction: column;
     }
 
+    #initial{
+        height: initial;
+    }
+
     #top{
         display: flex;
         flex-direction: row;
@@ -175,7 +179,7 @@
     <div id="userDiv">
         <div id="top">
             <img id="user" src="/camagru/public/pictures/user.png" alt="Utilisateur">
-            <p id="username">User-93400</p>
+            <p id="username"><?= $_SESSION['username']; ?></p>
         </div>
         <div id="bottom">
             <img id="logout" src="/camagru/public/pictures/logout.png" alt="Déconnexion">
@@ -183,6 +187,6 @@
         </div>
     </div>
     <div id="logoDiv">
-        <a href="/camagru/view/home.php"><img id="logo" src="/camagru/public/pictures/Camagru.png" alt="logo"></a>
+        <a id="initial" href="/camagru/view/home.php"><img id="logo" src="/camagru/public/pictures/Camagru.png" alt="logo"></a>
     </div>
 </header>

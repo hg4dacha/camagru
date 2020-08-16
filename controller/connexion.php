@@ -21,17 +21,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 password_verify($password, $pswrdVerif);
                 if($pswrdVerif === TRUE)
                 {
-                    $userinfo = NULL;
-                    if($usernameExist != 0)
-                    {
-                        $userinfo = recupUsrInfo_mail($identification);
-                        print_r($userinfo);
-                    }
-                    else if ($emailExist != 0)
-                    {
-                        $userinfo = recupUsrInfo_mail($identification);
-                        print_r($userinfo);
-                    }
+                    $userinfo = recupUsrInfo($identification);
+                    $_SESSION['id'] = $userinfo['id'];
+                    $_SESSION['lastname'] = $userinfo['lastname'];
+                    $_SESSION['firstname'] = $userinfo['firstname'];
+                    $_SESSION['email'] = $userinfo['email'];
+                    $_SESSION['username'] = $userinfo['username'];
+                    $_SESSION['passwordUsr'] = $userinfo['passwordUsr'];
+                    $_SESSION['notif'] = $userinfo['notif'];
+                    header('location: /camagru/view/home.php');
                 }
                 else
                 {

@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,26 +31,26 @@
             <div id="profileInfo">
                 <h1>Modification des informations personelles</h1>
                 <p id="expl">Insérez de nouvelles informations dans les champs que vous souhaitez modifier</p>
-                <form method="post" action="inscription.php">
+                <form method="post" action="change_info.php">
                     <div id="formBloc">
                         <div id="lineBlocTh">
                             <label for="pseudo">Nom</label>                
                             <div class="columnWidth">
-                                <input type="text" id="firstLine" value="Gaddacha" autofocus>
+                                <input type="text" id="firstLine" value="<?php  echo $_SESSION['firstname'] ?>" autofocus>
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
                         </div>
                         <div class="lineBlocOth">
                             <label for="email">Prénom</label>                
                             <div class="columnWidth">
-                                <input type="text" id="secondLine" value="Onss">
+                                <input type="text" id="secondLine" value="<?php  echo $_SESSION['lastname'] ?>">
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
                         </div>
                         <div class="lineBlocOth">
                             <label for="notif">Nom d'utilisateur</label>
                             <div class="columnWidth">
-                                <input type="text" id="thirdLine" value="User-93400">
+                                <input type="text" id="thirdLine" value="<?php  echo $_SESSION['username'] ?>">
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
                         </div>
@@ -53,16 +58,18 @@
                         <div class="lineBlocOth">
                             <label for="notif">E-mail</label>
                             <div class="columnWidth">
-                                <input type="text" id="fourthLine" value="e-mail@exemple.com">
+                                <input type="text" id="fourthLine" value="<?php  echo $_SESSION['email'] ?>">
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
                         </div>
                         <div class="lineBlocOth">
                             <p id="notifComm">Notification de commentaire</p>
                             <div id="radioAyn">
-                                <input id="yes" type="radio" name="notif" value="yes" checked/>
+                                <input id="yes" type="radio" name="notif" value="yes"
+                                <?php if($_SESSION['notif'] == TRUE) { ?> checked="checked"<?php } ?>/>
                                 <label class="labelRadio" for="yes">Activée</label>
-                                <input id="no" type="radio" name="notif" value="no">
+                                <input id="no" type="radio" name="notif" value="no"
+                                <?php if($_SESSION['notif'] == FALSE) { ?> checked="checked"<?php } ?>/>
                                 <label class="labelRadio" for="no">Désactivée</label>
                             </div>
                         </div>

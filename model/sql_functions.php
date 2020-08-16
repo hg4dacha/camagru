@@ -49,19 +49,10 @@ function pswrd_ctrlM($idf)
     return $reqCtrl->execute();
 }
 
-function recupUsrInfo_usr($idf)
+function recupUsrInfo($idf)
 {
     $dbc = db_connex();
-    $requsr = $dbc->prepare("SELECT * FROM users WHERE LOWER(username) = :idf");
-    $requsr->bindValue(':idf', $idf, PDO::PARAM_STR);
-    $requsr->execute();
-    return $requsr->fetch();
-}
-
-function recupUsrInfo_mail($idf)
-{
-    $dbc = db_connex();
-    $requsr = $dbc->prepare("SELECT * FROM users WHERE LOWER(email) = :idf");
+    $requsr = $dbc->prepare("SELECT * FROM users WHERE LOWER(username) = :idf OR LOWER(email) = :idf");
     $requsr->bindValue(':idf', $idf, PDO::PARAM_STR);
     $requsr->execute();
     return $requsr->fetch();
