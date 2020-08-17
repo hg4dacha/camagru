@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sql_functions.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
 
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
@@ -30,6 +30,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     $_SESSION['passwordUsr'] = $userinfo['passwordUsr'];
                     $_SESSION['notif'] = $userinfo['notif'];
                     header('location: /camagru/view/home.php');
+                    exit;
                 }
                 else
                 {

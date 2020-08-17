@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sql_functions.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
 
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {

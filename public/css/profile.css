@@ -202,18 +202,6 @@ h1{
     margin-left: 199px;
 }
 
-#radio1{
-    width: 15px;
-    height: 15px;
-    margin-left: 105px;
-}
-
-#radio2{
-    width: 15px;
-    height: 15px;
-    margin-left: 15px;
-}
-
 .labelRadio{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #1e272e;
@@ -223,6 +211,26 @@ h1{
 
 #radioAyn{
     padding-top: 9px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 105px;
+}
+
+#activated{
+    display: flex;
+    flex-direction: row;
+}
+
+#deactivated{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+}
+
+.check{
+    width: 22px;
+    height: 22px;
+    margin-top: 10px;
 }
 
 #notif{
@@ -445,17 +453,14 @@ h1{
     #radioAyn
     {
         padding-top: 7px;
-        margin-left: 90px;
+        margin-left: 93px;
     }
-    
-    #radio1
+
+    .check
     {
-        margin-left: 0px;
-    }
-    
-    #radio2
-    {
-        margin-left: 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: 8px;
     }
     
     #butt
@@ -676,14 +681,16 @@ h1{
     
     #radioAyn
     {
-        margin-left: 0px;
+        margin-left: 5px;
         padding-top: 0px;
         margin-top: 4px;
     }
-    
-    #radio1
+
+    .check
     {
-        margin-left: 3px;
+        width: 18px;
+        height: 18px;
+        margin-top: 8px;
     }
     
     #lock

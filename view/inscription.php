@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_inscription.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitInscription.php");
 
 ?>
 

@@ -25,15 +25,17 @@
     #top{
         display: flex;
         flex-direction: row;
-        padding-top: 42px;
-        padding-left: 3px;
+        padding-top: 38px;
+        padding-left: 8px;
+        padding-bottom: 8px;
     }
 
 
     #user{
         width: 50px;
         height: 50px;
-        padding-right: 3px;
+        padding-right: 7px;
+        padding-top: 2px;
     }
 
     #username{
@@ -46,7 +48,7 @@
     #bottom{
         display: flex;
         flex-direction: row;
-        padding-left: 31px;
+        padding-left: 26px;
     }
 
     #logout{
@@ -92,15 +94,30 @@
         #top
         {
             padding-top: 12px;
+            padding-bottom: 0px;
         }
 
         #bottom
         {
-            margin-top: -3px;
+            padding-left: 19px;
+        }
+
+        #logout
+        {
+            padding-top: 10px;
+            width: 14px;
+            height:14px;
+        }
+
+        #deconnex
+        {
+            font-size: 11px;
         }
 
         #user
         {
+            padding-right: 5px;
+            padding-top: 8px;
             width: 40px;
             height: 40px;
         }
@@ -146,6 +163,7 @@
         {
             width: 30px;
             height: 30px;
+            padding-top: 5px;
         }
 
         #username
@@ -183,7 +201,7 @@
         </div>
         <div id="bottom">
             <img id="logout" src="/camagru/public/pictures/logout.png" alt="Déconnexion">
-            <p id="deconnex">Se déconnecter</p>
+            <a href="/camagru/view/includes/deconnexion.php"><p id="deconnex">Se déconnecter</p></a>
         </div>
     </div>
     <div id="logoDiv">

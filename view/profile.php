@@ -2,6 +2,11 @@
 
 session_start();
 
+if (empty($_SESSION))
+{
+    header('location: /camagru/index.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,25 +59,29 @@ session_start();
                 <div id="lineLast">
                     <p class="label">Notification<br/>de commentaire</p>
                     <div id="radioAyn">
-                        <input id="radio1" type="radio" value="yes"
-                        <?php if($_SESSION['notif'] == TRUE) { ?>
-                        checked="checked"<?php } ?> disabled="disabled"/>
-                        <label class="labelRadio" for="yes">Activée</label>
-                        <input id="radio2" type="radio" value="no"
-                        <?php if($_SESSION['notif'] == FALSE) { ?>
-                        checked="checked"<?php } ?> disabled="disabled"/>
-                        <label class="labelRadio" for="no">Désactivée</label>
+                        <div id="activated">
+                            <?php if($_SESSION['notif'] == TRUE) { ?>
+                            <img class="check" src="/camagru/public/pictures/check.png" alt="OK">
+                            <?php } ?>
+                            <p class="labelRadio">Activée</p>
+                        </div>
+                        <div id="deactivated">
+                            <?php if($_SESSION['notif'] == FALSE) { ?>
+                            <img class="check" src="/camagru/public/pictures/check.png" alt="OK">
+                            <?php } ?>
+                            <p class="labelRadio">Désactivée</p>
+                        </div>
                     </div>
                 </div>
                 <div class="lines"></div>
                 <div id="butt">
-                    <a href="/camagru/view/change_password.php" id="marginA1">
+                    <a href="/camagru/view/passwordModification.php" id="marginA1">
                         <div id="buttOne1">
                             <img id="lock" src="/camagru/public/pictures/lock.png">
                             <p id="buttOne2">Modifier mon mot de passe</p>
                         </div>
                     </a>
-                    <a href="/camagru/view/change_info.php" id="marginA2">
+                    <a href="/camagru/view/infoModification.php" id="marginA2">
                         <div id="buttTwo1">
                             <img id="settings" src="/camagru/public/pictures/settings.png">
                             <p id="buttTwo2">Modifier mes infos personelles</p>

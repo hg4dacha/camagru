@@ -30,7 +30,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/connexion.php");
                         <input id="second" type="password" name="password" id="password"
                         placeholder="Mot de passe" size="30" maxlength="75" value="<?php if(isset($password)) { echo $password; } ?>"/>
                         <button type="submit" name="submit_connexion">Connexion</button>
-                        <p><a id="f_pass" href="view/password.html">Mot de passe oublié ?</a></p>
+                        <p><a id="f_pass" href="view/passwordForgot.html">Mot de passe oublié ?</a></p>
                         <p id="error">
                         <?php
                         if (isset($error))

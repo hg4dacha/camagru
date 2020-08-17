@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/db_connexion.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/dbConnexion.php");
 
 function UsrCheckExist($usr)
 {

@@ -2,6 +2,11 @@
 
 session_start();
 
+if (empty($_SESSION))
+{
+    header('location: /camagru/index.php');
+}
+
 ?>
 
 <!DOCTYPE html>
