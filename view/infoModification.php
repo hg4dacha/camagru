@@ -12,7 +12,7 @@ if (empty($_SESSION))
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/camagru/public/css/change_info.css" />
+    <link rel="stylesheet" href="/camagru/public/css/infoModification.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/camagru/public/pictures/logo_camagru.png" />
     <title>Modification du mot de passe - Camagru</title>
@@ -36,7 +36,7 @@ if (empty($_SESSION))
             <div id="profileInfo">
                 <h1>Modification des informations personelles</h1>
                 <p id="expl">Insérez de nouvelles informations dans les champs que vous souhaitez modifier</p>
-                <form method="post" action="change_info.php">
+                <form method="post" action="infoModification.php">
                     <div id="formBloc">
                         <div id="lineBlocTh">
                             <label for="pseudo">Nom</label>                
@@ -81,15 +81,12 @@ if (empty($_SESSION))
                         <small id="comment2">Recevez un e-mail lorsqu'une de vos photos est commentée par un autre utilisateur.</small>
                     </div>
                     <div id="butt">
-                        <a href="/camagru/view/profile.php">
-                            <div id="buttOne1">
-                                <img id="lock" src="/camagru/public/pictures/lock.png">
-                                <p id="buttOne2">Actualiser mes informations</p>
-                            </div>
-                        </a>
-                        <a href="/camagru/view/home.php">
-                            <p id="retHome">Retour à l'acceuil</p>
-                        </a>
+                        <div>
+                            <button id="buttone" type="submit" name="submit_new_pswrd"><img id="sttings" src="/camagru/public/pictures/settings.png">Actualiser mes informations</button>
+                            <a href="/camagru/view/home.php">
+                                <p id="retHome">Retour à l'acceuil</p>
+                            </a>
+                        </div>
                     </div>
                 </form>
             </div>

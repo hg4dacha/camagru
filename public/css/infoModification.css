@@ -24,6 +24,7 @@ nav{
     margin-top: 140px;
 }
 
+
 @font-face{
     font-family: 'GrandHotel';
     src: url('/camagru/public/polices/GrandHotel-Regular.otf');
@@ -99,9 +100,9 @@ section{
 #profileInfo{
     background-color: white;
     width: 855px;
-    height: 595px;
-    margin-top: 75px;
-    margin-left: 111px;
+    height: 940px;
+    margin-top: 38px;
+    margin-left: 150px;
     border: 1px solid rgb(165, 165, 165);
     border-radius: 2px;
     box-shadow: 0px 0px 2px rgb(165, 165, 165);
@@ -127,20 +128,28 @@ h1{
 label{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #2980b9;
-    font-size: 18px;
-    text-align: center;
-    padding-top: 8px;
+    font-size: 15px;
+    text-align: left;
 }
 
-#thLabel{
-    color: #1e272e;
+#notifComm{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #2980b9;
+    font-size: 15px;
+    margin: 0px;
+    text-align: left;
+}
+
+.columnWidth
+{
+    text-align: left;
 }
 
 input{
     background-color: white;
     height: 37px;
-    font-size: 15px;
-    padding-left: 11px;
+    font-size: 18px;
+    margin-left: 25px;
     border-bottom: 1px rgb(200, 200, 200) dashed;
     border-top: 0;
     border-left: 0;
@@ -153,49 +162,86 @@ input{
     height: 18px;
 }
 
-form{
-    padding-top: 50px;
-}
-
 
 #formBloc{
-    margin-top: 35px;
-    margin-left: 115px;
+    margin-top: 90px;
+    margin-left: 128px;
     display: flex;
     flex-direction: column;
 }
 
 #lineBlocTh{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin-left: 40px;
 }
 
 .lineBlocOth{
     display: flex;
-    flex-direction: row;
-    margin-top: 40px;
+    flex-direction: column;
+    margin-top: 35px;
+    margin-left: 40px;
 }
 
 #firstLine{
-    width: 365px;
-    margin-left: 65px;
-    margin-top: -10px;
+    width: 460px;
 }
 
 #secondLine{
-    width: 362px;
-    margin-left: 44px;
-    margin-top: -10px;
+    width: 460px;
 }
 
 #thirdLine{
-    width: 364px;
-    margin-left: 52px;
-    margin-top: -10px;
+    width: 460px;
+}
+
+#fourthLine{
+    width: 460px;
+}
+
+#comment1{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(142,142,142);
+    font-size: 13px;
+    margin-top: 5px;
+    margin-left: 40px;
+    text-align: left;
+}
+
+#comment2{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(142,142,142);
+    font-size: 13px;
+    margin-top: 5px;
+    margin-left: 40px;
+    text-align: left;
+}
+
+#yes{
+    width: 15px;
+    height: 15px;
+    margin-left: 31px;
+}
+
+#no{
+    width: 15px;
+    height: 15px;
+    margin-left: 40px;
+}
+
+.labelRadio{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1e272e;
+    font-size: 16px;
+}
+
+#radioAyn{
+    padding-top: 15px;
+    text-align: left;
 }
 
 #butt{
-    margin-top: 65px;
+    margin-top: 80px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -203,25 +249,12 @@ form{
     text-align: -webkit-center;
 }
 
-#buttOne1{
-    cursor: pointer;
-    background-color: #b33939;
-    font-weight:bold;
+#buttone{
+    width: 270px;
+    height: 50px;
+    background-color: #3c6382;
     border-radius: 4px;
-    padding-left: 23px;
-    padding-right: 23px;
     border: 0px;
-    display: flex;
-    flex-direction: row;
-    width: 225px;
-    height: 45px;
-}
-
-#buttOne1:active {
-    background-color: #ee928b;
-}
-
-#buttOne2{
     cursor: pointer;
     font-size: 14px;
     color: whitesmoke;
@@ -229,11 +262,15 @@ form{
     font-weight:bold;
 }
 
-#lock{
-    width: 24px;
-    height: 24px;
-    padding-top: 13px;
+#buttone:active {
+    background-color:#ee928b;
+}
+
+#sttings{
+    width: 21px;
+    height: 21px;
     padding-right: 5px;
+    margin-bottom: -6px;
 }
 
 #retHome{
@@ -242,8 +279,9 @@ form{
     color: black;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-decoration: underline;
-    margin-top: 78px;
+    margin-top: 60px;
     width: 140px;
+    height: 0px;
 }
 
 #settings{
@@ -260,6 +298,11 @@ form{
         padding-left: 180px;
         text-align: initial;
     }
+
+    #profileInfo
+    {
+        margin-left: 111px;
+    }
 }
 
 @media all and (max-width: 1150px)
@@ -275,25 +318,24 @@ form{
     #profileInfo
     {
         width: 761px;
-        height: 555px;
+        height: 875px;
         margin-top: 0px;
         margin-left: 65px;
     }
 
     #formBloc
     {
-        margin-top: 17px;
         margin-left: 75px;
     }
 
     #butt
     {
-        margin-top: 75px;
+        margin-top: 65px;
     }
 
     #retHome
     {
-        margin-top: 83px;
+        margin-top: 38px;
         width: 135px;
     }
 }
@@ -345,42 +387,58 @@ form{
     #profileInfo
     {
         width: 552px;
-        height: 585px;
+        height: 790px;
         margin-top: 6px;
         margin-left: 1px;
     }
 
     h1
     {
-        font-size: 21px;
+        font-size: 19px;
+    }
+
+    #expl
+    {
+        font-size: 12px;
     }
 
     #formBloc
     {
-        margin-left: 20px;
+        margin-top: 60px;
+        margin-left: 25px;
     }
 
     label
     {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     #firstLine
     {
-        width: 298px;
-        margin-left: 48px;
+        width: 371px;
+        margin-left: 15px;
+        font-size: 17px;
     }
 
     #secondLine
     {
-        width: 298px;
-        margin-left: 30px;
+        width: 371px;
+        margin-left: 15px;
+        font-size: 17px;
     }
 
     #thirdLine
     {
-        width: 296px;
-        margin-left: 39px;
+        width: 371px;
+        margin-left: 15px;
+        font-size: 17px;
+    }
+
+    #fourthLine
+    {
+        width: 371px;
+        margin-left: 15px;
+        font-size: 17px;
     }
 
     .pen
@@ -389,32 +447,39 @@ form{
         height: 15px;
     }
 
+    #comment1
+    {
+        font-size: 10px;
+    }
+
+    #comment2
+    {
+        font-size: 10px;
+    }
+
     #butt
     {
-        margin-top: 80px;
+        margin-top: 50px;
     }
 
-    #buttOne1
-    {
-        width: 214px;
-        height: 41px;
-    }
-
-    #buttOne2
+    #buttone
     {
         font-size: 13px;
+        width: 240px;
+        height: 44px;
     }
 
-    #lock
+    #sttings
     {
-        width: 21px;
-        height: 21px;
+        width: 19px;
+        height: 19px;
+        margin-bottom: -5px;
     }
 
     #retHome
     {
         font-size: 13px;
-        margin-top: 85px;
+        margin-top: 32px;
         width: 120px;
     }
 }
@@ -465,8 +530,8 @@ form{
 
     section
     {
-        padding-left: 85px;
-        padding-bottom: 60px;
+        padding-left: 76px;
+        padding-bottom: 25px;
         padding-top: 70px;
     }
 
@@ -474,9 +539,9 @@ form{
     {
         background-color: whitesmoke;
         width: 279px;
-        height: 585px;
-        margin-top: -3px;
-        margin-left: -8px;
+        height: 605px;
+        margin-top: 0px;
+        margin-left: 0px;
         border: initial;
         border-radius: initial;
         box-shadow: initial;
@@ -484,32 +549,35 @@ form{
 
     h1
     {
-        font-size: 16px;
+        font-size: 13px;
         text-align: left;
-        margin-top: 25px;
-        margin-left: 8px;
+        margin-top: 7px;
+        margin-left: 5px;
     }
 
     #expl
     {
         font-size: 10px;
-        margin-top: -14px;
+        margin-top: -10px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-    form
+    #formBloc
     {
-        padding-top: 30px;
-    }
-
-    input
-    {
-        border-bottom: 1px rgb(200, 200, 200) dashed;
+        margin-top: 30px;
+        margin-left: 20px;
     }
 
     label
     {
-        font-size: 13px;
+        font-size: 11px;
         text-align: left;
+    }
+
+    #notifComm
+    {
+        font-size: 11px;
     }
 
     #thLabel
@@ -520,11 +588,14 @@ form{
     #lineBlocTh
     {
         flex-direction: column;
+        margin-left: 0px;
     }
 
     .lineBlocOth
     {
         flex-direction: column;
+        margin-left: 0px;
+        margin-top: 25px;
     }
 
     .columnWidth
@@ -537,65 +608,109 @@ form{
     #firstLine
     {
         width: 195px;
+        height: 25px;
         margin-left: 10px;
         margin-top: -30px;
         background-color: whitesmoke;
+        font-size: 13px;
     }
 
     #secondLine
     {
         width: 195px;
+        height: 25px;
         margin-left: 10px;
         margin-top: -30px;
         background-color: whitesmoke;
+        font-size: 13px;
     }
 
     #thirdLine
     {
         width: 195px;
+        height: 25px;
         margin-left: 10px;
         margin-top: -30px;
         background-color: whitesmoke;
+        font-size: 13px;
+    }
+
+    #fourthLine
+    {
+        width: 195px;
+        height: 25px;
+        margin-left: 10px;
+        margin-top: -30px;
+        background-color: whitesmoke;
+        font-size: 13px;
     }
 
     .pen
     {
-        width: 15px;
-        height: 15px;
-        margin-top: -7px;
+        width: 11px;
+        height: 11px;
+        margin-top: -22px;
         margin-left: 5px;
+    }
+
+    #comment1
+    {
+        margin-left: 9px;
+    }
+
+    br
+    {
+        display: none;
+    }
+
+    #comment2
+    {
+        margin-left: 9px;
+    }
+
+    .labelRadio
+    {
+        font-size: 13px;
+    }
+
+    #yes
+    {
+        width: 11px;
+        height: 13px;
+        margin-left: 10px;
+    }
+
+    #no
+    {
+        width: 11px;
+        height: 13px;
     }
 
     #butt
     {
-        margin-top: 55px;
+        margin-top: 36px;
     }
 
-    #buttOne1
-    {
-        width: 188px;
-        height: 37px;
-        padding-left: 9px;
-        padding-right: 4px;
-    }
-
-    #buttOne2
+    #buttone
     {
         font-size: 11px;
-        padding-top: 1px;
+        padding-top: 0px;
+        width: 200px;
+        height: 40px;
     }
 
-    #lock
+    #sttings
     {
-        width: 18px;
-        height: 18px;
+        width: 15px;
+        height: 15px;
         margin-top: -2px;
+        margin-bottom: -3px;
     }
 
     #retHome
     {
         font-size: 11px;
-        margin-top: 74px;
+        margin-top: 30px;
         width: 100px;
     }
 }

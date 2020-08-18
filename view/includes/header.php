@@ -13,7 +13,7 @@
     #userDiv{
         text-align: left;
         width: 100%;
-        padding-left: 15px;
+        padding-left: 21px;
         display: flex;
         flex-direction: column;
     }
@@ -26,15 +26,15 @@
         display: flex;
         flex-direction: row;
         padding-top: 38px;
-        padding-left: 8px;
-        padding-bottom: 8px;
+        padding-left: 9px;
+        padding-bottom: 9px;
     }
 
 
     #user{
         width: 50px;
         height: 50px;
-        padding-right: 7px;
+        padding-right: 3px;
         padding-top: 2px;
     }
 
@@ -48,14 +48,14 @@
     #bottom{
         display: flex;
         flex-direction: row;
-        padding-left: 26px;
+        padding-left: 25px;
     }
 
     #logout{
-        width: 15px;
-        height:15px;
-        padding-right: 3px;
-        padding-top: 11px;
+        width: 17px;
+        height:17px;
+        padding-right: 1px;
+        padding-top: 9px;
         cursor: pointer;
     }
 
@@ -94,30 +94,31 @@
         #top
         {
             padding-top: 12px;
-            padding-bottom: 0px;
+            padding-bottom: 3px;
+            padding-left: 10px;
         }
 
         #bottom
         {
-            padding-left: 19px;
+            padding-left: 23px;
         }
 
         #logout
         {
-            padding-top: 10px;
-            width: 14px;
-            height:14px;
+            padding-top: 8px;
+            width: 13px;
+            height:13px;
         }
 
         #deconnex
         {
-            font-size: 11px;
+            font-size: 10px;
         }
 
         #user
         {
             padding-right: 5px;
-            padding-top: 8px;
+            padding-top: 7px;
             width: 40px;
             height: 40px;
         }
@@ -150,7 +151,7 @@
 
         #userDiv
         {
-            padding-left: 5px;
+            padding-left: 1px;
         }
 
         #top
@@ -163,7 +164,8 @@
         {
             width: 30px;
             height: 30px;
-            padding-top: 5px;
+            padding-top: 3px;
+            padding-right: 2px;
         }
 
         #username
@@ -181,7 +183,7 @@
         {
             width: 10px;
             height: 10px;
-            padding-top: 10px;
+            padding-top: 9px;
         }
 
         #deconnex
@@ -201,7 +203,7 @@
         </div>
         <div id="bottom">
             <img id="logout" src="/camagru/public/pictures/logout.png" alt="Déconnexion">
-            <a href="/camagru/view/includes/deconnexion.php"><p id="deconnex">Se déconnecter</p></a>
+            <a href="/camagru/view/includes/deconnexion.php"><p id="deconnex">Déconnexion</p></a>
         </div>
     </div>
     <div id="logoDiv">

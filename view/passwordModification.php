@@ -12,7 +12,7 @@ if (empty($_SESSION))
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/camagru/public/css/change_password.css" />
+    <link rel="stylesheet" href="/camagru/public/css/passwordModification.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/camagru/public/pictures/logo_camagru.png" />
     <title>Modification du mot de passe - Camagru</title>
@@ -36,7 +36,7 @@ if (empty($_SESSION))
             <div id="profileInfo">
                 <h1>Modification du mot de passe</h1>
                 <p id="expl">Insérez les informations relatives à vos mots de passe</p>
-                <form method="post" action="inscription.php">
+                <form method="post" action="passwordModification.php">
                     <div id="formBloc">
                         <div id="lineBlocTh">
                             <label for="pseudo" id="thLabel">Mot de passe actuel</label>                
@@ -61,15 +61,12 @@ if (empty($_SESSION))
                         </div>
                     </div>
                     <div id="butt">
-                        <a href="/camagru/view/change_password.php">
-                            <div id="buttOne1">
-                                <img id="lock" src="/camagru/public/pictures/lock.png">
-                                <p id="buttOne2">Réinitialiser le mot de passe</p>
-                            </div>
-                        </a>
-                        <a href="/camagru/view/home.php">
-                            <p id="retHome">Retour à l'acceuil</p>
-                        </a>
+                        <div>
+                            <button id="buttone" type="submit" name="submit_new_pswrd"><img id="lock" src="/camagru/public/pictures/lock.png">Réinitialiser le mot de passe</button>
+                            <a href="/camagru/view/home.php">
+                                <p id="retHome">Retour à l'acceuil</p>
+                            </a>
+                        </div>
                     </div>
                 </form>
             </div>
