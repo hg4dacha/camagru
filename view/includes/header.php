@@ -27,7 +27,7 @@
         flex-direction: row;
         padding-top: 38px;
         padding-left: 9px;
-        padding-bottom: 9px;
+        padding-bottom: 11px;
     }
 
 
@@ -48,12 +48,12 @@
     #bottom{
         display: flex;
         flex-direction: row;
-        padding-left: 25px;
+        padding-left: 26px;
     }
 
     #logout{
-        width: 17px;
-        height:17px;
+        width: 15px;
+        height:15px;
         padding-right: 1px;
         padding-top: 9px;
         cursor: pointer;
@@ -61,7 +61,7 @@
 
     #deconnex{
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 12px;
+        font-size: 11px;
         color: #EA2027;
         font-weight: bold;
         cursor: pointer;
@@ -94,13 +94,13 @@
         #top
         {
             padding-top: 12px;
-            padding-bottom: 3px;
-            padding-left: 10px;
+            padding-bottom: 5px;
+            padding-left: 11px;
         }
 
         #bottom
         {
-            padding-left: 23px;
+            padding-left: 24px;
         }
 
         #logout
@@ -158,6 +158,7 @@
         {
             padding-top: 5px;
             padding-left: 1px;
+            padding-bottom: 5px;
         }
         
         #user
@@ -181,14 +182,14 @@
 
         #logout
         {
-            width: 10px;
-            height: 10px;
-            padding-top: 9px;
+            width: 9px;
+            height: 9px;
+            padding-top: 8px;
         }
 
         #deconnex
         {
-            font-size: 9px;
+            font-size: 8px;
         }
     }
 
@@ -203,7 +204,7 @@
         </div>
         <div id="bottom">
             <img id="logout" src="/camagru/public/pictures/logout.png" alt="Déconnexion">
-            <a href="/camagru/view/includes/deconnexion.php"><p id="deconnex">Déconnexion</p></a>
+            <a href="/camagru/view/includes/deconnexion.php"><p id="deconnex">DÉCONNEXION</p></a>
         </div>
     </div>
     <div id="logoDiv">

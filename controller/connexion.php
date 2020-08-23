@@ -17,9 +17,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             if($usernameExist != 0 || $emailExist != 0)
             {
                 $identification = strtolower($identification);
-                $pswrdVerif = pswrd_ctrlU(strtolower($identification));
-                password_verify($password, $pswrdVerif);
-                if($pswrdVerif === TRUE)
+                $pswrdVerif = pswrd_ctrl(strtolower($identification));
+                $pswrdPass = password_verify($password, $pswrdVerif[0]);
+                if($pswrdPass === TRUE)
                 {
                     $userinfo = recupUsrInfo($identification);
                     $_SESSION['id'] = $userinfo['id'];

@@ -33,6 +33,8 @@ if (empty($_SESSION))
             </ul>
         </nav>
         <section>
+            <p id="success"><?php if(!(isset($_SESSION['success']))) { echo $_SESSION['success']; } ?></p>
+            <?php unset($_SESSION['success']); ?>
             <div id="profileInfo">
                 <h1>Informations personelles</h1>
                 <p id="expl">Informations d'utilisateur de votre compte Camagru</p>

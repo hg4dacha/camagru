@@ -33,20 +33,13 @@ function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $noti
     $reqIns->execute();
 }
 
-function pswrd_ctrlU($idf)
+function pswrd_ctrl($idf)
 {
     $dbc = db_connex();
-    $reqCtrl = $dbc->prepare("SELECT passwordUsr FROM users WHERE LOWER(username) = :idf");
+    $reqCtrl = $dbc->prepare("SELECT passwordUsr FROM users WHERE LOWER(username) = :idf OR LOWER(email) = :idf");
     $reqCtrl->bindValue(':idf', $idf, PDO::PARAM_STR);
-    return $reqCtrl->execute();
-}
-
-function pswrd_ctrlM($idf)
-{
-    $dbc = db_connex();
-    $reqCtrl = $dbc->prepare("SELECT passwordUsr FROM users WHERE LOWER(email) = :idf");
-    $reqCtrl->bindValue(':idf', $idf, PDO::PARAM_STR);
-    return $reqCtrl->execute();
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
 }
 
 function recupUsrInfo($idf)
@@ -56,6 +49,15 @@ function recupUsrInfo($idf)
     $requsr->bindValue(':idf', $idf, PDO::PARAM_STR);
     $requsr->execute();
     return $requsr->fetch();
+}
+
+function replacePswrd($newPswrd, $idf)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("UPDATE users SET passwordUsr = :newPswrd WHERE LOWER(username) = :idf");
+    $reqPswrd->bindValue(':newPswrd', $newPswrd, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_STR);
+    $reqPswrd->execute();
 }
 
 ?>
