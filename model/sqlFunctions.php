@@ -60,4 +60,13 @@ function replacePswrd($newPswrd, $idf)
     $reqPswrd->execute();
 }
 
+function replaceLastname($newElement, $idf)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("UPDATE users SET lastname = :newElement WHERE (username) = :idf");
+    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_STR);
+    $reqPswrd->execute();
+}
+
 ?>

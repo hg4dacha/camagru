@@ -7,6 +7,8 @@ if (empty($_SESSION))
     header('location: /camagru/index.php');
 }
 
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitNewInfo.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,31 +43,87 @@ if (empty($_SESSION))
                         <div id="lineBlocTh">
                             <label for="pseudo">Nom</label>                
                             <div class="columnWidth">
-                                <input type="text" id="firstLine" value="<?php  echo $_SESSION['firstname'] ?>" autofocus>
+                                <input type="text" id="firstLine" name="usr_lastname"
+                                value="<?php
+                                            if(isset($error_lastname))
+                                            {
+                                                if(isset($usr_lastname))
+                                                {
+                                                    echo $usr_lastname;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo $_SESSION['lastname'];
+                                            }
+                                        ?>" autofocus>
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
+                            <small id="error"><?php if(isset($error_lastname)) { echo $error_lastname; } ?></small>
                         </div>
                         <div class="lineBlocOth">
                             <label for="email">Prénom</label>                
                             <div class="columnWidth">
-                                <input type="text" id="secondLine" value="<?php  echo $_SESSION['lastname'] ?>">
+                                <input type="text" id="secondLine" name="usr_firstname"
+                                value="<?php
+                                            if(isset($error_firstname))
+                                            {
+                                                if(isset($usr_firstname))
+                                                {
+                                                    echo $usr_firstname;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo $_SESSION['firstname'];
+                                            }
+                                        ?>">
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
+                            <small id="error"><?php if(isset($error_firstname)) { echo $error_firstname; } ?></small>
                         </div>
                         <div class="lineBlocOth">
                             <label for="notif">Nom d'utilisateur</label>
                             <div class="columnWidth">
-                                <input type="text" id="thirdLine" value="<?php  echo $_SESSION['username'] ?>">
+                                <input type="text" id="thirdLine" name="usr_username"
+                                value="<?php
+                                            if(isset($error_username))
+                                            {
+                                                if(isset($usr_username))
+                                                {
+                                                    echo $usr_username;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo $_SESSION['username'];
+                                            }
+                                        ?>">
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
+                            <small id="error"><?php if(isset($error_username)) { echo $error_username; } ?></small>
                         </div>
                         <small id="comment1">Le nom d'utilisateur est unique, si vous le changez, l'ancien nom pourra être adopté<br/>par d'autres utilisateurs.</small>
                         <div class="lineBlocOth">
                             <label for="notif">E-mail</label>
                             <div class="columnWidth">
-                                <input type="text" id="fourthLine" value="<?php  echo $_SESSION['email'] ?>">
+                                <input type="email" id="fourthLine" name="usr_email"
+                                value="<?php
+                                            if(isset($error_email))
+                                            {
+                                                if(isset($usr_email))
+                                                {
+                                                    echo $usr_email;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                echo $_SESSION['email'];
+                                            }
+                                        ?>">
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
+                            <small id="error"><?php if(isset($error_email)) { echo $error_email; } ?></small>
                         </div>
                         <div class="lineBlocOth">
                             <p id="notifComm">Notification de commentaire</p>
@@ -82,7 +140,7 @@ if (empty($_SESSION))
                     </div>
                     <div id="butt">
                         <div>
-                            <button id="buttone" type="submit" name="submit_new_pswrd"><img id="sttings" src="/camagru/public/pictures/settings.png">Actualiser mes informations</button>
+                            <button id="buttone" type="submit" name="submit_new_info"><img id="sttings" src="/camagru/public/pictures/settings.png">Actualiser mes informations</button>
                             <a href="/camagru/view/home.php">
                                 <p id="retHome">Retour à l'acceuil</p>
                             </a>
