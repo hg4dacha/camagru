@@ -2,6 +2,23 @@
 
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/dbConnexion.php");
 
+//---------- Insertion ----------
+
+function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $notif)
+{
+    $dbc = db_connex();
+    $reqIns = $dbc->prepare("INSERT INTO users (lastname, firstname, email, username, passwordUsr, notif) VALUES (:lastname, :firstname, :email, :username, :passwordUsr, :notif)");
+    $reqIns->bindValue(':lastname', $lastname, PDO::PARAM_STR);
+    $reqIns->bindValue(':firstname', $firstname, PDO::PARAM_STR);
+    $reqIns->bindValue(':email', $email, PDO::PARAM_STR);
+    $reqIns->bindValue(':username', $username, PDO::PARAM_STR);
+    $reqIns->bindValue(':passwordUsr', $passwordUsr, PDO::PARAM_STR);
+    $reqIns->bindValue(':notif', $notif, PDO::PARAM_BOOL);
+    $reqIns->execute();
+}
+
+//---------- Selection ----------
+
 function UsrCheckExist($usr)
 {
     $dbc = db_connex();
@@ -20,18 +37,6 @@ function MailCheckExist($mail)
     return $reqField->rowCount();
 }
 
-function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $notif)
-{
-    $dbc = db_connex();
-    $reqIns = $dbc->prepare("INSERT INTO users (lastname, firstname, email, username, passwordUsr, notif) VALUES (:lastname, :firstname, :email, :username, :passwordUsr, :notif)");
-    $reqIns->bindValue(':lastname', $lastname, PDO::PARAM_STR);
-    $reqIns->bindValue(':firstname', $firstname, PDO::PARAM_STR);
-    $reqIns->bindValue(':email', $email, PDO::PARAM_STR);
-    $reqIns->bindValue(':username', $username, PDO::PARAM_STR);
-    $reqIns->bindValue(':passwordUsr', $passwordUsr, PDO::PARAM_STR);
-    $reqIns->bindValue(':notif', $notif, PDO::PARAM_BOOL);
-    $reqIns->execute();
-}
 
 function pswrd_ctrl($idf)
 {
@@ -51,6 +56,8 @@ function recupUsrInfo($idf)
     return $requsr->fetch();
 }
 
+//---------- Replacement ----------
+
 function replacePswrd($newPswrd, $idf)
 {
     $dbc = db_connex();
@@ -63,9 +70,45 @@ function replacePswrd($newPswrd, $idf)
 function replaceLastname($newElement, $idf)
 {
     $dbc = db_connex();
-    $reqPswrd = $dbc->prepare("UPDATE users SET lastname = :newElement WHERE (username) = :idf");
+    $reqPswrd = $dbc->prepare("UPDATE users SET lastname = :newElement WHERE id = :idf");
     $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
-    $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_INT);
+    $reqPswrd->execute();
+}
+
+function replaceFirstname($newElement, $idf)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("UPDATE users SET firstname = :newElement WHERE id = :idf");
+    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_INT);
+    $reqPswrd->execute();
+}
+
+function replaceUsername($newElement, $idf)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("UPDATE users SET username = :newElement WHERE id = :idf");
+    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_INT);
+    $reqPswrd->execute();
+}
+
+function replaceEmail($newElement, $idf)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("UPDATE users SET email = :newElement WHERE id = :idf");
+    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_INT);
+    $reqPswrd->execute();
+}
+
+function replaceNotific($newElement, $idf)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("UPDATE users SET notif = :newElement WHERE id = :idf");
+    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_INT);
     $reqPswrd->execute();
 }
 

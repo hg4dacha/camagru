@@ -45,12 +45,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitNewInfo.php");
                             <div class="columnWidth">
                                 <input type="text" id="firstLine" name="usr_lastname"
                                 value="<?php
-                                            if(isset($error_lastname))
+                                            if(isset($usr_lastname))
                                             {
-                                                if(isset($usr_lastname))
-                                                {
-                                                    echo $usr_lastname;
-                                                }
+                                                echo $usr_lastname;
                                             }
                                             else
                                             {
@@ -66,12 +63,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitNewInfo.php");
                             <div class="columnWidth">
                                 <input type="text" id="secondLine" name="usr_firstname"
                                 value="<?php
-                                            if(isset($error_firstname))
+                                            if(isset($usr_firstname))
                                             {
-                                                if(isset($usr_firstname))
-                                                {
-                                                    echo $usr_firstname;
-                                                }
+                                                echo $usr_firstname;
                                             }
                                             else
                                             {
@@ -87,12 +81,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitNewInfo.php");
                             <div class="columnWidth">
                                 <input type="text" id="thirdLine" name="usr_username"
                                 value="<?php
-                                            if(isset($error_username))
+                                            if(isset($usr_username))
                                             {
-                                                if(isset($usr_username))
-                                                {
-                                                    echo $usr_username;
-                                                }
+                                                echo $usr_username;
                                             }
                                             else
                                             {
@@ -109,12 +100,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitNewInfo.php");
                             <div class="columnWidth">
                                 <input type="email" id="fourthLine" name="usr_email"
                                 value="<?php
-                                            if(isset($error_email))
+                                            if(isset($usr_email))
                                             {
-                                                if(isset($usr_email))
-                                                {
-                                                    echo $usr_email;
-                                                }
+                                                echo $usr_email;
                                             }
                                             else
                                             {
@@ -128,10 +116,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitNewInfo.php");
                         <div class="lineBlocOth">
                             <p id="notifComm">Notification de commentaire</p>
                             <div id="radioAyn">
-                                <input id="yes" type="radio" name="notif" value="yes"
+                                <input id="yes" type="radio" name="notific" value="yes"
                                 <?php if($_SESSION['notif'] == TRUE) { ?> checked="checked"<?php } ?>/>
                                 <label class="labelRadio" for="yes">Activée</label>
-                                <input id="no" type="radio" name="notif" value="no"
+                                <input id="no" type="radio" name="notific" value="no"
                                 <?php if($_SESSION['notif'] == FALSE) { ?> checked="checked"<?php } ?>/>
                                 <label class="labelRadio" for="no">Désactivée</label>
                             </div>

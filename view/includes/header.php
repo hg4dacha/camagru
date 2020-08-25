@@ -34,7 +34,7 @@
     #user{
         width: 50px;
         height: 50px;
-        padding-right: 3px;
+        padding-right: 5px;
         padding-top: 2px;
     }
 
@@ -117,7 +117,7 @@
 
         #user
         {
-            padding-right: 5px;
+            padding-right: 4px;
             padding-top: 7px;
             width: 40px;
             height: 40px;
