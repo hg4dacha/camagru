@@ -63,13 +63,13 @@ if (empty($_SESSION))
                     <div id="radioAyn">
                         <div id="activated">
                             <?php if($_SESSION['notif'] == TRUE) { ?>
-                            <img class="check" src="/camagru/public/pictures/check.png" alt="OK">
+                            <img class="check" src="/camagru/public/pictures/check_green.png" alt="OK">
                             <?php } ?>
                             <p class="labelRadio">Activée</p>
                         </div>
                         <div id="deactivated">
                             <?php if($_SESSION['notif'] == FALSE) { ?>
-                            <img class="check" src="/camagru/public/pictures/check.png" alt="OK">
+                            <img class="check" src="/camagru/public/pictures/check_red.png" alt="OK">
                             <?php } ?>
                             <p class="labelRadio">Désactivée</p>
                         </div>

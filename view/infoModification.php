@@ -117,10 +117,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitNewInfo.php");
                             <p id="notifComm">Notification de commentaire</p>
                             <div id="radioAyn">
                                 <input id="yes" type="radio" name="notific" value="yes"
-                                <?php if($_SESSION['notif'] == TRUE) { ?> checked="checked"<?php } ?>/>
+                                <?php if(($_SESSION['notif'] == TRUE && empty($notific)) || (!empty($notific) && $notific == "yes")) { ?> checked="checked"<?php } ?>/>
                                 <label class="labelRadio" for="yes">Activée</label>
                                 <input id="no" type="radio" name="notific" value="no"
-                                <?php if($_SESSION['notif'] == FALSE) { ?> checked="checked"<?php } ?>/>
+                                <?php if(($_SESSION['notif'] == FALSE && empty($notific)) || (!empty($notific) && $notific == "no")) { ?> checked="checked"<?php } ?>/>
                                 <label class="labelRadio" for="no">Désactivée</label>
                             </div>
                         </div>

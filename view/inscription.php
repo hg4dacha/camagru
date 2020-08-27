@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+if (!empty($_SESSION))
+{
+    header('location: /camagru/view/home.php');
+}
+
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitInscription.php");
 
 ?>
