@@ -1,6 +1,7 @@
 <?php
 
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/phpFunctions.php");
 
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
@@ -68,6 +69,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         $password = password_hash($password, PASSWORD_BCRYPT);
                         $notif = TRUE;
                         insertMbr($lastname, $firstname, $email, $username, $password, $notif);
+                        $subject = "Confirmation de la création de votre compte.";
+                        $body = "Votre compte a bien été crée !";
+                        sendmail($email, $subject, $body);
                     }
                 }
                 else
