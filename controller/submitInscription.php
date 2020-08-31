@@ -71,11 +71,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         insertMbr($lastname, $firstname, $email, $username, $password, $notif);
                         $keyUsr = mt_rand(10000, 1000000).uniqid().mt_rand(10000, 1000000);
                         $subject = "Confirmation de création de votre compte.";
-                        $body = $username.", plus q'une étape pour finaliser votre inscription !</br>Cliquez <a href=\"http://localhost:8080/camagru/index.php\"><b>ici</b></a> et connectez-vous.</br></br></br></br></br>___________________________</br>© 2020 CAMAGRU BY HG4DACHA</br>*********Tous droits réservés*********";
+                        $body = "<img src=\"cid:logo\" alt=\"logo\"></br>".$username.", plus q'une étape pour finaliser votre inscription !</br>Cliquez <a href=\"http://localhost:8080/camagru/index.php\"><b>ici</b></a> et connectez-vous.</br></br></br></br>_____________________________</br>© 2020 CAMAGRU BY HG4DACHA</br>*********Tous droits réservés*********";
                         sendmail($email, $subject, $body);
                         $_SESSION['messVald'] = "Votre compte a bien été crée.</br>Un email de validation vous a été envoyé.";
-                        header('location: /camagru/index.php');
-                        exit;
+                        // header('location: /camagru/index.php');
+                        // exit;
                     }
                 }
                 else

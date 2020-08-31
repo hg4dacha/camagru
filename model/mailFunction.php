@@ -24,6 +24,7 @@ function sendmail($mailAdress, $subject, $body)
         $mail->addAddress($mailAdress);
         $mail->CharSet = 'UTF-8';
         $mail->isHTML(true);
+        $mail->AddEmbeddedImage('../public/pictures/Camagru.png', 'logo');
         $mail->Subject = $subject;
         $mail->Body    = $body;
         $mail->send();
