@@ -20,7 +20,7 @@ function sendmail($mailAdress, $subject, $body)
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
         $mail->Username   = 'camagru042@gmail.com';                 // SMTP username
         $mail->Password   = '240urgamac';                           // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+        $mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
         $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
         //Recipients
