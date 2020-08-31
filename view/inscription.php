@@ -5,6 +5,7 @@ session_start();
 if (!empty($_SESSION))
 {
     header('location: /camagru/view/home.php');
+    exit;
 }
 
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitInscription.php");

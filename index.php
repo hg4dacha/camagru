@@ -2,9 +2,10 @@
 
 session_start();
 
-if (!empty($_SESSION))
+if(!empty($_SESSION['id']) || !empty($_SESSION['lastname']) || !empty($_SESSION['firstname']) || !empty($_SESSION['email']) || !empty($_SESSION['username']) || !empty($_SESSION['passwordUsr']) || !empty($_SESSION['notif']))
 {
     header('location: /camagru/view/home.php');
+    exit;
 }
 
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/connexion.php");
@@ -38,10 +39,19 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/connexion.php");
                         <p><a id="f_pass" href="view/passwordForgot.html">Mot de passe oublié ?</a></p>
                         <p id="error">
                         <?php
-                        if (isset($error))
-                        {
-                            echo $error;
-                        }
+                            if(isset($error))
+                            {
+                                echo $error;
+                            }
+                        ?>
+                        </p>
+                        <p id="messVald">
+                        <?php
+                            if(isset($_SESSION['messVald']))
+                            {
+                                echo $_SESSION['messVald'];
+                                unset($_SESSION['messVald']);
+                            }
                         ?>
                         </p>
                     </form>
