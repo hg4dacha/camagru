@@ -4,6 +4,11 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/dbConnexion.php");
 
 //---------- Insertion ----------
 
+function insertKey()
+{
+    
+}
+
 function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $notif)
 {
     $dbc = db_connex();
