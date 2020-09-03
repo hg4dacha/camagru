@@ -17,20 +17,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             if($usernameExist != 0 || $emailExist != 0)
             {
                 $identification = strtolower($identification);
-                $pswrdVerif = pswrd_ctrl(strtolower($identification));
+                $pswrdVerif = pswrd_ctrl($identification);
                 $pswrdPass = password_verify($password, $pswrdVerif[0]);
                 if($pswrdPass === TRUE)
                 {
-                    $userinfo = recupUsrInfo($identification);
-                    $_SESSION['id'] = $userinfo['id'];
-                    $_SESSION['lastname'] = $userinfo['lastname'];
-                    $_SESSION['firstname'] = $userinfo['firstname'];
-                    $_SESSION['email'] = $userinfo['email'];
-                    $_SESSION['username'] = $userinfo['username'];
-                    $_SESSION['passwordUsr'] = $userinfo['passwordUsr'];
-                    $_SESSION['notif'] = $userinfo['notif'];
-                    header('location: /camagru/view/home.php');
-                    exit;
+                    $tokenUsr = tokenUsr_ctrl($identification);
+                    if ($tokenUsr[0] == FALSE)
+                    {
+                        $error = "Vous devez valider votre inscription via le <span style=\"font-weight:bold;\">lien</span> dans<br>le mail que vous avez reçu.";
+                    }
+                    elseif($tokenUsr[0] == TRUE)
+                    {
+                        $userinfo = recupUsrInfo($identification);
+                        $_SESSION['id'] = $userinfo['id'];
+                        $_SESSION['lastname'] = $userinfo['lastname'];
+                        $_SESSION['firstname'] = $userinfo['firstname'];
+                        $_SESSION['email'] = $userinfo['email'];
+                        $_SESSION['username'] = $userinfo['username'];
+                        $_SESSION['passwordUsr'] = $userinfo['passwordUsr'];
+                        $_SESSION['notif'] = $userinfo['notif'];
+                        header('location: /camagru/view/home.php');
+                        exit;
+                    }
                 }
                 else
                 {

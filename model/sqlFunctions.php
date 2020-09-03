@@ -4,21 +4,19 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/dbConnexion.php");
 
 //---------- Insertion ----------
 
-function insertKey()
-{
-    
-}
-
-function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $notif)
+function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $notif, $keyUsr, $tokenUsr, $idCTRL)
 {
     $dbc = db_connex();
-    $reqIns = $dbc->prepare("INSERT INTO users (lastname, firstname, email, username, passwordUsr, notif) VALUES (:lastname, :firstname, :email, :username, :passwordUsr, :notif)");
+    $reqIns = $dbc->prepare("INSERT INTO users (lastname, firstname, email, username, passwordUsr, notif, keyUsr, tokenUsr, idCTRL) VALUES (:lastname, :firstname, :email, :username, :passwordUsr, :notif, :keyUsr, :tokenUsr, :idCTRL)");
     $reqIns->bindValue(':lastname', $lastname, PDO::PARAM_STR);
     $reqIns->bindValue(':firstname', $firstname, PDO::PARAM_STR);
     $reqIns->bindValue(':email', $email, PDO::PARAM_STR);
     $reqIns->bindValue(':username', $username, PDO::PARAM_STR);
     $reqIns->bindValue(':passwordUsr', $passwordUsr, PDO::PARAM_STR);
     $reqIns->bindValue(':notif', $notif, PDO::PARAM_BOOL);
+    $reqIns->bindValue(':keyUsr', $keyUsr, PDO::PARAM_STR);
+    $reqIns->bindValue(':tokenUsr', $tokenUsr, PDO::PARAM_BOOL);
+    $reqIns->bindValue(':idCTRL', $idCTRL, PDO::PARAM_STR);
     $reqIns->execute();
 }
 
@@ -59,6 +57,33 @@ function recupUsrInfo($idf)
     $requsr->bindValue(':idf', $idf, PDO::PARAM_STR);
     $requsr->execute();
     return $requsr->fetch();
+}
+
+function tokenUsr_ctrl($idf)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT tokenUsr FROM users WHERE LOWER(username) = :idf OR LOWER(email) = :idf");
+    $reqCtrl->bindValue(':idf', $idf, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
+}
+
+function username_ctrl($idCTRL)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT username FROM users WHERE idCTRL = :idCTRL");
+    $reqCtrl->bindValue(':idCTRL', $idCTRL, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
+}
+
+function keyUsr_ctrl($idCTRL)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT keyUsr FROM users WHERE idCTRL = :idCTRL");
+    $reqCtrl->bindValue(':idCTRL', $idCTRL, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
 }
 
 //---------- Replacement ----------
