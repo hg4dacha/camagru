@@ -104,13 +104,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     {
                         if($notific == "yes")
                         {
-                            $notific = 1;
+                            $notific = TRUE;
                             replaceNotific($notific, $_SESSION['id']);
                             $_SESSION['notif'] = $notific;
                         }
                         elseif($notific == "no")
                         {
-                            $notific = 0;
+                            $notific = FALSE;
                             replaceNotific($notific, $_SESSION['id']);
                             $_SESSION['notif'] = $notific;
                         }

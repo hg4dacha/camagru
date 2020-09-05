@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
 
 
@@ -10,25 +12,37 @@ if((isset($_GET['idCTRL']) && isset($_GET['keyID']) && isset($_GET['usrname'])) 
     $keyID = htmlspecialchars($_GET['keyID']);
 
     $usrnameChecked = username_ctrl($idCTRL);
-    echo($usrnameChecked[0]."<br>");
-    if($usrnameChecked[0] == $usrname)
+    if($usrnameChecked[0] === $usrname)
     {
         $keyUsrChecked = keyUsr_ctrl($idCTRL);
-        echo($keyID."<br>");
-        echo($keyUsrChecked[0]."<br>");
-        if($keyUsrChecked[0] == $keyID)
+        if($keyUsrChecked[0] === $keyID)
         {
-            echo("SALUT!");
+            $keyReplace = uniqid().random_int(583483, 962379835641329875);
+            replaceKeyUsr($keyReplace, $usrnameChecked[0]);
+            $idReplace = random_int(364729492, 689346897455960983).uniqid().random_int(7945947, 436923567916564316);
+            replaceIdCtrl($idReplace, $usrnameChecked[0]);
+            $newToken = TRUE;
+            replaceToken($newToken, $usrnameChecked[0]);
+            $_SESSION['messVald'] = "Félicitations ! Votre compte a été validé,<br> vous pouvez désormais vous connectez.";
+            header('location: /camagru/index.php');
+
         }
         else
         {
-            echo("keyID no found");
+            header('location: /camagru/view/404.html');
+            exit;
         }
     }
     else
     {
-        echo("username no found");
+        header('location: /camagru/view/404.html');
+        exit;
     }
+}
+else
+{
+    header('location: /camagru/view/404.html');
+    exit;
 }
 
 ?>

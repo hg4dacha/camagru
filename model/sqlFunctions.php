@@ -137,8 +137,35 @@ function replaceNotific($newElement, $idf)
 {
     $dbc = db_connex();
     $reqPswrd = $dbc->prepare("UPDATE users SET notif = :newElement WHERE id = :idf");
-    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_BOOL);
     $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_INT);
+    $reqPswrd->execute();
+}
+
+function replaceKeyUsr($newElement, $pseudo)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("UPDATE users SET keyUsr = :newElement WHERE username = :pseudo");
+    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+    $reqPswrd->execute();
+}
+
+function replaceIdCtrl($newElement, $pseudo)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("UPDATE users SET idCTRL = :newElement WHERE username = :pseudo");
+    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
+    $reqPswrd->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+    $reqPswrd->execute();
+}
+
+function replaceToken($newElement, $pseudo)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("UPDATE users SET tokenUsr = :newElement WHERE username = :pseudo");
+    $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_BOOL);
+    $reqPswrd->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
     $reqPswrd->execute();
 }
 
