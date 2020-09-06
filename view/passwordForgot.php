@@ -21,11 +21,11 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/mailPasswordForgot.p
                 <img id="locked" src="../public/pictures/locked.png" alt="locked"/>    
                 <p id="phrase">Entrez votre adresse e-mail,
                 vous recevrez<br/>un lien pour récuperer votre compte.</p>
-                <form method="post" action="inscription.html">
-                    <input id="email" type="text" name="email" id="email"
+                <form method="post" action="passwordForgot.php">
+                    <input id="email" type="text" name="emailUsr" id="email"
                     placeholder="Entrez votre adresse e-mail" 
                     size="30" maxlength="75"/>
-                    <button type="submit">Envoyer un mail de réinitialisation</button>
+                    <button name="reset_email" type="submit">Envoyer un mail de réinitialisation</button>
                     <p><a href="../index.php">Revenir à l'écran de connexion</a></p>
                 </form>
             </div>

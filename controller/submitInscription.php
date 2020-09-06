@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         $error_username = "Le nom d'utilisateur est déjà utilisé. Veuillez insérer un autre nom d'utilisateur.";
                     }
     
-                    $emailExist = MailCheckExist($email);
+                    $emailExist = MailCheckExist(strtolower($email));
                     if($emailExist != 0)
                     {
                         $error_email = "L'adresse e-mail est déjà utilisée. Veuillez insérer une autre adresse e-mail.";
