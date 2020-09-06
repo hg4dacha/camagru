@@ -145,7 +145,7 @@ function replaceNotific($newElement, $idf)
 function replaceKeyUsr($newElement, $pseudo)
 {
     $dbc = db_connex();
-    $reqPswrd = $dbc->prepare("UPDATE users SET keyUsr = :newElement WHERE username = :pseudo");
+    $reqPswrd = $dbc->prepare("UPDATE users SET keyUsr = :newElement WHERE username = :pseudo OR email = :pseudo");
     $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
     $reqPswrd->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
     $reqPswrd->execute();
@@ -154,7 +154,7 @@ function replaceKeyUsr($newElement, $pseudo)
 function replaceIdCtrl($newElement, $pseudo)
 {
     $dbc = db_connex();
-    $reqPswrd = $dbc->prepare("UPDATE users SET idCTRL = :newElement WHERE username = :pseudo");
+    $reqPswrd = $dbc->prepare("UPDATE users SET idCTRL = :newElement WHERE username = :pseudo OR email = :pseudo");
     $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_STR);
     $reqPswrd->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
     $reqPswrd->execute();

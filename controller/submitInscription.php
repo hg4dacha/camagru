@@ -72,7 +72,22 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         $tokenUsr = FALSE;
                         $idCTRL = uniqid().random_int(55197, 9976834851452);
                         $subject = "Confirmation de création de votre compte.";
-                        $body = "<img src=\"cid:logo\" alt=\"logo\" style=\"display:block;margin-left:auto;margin-right:auto;width:30%;\"><br><br><p style=\"color:#1e272e;font-weight:bold;font-size:17px;border:0;\">".$username.", plus qu'une étape pour finaliser votre inscription !<br>Cliquez sur le lien ci-dessous et connectez-vous avec<br>votre nom d'utilisateur ou e-mail et votre mot de passe.<br><a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/registrConfirmation.php?idCTRL=".urlencode($idCTRL)."&amp;usrname=".urlencode($username)."&amp;keyID=".urlencode($keyUsr)."\">>>>>>Je me connecte et je finalise mon inscription<<<<<</a></p><br><br><br><br><p style=\"color:#b33939;font-weight:bold;font-size:13px;border:0;\">_____________________________<br>© 2020 CAMAGRU BY HG4DACHA<br>********Tous droits réservés********</p>";
+                        $body = "
+                        <img src=\"cid:logo\" alt=\"logo\" style=\"display:block;margin-left:auto;margin-right:auto;width:30%;\">
+                        <br><br>
+                        <p style=\"color:#1e272e;font-weight:bold;font-size:17px;border:0;\">".$username.", plus qu'une étape pour finaliser votre inscription !
+                        <br>
+                        Cliquez sur le lien ci-dessous et connectez-vous avec<br>votre nom d'utilisateur ou e-mail et votre mot de passe.
+                        <br>
+                        <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/registrConfirmation.php?idCTRL=".urlencode($idCTRL)."&amp;usn=".urlencode($username)."&amp;keyID=".urlencode($keyUsr)."\">>>>>>Je valide mon compte et je finalise mon inscription<<<<<</a>
+                        </p>
+                        <br><br><br><br>
+                        <p style=\"color:#b33939;font-weight:bold;font-size:13px;border:0;\">_____________________________
+                        <br>
+                        © 2020 CAMAGRU BY HG4DACHA
+                        <br>
+                        ********Tous droits réservés********
+                        </p>";
                         sendmail($email, $subject, $body);
                         insertMbr($lastname, $firstname, $email, $username, $password, $notif, $keyUsr, $tokenUsr, $idCTRL);
                         $_SESSION['messVald'] = "Votre compte a bien été crée.</br>Un email de validation vous a été envoyé.";

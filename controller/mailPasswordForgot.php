@@ -13,19 +13,48 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 
         if(!(empty($_POST['emailUsr'])))
         {
-            $emailExist = MailCheckExist(strtolower($emailUsr));
-            if($emailExist != 0)
+            if(filter_var($emailUsr, FILTER_VALIDATE_EMAIL))
             {
-                $emailUsr = strtolower($emailUsr);
-                $keyReplace = uniqid().random_int(168729, 962334679821329875);
-                replaceKeyUsr($keyReplace, $emailUsr);
-                $idReplace = random_int(871200492, 680397568155960983).uniqid().random_int(2079995, 439836701916564316);
-                replaceIdCtrl($idReplace, $emailUsr);
+                $emailExist = MailCheckExist(strtolower($emailUsr));
+                if($emailExist != 0)
+                {
+                    $emailUsr = strtolower($emailUsr);
+                    $keyReplace = uniqid().random_int(168729, 962334679821329875);
+                    replaceKeyUsr($keyReplace, $emailUsr);
+                    $idReplace = random_int(871200492, 680397568155960983).uniqid().random_int(2079995, 439836701916564316);
+                    replaceIdCtrl($idReplace, $emailUsr);
+                    $subject = "Réinitialisation de votre mot de passe.";
+                    $body = "
+                    <img src=\"cid:logo\" alt=\"logo\" style=\"display:block;margin-left:auto;margin-right:auto;width:30%;\">
+                    <br><br>
+                    <p style=\"color:#1e272e;font-weight:bold;font-size:17px;border:0;\">".$username.", plus qu'une étape pour finaliser votre inscription !
+                    <br>
+                    Cliquez sur le lien ci-dessous et connectez-vous avec<br>votre nom d'utilisateur ou e-mail et votre mot de passe.
+                    <br>
+                    <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/registrConfirmation.php?keyID=".urlencode($keyReplace)."&amp;idCTRL=".urlencode($idReplace)."&amp;ema=".urlencode($emailUsr)."\">>>>>>Réinitialisation du mot de passe.<<<<<</a>
+                    </p>
+                    <br><br><br><br>
+                    <p style=\"color:#b33939;font-weight:bold;font-size:13px;border:0;\">_____________________________
+                    <br>
+                    © 2020 CAMAGRU BY HG4DACHA
+                    <br>
+                    ********Tous droits réservés********
+                    </p>";
+                    sendmail($emailUsr, $subject, $body);
+                }
+                else
+                {
+
+                }
             }
             else
             {
-
+                $error = "Veuillez entrez une adresse e-mail valide";
             }
+        }
+        else
+        {
+            $error = "Veuillez entrez votre adresse e-mail";
         }
     }
 }

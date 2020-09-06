@@ -23,8 +23,16 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/mailPasswordForgot.p
                 vous recevrez<br/>un lien pour récuperer votre compte.</p>
                 <form method="post" action="passwordForgot.php">
                     <input id="email" type="text" name="emailUsr" id="email"
-                    placeholder="Entrez votre adresse e-mail" 
-                    size="30" maxlength="75"/>
+                    placeholder="Entrez votre adresse e-mail"
+                    size="30" maxlength="75" value="<?php if(isset($emailUsr)) { echo $emailUsr; } ?>"/>
+                    <p id="error">
+                        <?php
+                            if(isset($error))
+                            {
+                                echo $error;
+                            }
+                        ?>
+                    </p>
                     <button name="reset_email" type="submit">Envoyer un mail de réinitialisation</button>
                     <p><a href="../index.php">Revenir à l'écran de connexion</a></p>
                 </form>
