@@ -1,11 +1,17 @@
+<?php
+
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/mailPasswordForgot.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/camagru/public/css/password.css" />
+    <link rel="stylesheet" href="/camagru/public/css/passwordForgot.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/camagru/public/pictures/logo_camagru.png" />
-    <title>Réinitialiser le mot de passe - Camagru</title>
+    <title>Mot de passe oublié - Camagru</title>
 </head>
 <body>
     <div id="contenu">
