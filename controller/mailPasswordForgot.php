@@ -43,13 +43,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     ********Tous droits réservés********
                     </p>";
                     sendmail($emailUsr, $subject, $body);
-                    $_SESSION['messVald'] = "Félicitations ! Votre compte a été validé,<br> vous pouvez désormais vous connectez.";
+                    $_SESSION['messVald'] = "Un e-mail de réinitialisation a été envoyé<br>à l'adresse insérée.";
                     header('location: /camagru/index.php');
                     exit;
                 }
                 else
                 {
-
+                    $_SESSION['messVald'] = "Un e-mail de réinitialisation a été envoyé à l'adresse insérée.";
+                    header('location: /camagru/index.php');
+                    exit;
                 }
             }
             else

@@ -75,7 +75,15 @@ function username_ctrl($idCTRL)
     $reqCtrl->bindValue(':idCTRL', $idCTRL, PDO::PARAM_STR);
     $reqCtrl->execute();
     return $reqCtrl->fetch();
+}
 
+function mail_ctrl($idCTRL)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT email FROM users WHERE idCTRL = :idCTRL");
+    $reqCtrl->bindValue(':idCTRL', $idCTRL, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
 }
 
 function keyUsr_ctrl($idCTRL)
