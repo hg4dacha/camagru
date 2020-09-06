@@ -5,10 +5,10 @@ session_start();
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
 
 
-if((isset($_GET['idCTRL']) && isset($_GET['keyID']) && isset($_GET['usrname'])) && (!empty($_GET['idCTRL']) && !empty($_GET['keyID']) && !empty($_GET['usrname'])))
+if((isset($_GET['idCTRL']) && isset($_GET['keyID']) && isset($_GET['usn'])) && (!empty($_GET['idCTRL']) && !empty($_GET['keyID']) && !empty($_GET['usn'])))
 {
     $idCTRL = htmlspecialchars($_GET['idCTRL']);    
-    $usrname = htmlspecialchars($_GET['usrname']);
+    $usrname = htmlspecialchars($_GET['usn']);
     $keyID = htmlspecialchars($_GET['keyID']);
 
     $usrnameChecked = username_ctrl($idCTRL);
@@ -25,7 +25,7 @@ if((isset($_GET['idCTRL']) && isset($_GET['keyID']) && isset($_GET['usrname'])) 
             replaceToken($newToken, $usrnameChecked[0]);
             $_SESSION['messVald'] = "Félicitations ! Votre compte a été validé,<br> vous pouvez désormais vous connectez.";
             header('location: /camagru/index.php');
-
+            exit;
         }
         else
         {

@@ -77,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         <br><br>
                         <p style=\"color:#1e272e;font-weight:bold;font-size:17px;border:0;\">".$username.", plus qu'une étape pour finaliser votre inscription !
                         <br>
-                        Cliquez sur le lien ci-dessous et connectez-vous avec<br>votre nom d'utilisateur ou e-mail et votre mot de passe.
+                        Cliquez sur le lien ci-dessous et validez votre compte pour<br>vous connectez avec votre identifiant et votre mot de passe.
                         <br>
                         <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/registrConfirmation.php?idCTRL=".urlencode($idCTRL)."&amp;usn=".urlencode($username)."&amp;keyID=".urlencode($keyUsr)."\">>>>>>Je valide mon compte et je finalise mon inscription<<<<<</a>
                         </p>

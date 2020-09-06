@@ -27,11 +27,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     $body = "
                     <img src=\"cid:logo\" alt=\"logo\" style=\"display:block;margin-left:auto;margin-right:auto;width:30%;\">
                     <br><br>
-                    <p style=\"color:#1e272e;font-weight:bold;font-size:17px;border:0;\">".$username.", plus qu'une étape pour finaliser votre inscription !
+                    <p style=\"color:#1e272e;font-weight:bold;font-size:17px;border:0;\">Votre demande de réinitialisation de mot de passe a bien été prise en compte.
                     <br>
-                    Cliquez sur le lien ci-dessous et connectez-vous avec<br>votre nom d'utilisateur ou e-mail et votre mot de passe.
+                    Cliquez sur le lien ci-dessous pour définir un nouveau mot de passe.
                     <br>
-                    <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/registrConfirmation.php?keyID=".urlencode($keyReplace)."&amp;idCTRL=".urlencode($idReplace)."&amp;ema=".urlencode($emailUsr)."\">>>>>>Réinitialisation du mot de passe.<<<<<</a>
+                    <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/psswrdF_ctrl.php?keyID=".urlencode($keyReplace)."&amp;idCTRL=".urlencode($idReplace)."&amp;ema=".urlencode($emailUsr)."\">>>>>>Réinitialisation du mot de passe<<<<<</a>
+                    <br>
+                    Si vous n'êtes pas à l'origine de cette demande, ignorez cet e-mail<br>et la demande ne sera pas prise en compte.
                     </p>
                     <br><br><br><br>
                     <p style=\"color:#b33939;font-weight:bold;font-size:13px;border:0;\">_____________________________
@@ -41,6 +43,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     ********Tous droits réservés********
                     </p>";
                     sendmail($emailUsr, $subject, $body);
+                    $_SESSION['messVald'] = "Félicitations ! Votre compte a été validé,<br> vous pouvez désormais vous connectez.";
+                    header('location: /camagru/index.php');
+                    exit;
                 }
                 else
                 {
