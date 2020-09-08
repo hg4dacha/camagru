@@ -8,7 +8,16 @@ if(!empty($_SESSION['id']) || !empty($_SESSION['lastname']) || !empty($_SESSION[
     exit;
 }
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitInscription.php");
+if(isset($_SESSION['idPASS']))
+{
+    unset($_SESSION['idPASS']);
+}
+if(isset($_SESSION['pass']))
+{
+    unset($_SESSION['pass']);
+}
+
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_inscription.php");
 
 ?>
 
@@ -32,25 +41,25 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitInscription.ph
                     <input type="text" name="lastname" id="lastname"
                     placeholder="Nom" 
                     size="30" maxlength="250" value="<?php if(isset($lastname)) { echo $lastname; } ?>"/>
-                    <small id="error"><?php if(isset($error_lastname)) { echo $error_lastname; } ?></small>
+                    <small class="error"><?php if(isset($error_lastname)) { echo $error_lastname; } ?></small>
                     <input class="row" type="text" name="firstname" id="firstname"
                     placeholder="Prénom" 
                     size="30" maxlength="250" value="<?php if(isset($firstname)) { echo $firstname; } ?>"/>
-                    <small id="error"><?php if(isset($error_firstname)) { echo $error_firstname; } ?></small>
+                    <small class="error"><?php if(isset($error_firstname)) { echo $error_firstname; } ?></small>
                     <input class="row" type="email" name="email" id="email"
                     placeholder="Adresse e-mail" 
                     size="30" maxlength="250" value="<?php if(isset($email)) { echo $email; } ?>"/>
-                    <small id="error"><?php if(isset($error_email)) { echo $error_email; } ?></small>
+                    <small class="error"><?php if(isset($error_email)) { echo $error_email; } ?></small>
                     <input class="row" type="text" name="username" id="username"
                     placeholder="Nom d'utilisateur" 
                     size="30" maxlength="250" value="<?php if(isset($username)) { echo $username; } ?>"/>
-                    <small id="error"><?php if(isset($error_username)) { echo $error_username; } ?></small>
+                    <small class="error"><?php if(isset($error_username)) { echo $error_username; } ?></small>
                     <input class="row" type="password" name="password" id="password"
                     placeholder="Mot de passe" size="30" maxlength="250"/>
-                    <small id="error"><?php if(isset($error_password)) { echo $error_password; } ?></small>
+                    <small class="error"><?php if(isset($error_password)) { echo $error_password; } ?></small>
                     <input class="row" type="password" name="password2" id="password2"
                     placeholder="Confirmez le mot de passe" size="30" maxlength="250"/>
-                    <small id="error"><?php if(isset($error_password2)) { echo $error_password2; } ?></small>
+                    <small class="error"><?php if(isset($error_password2)) { echo $error_password2; } ?></small>
                     <button type="submit" name="submit_inscription">S'inscrire</button>
                     <p>Vous avez déjà un compte ? <a href="../index.php">Connectez-vous</a></p>
                     <p id="error2">

@@ -2,7 +2,7 @@
 
 session_start();
 
-if (empty($_SESSION))
+if(empty($_SESSION['id']) || empty($_SESSION['lastname']) || empty($_SESSION['firstname']) || empty($_SESSION['email']) || empty($_SESSION['username']) || empty($_SESSION['passwordUsr']) || empty($_SESSION['notif']))
 {
     header('location: /camagru/index.php');
 }
@@ -14,7 +14,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newpswrd.php"
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/camagru/public/css/passwordModification.css" />
+    <link rel="stylesheet" href="/camagru/public/css/pswrd_modification.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/camagru/public/pictures/logo_camagru.png" />
     <title>Modification du mot de passe - Camagru</title>
@@ -38,7 +38,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newpswrd.php"
             <div id="profileInfo">
                 <h1>Modification du mot de passe</h1>
                 <p id="expl">Insérez les informations relatives à vos mots de passe</p>
-                <form method="post" action="passwordModification.php">
+                <form method="post" action="pswrd_modification.php">
                     <div id="formBloc">
                         <div id="lineBlocTh">
                             <label for="pseudo" id="thLabel">Mot de passe actuel</label>                

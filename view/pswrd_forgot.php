@@ -21,7 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/pswrd_rst_mail.php")
                 <img id="locked" src="../public/pictures/locked.png" alt="locked"/>    
                 <p id="phrase">Entrez votre adresse e-mail,
                 vous recevrez<br/>un lien pour récuperer votre compte.</p>
-                <form method="post" action="psswrd_forgot.php">
+                <form method="post" action="pswrd_forgot.php">
                     <input id="email" type="email" name="emailUsr" id="email"
                     placeholder="Entrez votre adresse e-mail"
                     size="30" maxlength="254" value="<?php if(isset($emailUsr)) { echo $emailUsr; } ?>"/>

@@ -79,7 +79,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         <br>
                         Cliquez sur le lien ci-dessous et validez votre compte pour<br>vous connectez avec votre identifiant et votre mot de passe.
                         <br>
-                        <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/registrConfirmation.php?idCTRL=".urlencode($idCTRL)."&amp;usn=".urlencode($username)."&amp;keyID=".urlencode($keyUsr)."\">>>>>>Je valide mon compte et je finalise mon inscription<<<<<</a>
+                        <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/registr_confirm.php?idCTRL=".urlencode($idCTRL)."&amp;usn=".urlencode($username)."&amp;keyID=".urlencode($keyUsr)."\">>>>>>Je valide mon compte et je finalise mon inscription<<<<<</a>
                         </p>
                         <br><br><br><br>
                         <p style=\"color:#b33939;font-weight:bold;font-size:13px;border:0;\">_____________________________

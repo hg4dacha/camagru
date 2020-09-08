@@ -100,7 +100,7 @@ function keyUsr_ctrl($idCTRL)
 function replacePswrd($newPswrd, $idf)
 {
     $dbc = db_connex();
-    $reqPswrd = $dbc->prepare("UPDATE users SET passwordUsr = :newPswrd WHERE LOWER(username) = :idf");
+    $reqPswrd = $dbc->prepare("UPDATE users SET passwordUsr = :newPswrd WHERE LOWER(username) = :idf OR idCTRL = :idf");
     $reqPswrd->bindValue(':newPswrd', $newPswrd, PDO::PARAM_STR);
     $reqPswrd->bindValue(':idf', $idf, PDO::PARAM_STR);
     $reqPswrd->execute();

@@ -2,7 +2,7 @@
 
 session_start();
 
-if (empty($_SESSION))
+if(empty($_SESSION['id']) || empty($_SESSION['lastname']) || empty($_SESSION['firstname']) || empty($_SESSION['email']) || empty($_SESSION['username']) || empty($_SESSION['passwordUsr']) || empty($_SESSION['notif']))
 {
     header('location: /camagru/index.php');
 }
@@ -14,7 +14,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newinfo.php")
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/camagru/public/css/infoModification.css" />
+    <link rel="stylesheet" href="/camagru/public/css/info_modification.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/camagru/public/pictures/logo_camagru.png" />
     <title>Modification du mot de passe - Camagru</title>
@@ -38,7 +38,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newinfo.php")
             <div id="profileInfo">
                 <h1>Modification des informations personelles</h1>
                 <p id="expl">Insérez de nouvelles informations dans les champs que vous souhaitez modifier</p>
-                <form method="post" action="infoModification.php">
+                <form method="post" action="info_modification.php">
                     <div id="formBloc">
                         <div id="lineBlocTh">
                             <label for="pseudo">Nom</label>                

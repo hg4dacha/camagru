@@ -2,15 +2,11 @@
 
 session_start();
 
-// if(isset($_SESSION['pass']))
-// {
-//     unset($_SESSION['pass']);
-// }
-// else
-// {
-//     header('location: /camagru/index.php');
-//     exit;
-// }
+if(!(isset($_SESSION['pass'])))
+{
+    header('location: /camagru/index.php');
+    exit;
+}
 
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_rst_pswrd.php");
 
@@ -33,20 +29,20 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_rst_pswrd.php
                 <img id="locked" src="../public/pictures/unlocked.png" alt="locked"/>    
                 <p id="phrase">Saisissez un nouveau mot de passe,<br>
                 vous pourrez ensuite vous connecter avec.</p>
-                <form method="post" action="newPsswrd_define.php">
+                <form method="post" action="newpswrd_define.php">
                     <input id="password1" type="password" name="password1" id="email"
                     placeholder="Entrez un nouveau mot de passe" 
                     size="30" maxlength="255"
                     value="<?php if(isset($password1)) { echo $password1; } ?>"/>
-                    <small id="error"><?php if(isset($error1)) { echo $error1; } ?></small>
+                    <small class="error1"><?php if(isset($error1)) { echo $error1; } ?></small>
                     <input id="password2" type="password" name="password2" id="email"
                     placeholder="Confirmez le mot de passe" 
                     size="30" maxlength="255"
                     value="<?php if(isset($password2)) { echo $password2; } ?>"/>
-                    <small id="error"><?php if(isset($error2)) { echo $error2; } ?></small>
+                    <small class="error1"><?php if(isset($error2)) { echo $error2; } ?></small>
                     <button type="submit" name="submit_rst_pswrd">Réinitialiser le mot de passe</button>
                     <p><a href="../index.php">Annuler</a></p>
-                    <small id="error"><?php if(isset($error3)) { echo $error3; } ?></small>
+                    <small id="error2"><?php if(isset($error3)) { echo $error3; } ?></small>
                 </form>
             </div>
         </div>

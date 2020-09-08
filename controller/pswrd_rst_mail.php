@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     ********Tous droits réservés********
                     </p>";
                     sendmail($emailUsr, $subject, $body);
-                    $_SESSION['messVald'] = "Un e-mail de réinitialisation a été envoyé<br>à l'adresse insérée.";
+                    $_SESSION['messVald'] = "Un e-mail de réinitialisation a été envoyé<br>à l'adresse saisie.";
                     header('location: /camagru/index.php');
                     exit;
                 }
