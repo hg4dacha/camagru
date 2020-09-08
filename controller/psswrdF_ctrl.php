@@ -6,20 +6,23 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
 
 if((isset($_GET['keyID']) && isset($_GET['idCTRL']) && isset($_GET['ema'])) && (!empty($_GET['keyID']) && !empty($_GET['idCTRL']) && !empty($_GET['ema'])))
 {
-    $idCTRL = htmlspecialchars($_GET['keyID']);    
-    $keyID = htmlspecialchars($_GET['idCTRL']);
+    $idCTRL = htmlspecialchars($_GET['idCTRL']);    
+    $keyID = htmlspecialchars($_GET['keyID']);
     $mailUsr = htmlspecialchars($_GET['ema']);
 
     $mailChecked = mail_ctrl($idCTRL);
+    echo $mailChecked[0]."<br>";
+    echo $mailUsr;
     if($mailChecked[0] === $mailUsr)
     {
         $keyUsrChecked = keyUsr_ctrl($idCTRL);
         if($keyUsrChecked[0] === $keyID)
         {
             $keyReplace = uniqid().random_int(583483, 962379835641329875).random_int(4385, 96329875);
-            replaceKeyUsr($keyReplace, $usrnameChecked[0]);
+            replaceKeyUsr($keyReplace, $mailChecked[0]);
             $idReplace = random_int(7965, 8635870).uniqid().random_int(794, 4369566).uniqid();
-            replaceIdCtrl($idReplace, $usrnameChecked[0]);
+            replaceIdCtrl($idReplace, $mailChecked[0]);
+            $_SESSION['pass'] = 1;
             header('location: /camagru/view/newPassword.php');
             exit;
         }

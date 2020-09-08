@@ -22,7 +22,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/mailPasswordForgot.p
                 <p id="phrase">Entrez votre adresse e-mail,
                 vous recevrez<br/>un lien pour récuperer votre compte.</p>
                 <form method="post" action="passwordForgot.php">
-                    <input id="email" type="text" name="emailUsr" id="email"
+                    <input id="email" type="email" name="emailUsr" id="email"
                     placeholder="Entrez votre adresse e-mail"
                     size="30" maxlength="254" value="<?php if(isset($emailUsr)) { echo $emailUsr; } ?>"/>
                     <p id="error">

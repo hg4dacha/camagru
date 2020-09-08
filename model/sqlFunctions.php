@@ -78,7 +78,7 @@ function username_ctrl($idCTRL)
 }
 
 function mail_ctrl($idCTRL)
-{
+{ 
     $dbc = db_connex();
     $reqCtrl = $dbc->prepare("SELECT email FROM users WHERE idCTRL = :idCTRL");
     $reqCtrl->bindValue(':idCTRL', $idCTRL, PDO::PARAM_STR);
