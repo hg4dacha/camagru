@@ -7,7 +7,7 @@ if (empty($_SESSION))
     header('location: /camagru/index.php');
 }
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitNewInfo.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newinfo.php");
 
 ?>
 <!DOCTYPE html>

@@ -7,7 +7,7 @@ if (empty($_SESSION))
     header('location: /camagru/index.php');
 }
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submitNewPassword.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newpswrd.php");
 
 ?>
 <!DOCTYPE html>

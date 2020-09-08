@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     <br>
                     Cliquez sur le lien ci-dessous pour définir un nouveau mot de passe.
                     <br>
-                    <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/psswrdF_ctrl.php?keyID=".urlencode($keyReplace)."&amp;idCTRL=".urlencode($idReplace)."&amp;ema=".urlencode($emailUsr)."\">>>>>>Réinitialisation du mot de passe<<<<<</a>
+                    <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/newPsswrd_link.php?keyID=".urlencode($keyReplace)."&amp;idCTRL=".urlencode($idReplace)."&amp;ema=".urlencode($emailUsr)."\">>>>>>Réinitialisation du mot de passe<<<<<</a>
                     <br>
                     Une fois que vous aurez cliqué sur ce lien, il deviendra inutilisable.
                     <br><br>

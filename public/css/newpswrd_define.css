@@ -76,7 +76,11 @@ input{
     border-radius: 4px;
 }
 
-#email{
+#password1{
+    margin-bottom: 15px;
+}
+
+#password2{
     margin-bottom: 21px;
 }
 

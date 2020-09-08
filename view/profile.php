@@ -77,13 +77,13 @@ if (empty($_SESSION))
                 </div>
                 <div class="lines"></div>
                 <div id="butt">
-                    <a href="/camagru/view/passwordModification.php" id="marginA1">
+                    <a href="/camagru/view/pswrd_modification.php" id="marginA1">
                         <div id="buttOne1">
                             <img id="lock" src="/camagru/public/pictures/lock.png">
                             <p id="buttOne2">Modifier mon mot de passe</p>
                         </div>
                     </a>
-                    <a href="/camagru/view/infoModification.php" id="marginA2">
+                    <a href="/camagru/view/info_modification.php" id="marginA2">
                         <div id="buttTwo1">
                             <img id="settings" src="/camagru/public/pictures/settings.png">
                             <p id="buttTwo2">Modifier mes infos personelles</p>

@@ -23,7 +23,7 @@ if((isset($_GET['keyID']) && isset($_GET['idCTRL']) && isset($_GET['ema'])) && (
             $idReplace = random_int(7965, 8635870).uniqid().random_int(794, 4369566).uniqid();
             replaceIdCtrl($idReplace, $mailChecked[0]);
             $_SESSION['pass'] = 1;
-            header('location: /camagru/view/newPassword.php');
+            header('location: /camagru/view/newpswrd_define.php');
             exit;
         }
         else
