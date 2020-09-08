@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!empty($_SESSION['id']) || !empty($_SESSION['lastname']) || !empty($_SESSION['firstname']) || !empty($_SESSION['email']) || !empty($_SESSION['username']) || !empty($_SESSION['passwordUsr']) || !empty($_SESSION['notif']))
+if(isset($_SESSION['id']) || isset($_SESSION['lastname']) || isset($_SESSION['firstname']) || isset($_SESSION['email']) || isset($_SESSION['username']) || isset($_SESSION['passwordUsr']) || isset($_SESSION['notif']))
 {
     header('location: /camagru/view/home.php');
     exit;

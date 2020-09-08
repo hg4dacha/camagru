@@ -45,6 +45,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 $error_email = "L'adresse e-mail n'est pas valide.";
             }
         }
+
+        if(empty($usr_lastname))
+        {
+            $usr_lastname = NULL;
+        }
+        if(empty($usr_firstname))
+        {
+            $usr_firstname = NULL;
+        }
+        if(empty($usr_username))
+        {
+            $usr_username = NULL;
+        }
+        if(empty($usr_email))
+        {
+            $usr_email = NULL;
+        }
+        if(empty($notific))
+        {
+            $notific = NULL;
+        }
         
         if(empty($error_lastname) && empty($error_firstname) && empty($error_username) && empty($error_email))
         {
@@ -75,7 +96,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 {
                     $notifSess = "no";
                 }
-                if(((ucfirst(strtolower($usr_lastname)) != ucfirst(strtolower($_SESSION['lastname'])))) || ((ucfirst(strtolower($usr_firstname)) != ucfirst(strtolower($_SESSION['firstname'])))) || (($usr_username) != ($_SESSION['username'])) || ((strtolower($usr_email) != (strtolower($_SESSION['email'])))) || ($notific != $notifSess))
+                if((($usr_lastname != NULL) && ((ucfirst(strtolower($usr_lastname)) != ucfirst(strtolower($_SESSION['lastname']))))) || (($usr_firstname != NULL) && ((ucfirst(strtolower($usr_firstname)) != ucfirst(strtolower($_SESSION['firstname']))))) || (($usr_username != NULL) && (($usr_username) != ($_SESSION['username']))) || (($usr_email != NULL) && ((strtolower($usr_email) != (strtolower($_SESSION['email']))))) || (($notific != NULL) && ($notific != $notifSess)))
                 {
                     if(!(empty($_POST['usr_lastname'])) && ($usr_lastname != $_SESSION['lastname']))
                     {
