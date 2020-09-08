@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/psswrdRst_mail.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/pswrd_rst_mail.php");
 
 ?>
 
