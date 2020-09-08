@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/mailPasswordForgot.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/psswrdRst_mail.php");
 
 ?>
 
@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/mailPasswordForgot.p
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/camagru/public/css/passwordForgot.css" />
+    <link rel="stylesheet" href="/camagru/public/css/psswrd_forgot.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/camagru/public/pictures/logo_camagru.png" />
     <title>Mot de passe oublié - Camagru</title>
@@ -21,7 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/mailPasswordForgot.p
                 <img id="locked" src="../public/pictures/locked.png" alt="locked"/>    
                 <p id="phrase">Entrez votre adresse e-mail,
                 vous recevrez<br/>un lien pour récuperer votre compte.</p>
-                <form method="post" action="passwordForgot.php">
+                <form method="post" action="psswrd_forgot.php">
                     <input id="email" type="email" name="emailUsr" id="email"
                     placeholder="Entrez votre adresse e-mail"
                     size="30" maxlength="254" value="<?php if(isset($emailUsr)) { echo $emailUsr; } ?>"/>

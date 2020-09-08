@@ -2,15 +2,15 @@
 
 session_start();
 
-if(isset($_SESSION['pass']))
-{
-    unset($_SESSION['pass']);
-}
-else
-{
-    header('location: /camagru/index.php');
-    exit;
-}
+// if(isset($_SESSION['pass']))
+// {
+//     unset($_SESSION['pass']);
+// }
+// else
+// {
+//     header('location: /camagru/index.php');
+//     exit;
+// }
 
 ?>
 
@@ -18,7 +18,7 @@ else
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/camagru/public/css/newPassword.css" />
+    <link rel="stylesheet" href="/camagru/public/css/newPsswrd_define.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/camagru/public/pictures/logo_camagru.png" />
     <title>Réinitialiser le mot de passe - Camagru</title>
@@ -31,7 +31,7 @@ else
                 <img id="locked" src="../public/pictures/unlocked.png" alt="locked"/>    
                 <p id="phrase">Saisissez un nouveau mot de passe,<br>
                 vous pourrez ensuite vous connecter avec.</p>
-                <form method="post" action="inscription.html">
+                <form method="post" action="newPsswrd_define.php">
                     <input id="email" type="password" name="password1" id="email"
                     placeholder="Entrez un nouveau mot de passe" 
                     size="30" maxlength="255"

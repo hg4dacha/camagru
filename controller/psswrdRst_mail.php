@@ -33,7 +33,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     <br>
                     <a style=\"color:#0095f6\" href=\"http://localhost:8080/camagru/controller/psswrdF_ctrl.php?keyID=".urlencode($keyReplace)."&amp;idCTRL=".urlencode($idReplace)."&amp;ema=".urlencode($emailUsr)."\">>>>>>Réinitialisation du mot de passe<<<<<</a>
                     <br>
-                    Si vous n'êtes pas à l'origine de cette demande, ignorez cet e-mail<br>et la demande ne sera pas prise en compte.
+                    Une fois que vous aurez cliqué sur ce lien, il deviendra inutilisable.
+                    <br><br>
+                    <span style=\"font-weight:normal;color:#EA2027;\">Si vous n'êtes pas à l'origine de cette demande, ignorez cet e-mail<br>et la demande ne sera pas prise en compte.</span>
                     </p>
                     <br><br><br><br>
                     <p style=\"color:#b33939;font-weight:bold;font-size:13px;border:0;\">_____________________________
