@@ -10,16 +10,14 @@ if((isset($_GET['idCTRL']) && isset($_GET['keyID']) && isset($_GET['usn'])) && (
     $usrname = htmlspecialchars($_GET['usn']);
     $keyID = htmlspecialchars($_GET['keyID']);
 
-    $nameTemp = check_name($idCTRL);
-    if($nameTemp =! 0)
+    $usrnameChecked = username_ctrl($idCTRL);
+    if($usrnameChecked != NULL)
     {
-        $usrnameChecked = username_ctrl($idCTRL);
         if($usrnameChecked[0] === $usrname)
         {
-            $keyTemp = Check_key($idCTRL);
-            if($keyTemp =! 0)
+            $keyUsrChecked = keyUsr_ctrl($idCTRL);
+            if($keyUsrChecked != NULL)
             {
-                $keyUsrChecked = keyUsr_ctrl($idCTRL);
                 if($keyUsrChecked[0] === $keyID)
                 {
                     $keyReplace = uniqid().random_int(583483, 962379835641329875);

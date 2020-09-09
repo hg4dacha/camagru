@@ -40,34 +40,6 @@ function MailCheckExist($mail)
     return $reqField->rowCount();
 }
 
-function check_name($idCTRL)
-{
-    $dbc = db_connex();
-    $reqField = $dbc->prepare("SELECT username FROM users WHERE idCTRL = :idCTRL");
-    $reqField->bindValue(':idCTRL', $idCTRL, PDO::PARAM_STR);
-    $reqField->execute();
-    return $reqField->rowCount();
-}
-
-function Check_mail($idCTRL)
-{
-    $dbc = db_connex();
-    $reqField = $dbc->prepare("SELECT email FROM users WHERE idCTRL = :idCTRL");
-    $reqField->bindValue(':idCTRL', $idCTRL, PDO::PARAM_STR);
-    $reqField->execute();
-    return $reqField->rowCount();
-}
-
-function Check_key($idCTRL)
-{
-    $dbc = db_connex();
-    $reqField = $dbc->prepare("SELECT keyUsr FROM users WHERE idCTRL = :idCTRL");
-    $reqField->bindValue(':idCTRL', $idCTRL, PDO::PARAM_STR);
-    $reqField->execute();
-    return $reqField->rowCount();
-}
-
-
 function pswrd_ctrl($idf)
 {
     $dbc = db_connex();

@@ -11,21 +11,35 @@ if((isset($_GET['keyID']) && isset($_GET['idCTRL']) && isset($_GET['ema'])) && (
     $mailUsr = htmlspecialchars($_GET['ema']);
 
     $mailChecked = mail_ctrl($idCTRL);
-    echo $mailChecked[0]."<br>";
-    echo $mailUsr;
-    if($mailChecked[0] === $mailUsr)
+    if($mailChecked != NULL)
     {
-        $keyUsrChecked = keyUsr_ctrl($idCTRL);
-        if($keyUsrChecked[0] === $keyID)
+        if($mailChecked[0] === $mailUsr)
         {
-            $keyReplace = uniqid().random_int(583483, 962379835641329875).random_int(4385, 96329875);
-            replaceKeyUsr($keyReplace, $mailChecked[0]);
-            $idReplace = random_int(7965, 8635870).uniqid().random_int(794, 4369566).uniqid();
-            replaceIdCtrl($idReplace, $mailChecked[0]);
-            $_SESSION['idPASS'] = $idReplace;
-            $_SESSION['pass'] = 1;
-            header('location: /camagru/view/newpswrd_define.php');
-            exit;
+            $keyUsrChecked = keyUsr_ctrl($idCTRL);
+            if($keyUsrChecked != NULL)
+            {
+                if($keyUsrChecked[0] === $keyID)
+                {
+                    $keyReplace = uniqid().random_int(583483, 962379835641329875).random_int(4385, 96329875);
+                    replaceKeyUsr($keyReplace, $mailChecked[0]);
+                    $idReplace = random_int(7965, 8635870).uniqid().random_int(794, 4369566).uniqid();
+                    replaceIdCtrl($idReplace, $mailChecked[0]);
+                    $_SESSION['idPASS'] = $idReplace;
+                    $_SESSION['pass'] = 1;
+                    header('location: /camagru/view/newpswrd_define.php');
+                    exit;
+                }
+                else
+                {
+                    header('location: /camagru/view/404.html');
+                    exit;
+                }
+            }
+            else
+            {
+                header('location: /camagru/view/404.html');
+                exit;
+            }
         }
         else
         {
