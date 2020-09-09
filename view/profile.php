@@ -40,29 +40,29 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
                 <p id="expl">Informations d'utilisateur de votre compte Camagru</p>
                 <div id="line1">
                     <p class="label">Nom</p>
-                    <p id="lastname"><?= $_SESSION['lastname']; ?></p>
+                    <p id="lastname"><?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; } ?></p>
                 </div>
                 <div class="lines"></div>
                 <div class="lineOther">
                     <p class="label">Prénom</p>
-                    <p id="firstname"><?= $_SESSION['firstname']; ?></p>
+                    <p id="firstname"><?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname']; } ?></p>
                 </div>
                 <div class="lines"></div>
                 <div class="lineOther">
                     <p class="label">Nom d'utilisateur</p>                
-                    <p id="pseudo"><?= $_SESSION['username']; ?></p>
+                    <p id="pseudo"><?php if(isset($_SESSION['username'])){ echo $_SESSION['username']; } ?></p>
                 </div>
                 <div class="lines"></div>
                 <div class="lineOther">
                     <p class="label">E-mail</p>                
-                    <p id="email"><?= $_SESSION['email']; ?></p>
+                    <p id="email"><?php if(isset($_SESSION['email'])){ echo $_SESSION['email']; } ?></p>
                 </div>
                 <div class="lines"></div>
                 <div id="lineLast">
                     <p class="label">Notification<br/>de commentaire</p>
                     <div id="radioAyn">
                         <div id="activated">
-                            <?php if($_SESSION['notif'] == TRUE) { ?>
+                            <?php if(isset($_SESSION['notif'])){ if($_SESSION['notif'] == TRUE) { ?>
                             <img class="check" src="/camagru/public/pictures/check_green.png" alt="OK">
                             <?php } ?>
                             <p class="labelRadio">Activée</p>
@@ -70,7 +70,7 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
                         <div id="deactivated">
                             <?php if($_SESSION['notif'] == FALSE) { ?>
                             <img class="check" src="/camagru/public/pictures/check_red.png" alt="OK">
-                            <?php } ?>
+                            <?php } } ?>
                             <p class="labelRadio">Désactivée</p>
                         </div>
                     </div>

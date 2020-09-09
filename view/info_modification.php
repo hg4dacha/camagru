@@ -51,7 +51,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newinfo.php")
                                             }
                                             else
                                             {
-                                                echo $_SESSION['lastname'];
+                                                if(isset($_SESSION['lastname']))
+                                                {
+                                                    echo $_SESSION['lastname'];
+                                                }
                                             }
                                         ?>" autofocus>
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
@@ -69,7 +72,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newinfo.php")
                                             }
                                             else
                                             {
-                                                echo $_SESSION['firstname'];
+                                                if(isset($_SESSION['firstname']))
+                                                {
+                                                    echo $_SESSION['firstname'];
+                                                }
                                             }
                                         ?>">
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
@@ -87,7 +93,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newinfo.php")
                                             }
                                             else
                                             {
-                                                echo $_SESSION['username'];
+                                                if(isset($_SESSION['username']))
+                                                {
+                                                    echo $_SESSION['username'];
+                                                }
                                             }
                                         ?>">
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
@@ -106,7 +115,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newinfo.php")
                                             }
                                             else
                                             {
-                                                echo $_SESSION['email'];
+                                                if(isset($_SESSION['email']))
+                                                {
+                                                    echo $_SESSION['email'];
+                                                }
                                             }
                                         ?>">
                                 <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
@@ -117,10 +129,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_newinfo.php")
                             <p id="notifComm">Notification de commentaire</p>
                             <div id="radioAyn">
                                 <input id="yes" type="radio" name="notific" value="yes"
-                                <?php if(($_SESSION['notif'] == TRUE && empty($notific)) || (!empty($notific) && $notific == "yes")) { ?> checked="checked"<?php } ?>/>
+                                <?php if((isset($_SESSION['notif']) && $_SESSION['notif'] == TRUE && empty($notific)) || (!empty($notific) && $notific == "yes")) { ?> checked="checked"<?php } ?>/>
                                 <label class="labelRadio" for="yes">Activée</label>
                                 <input id="no" type="radio" name="notific" value="no"
-                                <?php if(($_SESSION['notif'] == FALSE && empty($notific)) || (!empty($notific) && $notific == "no")) { ?> checked="checked"<?php } ?>/>
+                                <?php if((isset($_SESSION['notif']) && $_SESSION['notif'] == FALSE && empty($notific)) || (!empty($notific) && $notific == "no")) { ?> checked="checked"<?php } ?>/>
                                 <label class="labelRadio" for="no">Désactivée</label>
                             </div>
                         </div>

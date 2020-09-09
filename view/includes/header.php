@@ -200,7 +200,7 @@
     <div id="userDiv">
         <div id="top">
             <img id="user" src="/camagru/public/pictures/user.png" alt="Utilisateur">
-            <p id="username"><?= $_SESSION['username']; ?></p>
+            <p id="username"><?php if(isset($_SESSION['username'])){ echo $_SESSION['username']; } ?></p>
         </div>
         <div id="bottom">
             <img id="logout" src="/camagru/public/pictures/logout.png" alt="Déconnexion">
