@@ -24,7 +24,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     $tokenUsr = tokenUsr_ctrl($identification);
                     if ($tokenUsr[0] == FALSE)
                     {
-                        $error = "Vous devez valider votre inscription via le <span style=\"font-weight:bold;\">lien</span> dans<br>le mail que vous avez reçu.";
+                        $idCTRLL = idf_id_take($identification);
+                        $error = "Vous devez valider votre inscription via le lien dans<br>l'e-mail qui vous a été envoyé. <a href=\"http://localhost:8080/camagru/controller/resend_inscrp_mail.php?idf=".urlencode($identification)."&amp;id=".urlencode($idCTRLL[0])."\" style=\"font-weight:bold;color:#b33939;\">Renvoyer l'e-mail</a>";
                     }
                     elseif($tokenUsr[0] == TRUE)
                     {

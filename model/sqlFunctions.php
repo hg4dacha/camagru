@@ -94,6 +94,15 @@ function keyUsr_ctrl($idCTRL)
     return $reqCtrl->fetch();
 }
 
+function idf_id_take($idf)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT idCTRL FROM users WHERE LOWER(username) = :idf OR LOWER(email) = :idf");
+    $reqCtrl->bindValue(':idf', $idf, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
+}
+
 //---------- Replacement ----------
 
 function replacePswrd($newPswrd, $idf)
