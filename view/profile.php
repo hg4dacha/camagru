@@ -76,22 +76,28 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
                     </div>
                 </div>
                 <div class="lines"></div>
-                <div id="butt">
-                    <a href="/camagru/view/pswrd_modification.php" id="marginA1">
-                        <div id="buttOne1">
-                            <img id="lock" src="/camagru/public/pictures/lock.png">
-                            <p id="buttOne2">Modifier mon mot de passe</p>
-                        </div>
+                    <div id="butt">
+                        <a href="/camagru/view/pswrd_modification.php" id="marginA1">
+                            <div id="buttOne1">
+                                <img id="lock" src="/camagru/public/pictures/lock.png">
+                                <p id="buttOne2">Modifier mon mot de passe</p>
+                            </div>
+                        </a>
+                        <a href="/camagru/view/info_modification.php" id="marginA2">
+                            <div id="buttTwo1">
+                                <img id="settings" src="/camagru/public/pictures/settings.png">
+                                <p id="buttTwo2">Modifier mes infos personelles</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                    <a id="delete" href="/camagru/view/account_deletion.php">
+                        <img id="trash" src="/camagru/public/pictures/delete.png">
+                        <p id="dlt">Supprimer mon compte</p>
                     </a>
-                    <a href="/camagru/view/info_modification.php" id="marginA2">
-                        <div id="buttTwo1">
-                            <img id="settings" src="/camagru/public/pictures/settings.png">
-                            <p id="buttTwo2">Modifier mes infos personelles</p>
-                        </div>
-                    </a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
         <?php include("includes/footer.php") ?>
     </div>
 </body>

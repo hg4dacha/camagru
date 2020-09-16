@@ -1,0 +1,603 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+#contenu{
+    min-height: 100%;
+    position: relative;
+}
+
+nav{
+    background-color: white;
+    width: 225px;
+    height: 100%;
+    box-shadow: 1px 5px 5px rgb(165, 165, 165);
+    position: fixed;
+    left: 0;
+    border-top: 1px rgb(165, 165, 165) solid;
+    margin-top: 140px;
+}
+
+@font-face{
+    font-family: 'GrandHotel';
+    src: url('/camagru/public/polices/GrandHotel-Regular.otf');
+}
+
+ul{
+    list-style-type: none;
+    font-size: 35px;
+    font-family: 'GrandHotel';
+}
+
+li{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+}
+
+.border{
+    border-bottom: 1px rgb(165, 165, 165) solid;
+    width: 95px;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    height: 0px;
+}
+
+.first{
+    color: #1e272e;
+    padding-top: 20px;
+}
+
+.other{
+    color: #1e272e;
+    margin-top: 20px;
+}
+
+#home{
+    width: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#gallery{
+    width: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#camera{
+    width: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#profile{
+    width: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+section{
+    margin-top: auto;
+    margin-left: auto;
+    padding-top: 160px;
+    padding-bottom: 115px;
+    padding-left: 0px;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+}
+
+#profileInfo{
+    background-color: white;
+    width: 855px;
+    height: 630px;
+    margin-top: 75px;
+    margin-left: 111px;
+    border: 1px solid rgb(165, 165, 165);
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px rgb(165, 165, 165);
+}
+
+h1{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1e272e;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 35px;
+}
+
+#warning{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-size: 17px;
+    color: #EA2027;
+}
+
+#expl{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(142,142,142);
+    margin-top: -15px;
+    font-size: 14px;
+}
+
+label{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #b33939;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#thLabel{
+    color: #2980b9;
+}
+
+input{
+    background-color: white;
+    width: 365px;
+    height: 37px;
+    font-size: 15px;
+    padding-left: 11px;
+    border: 1px #1e272e dashed;
+    border-radius: 4px;
+    outline: 0;
+    margin-left: 27px;
+}
+
+.pen{
+    width: 18px;
+    height: 18px;
+}
+
+form{
+    padding-top: 50px;
+}
+
+
+#formBloc{
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#lineBlocTh{
+    display: flex;
+    flex-direction: column;
+}
+
+.lineBlocOth{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+#butt{
+    margin-top: 65px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+}
+
+#buttone{
+    width: 320px;
+    height: 40px;
+    background-color: #EA2027;
+    border-radius: 4px;
+    border: 0px;
+    cursor: pointer;
+    font-size: 14px;
+    color: whitesmoke;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight:bold;
+    padding-bottom: 2px;
+    position: relative;
+    bottom: 25px;
+}
+
+#buttone:active {
+    background-color: #f97e82;
+}
+
+#lock{
+    width: 17px;
+    height: 17px;
+    padding-right: 2px;
+    margin-bottom: -2px;
+}
+
+#retHome{
+    cursor: pointer;
+    font-size: 15px;
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: underline;
+    margin-top: 40px;
+    width: 140px;
+    height: 0px;
+}
+
+#settings{
+    width: 23px;
+    height: 23px;
+    padding-top: 13px;
+    padding-right: 5px;
+}
+
+.error{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    text-align: center;
+    color: #EA2027;
+    padding-left: 226px;
+    padding-top: 5px;
+    font-size: 12px;
+    max-width: 368px;
+}
+
+#error01{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    text-align: center;
+    color: #EA2027;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+@media all and (max-width: 1300px)
+{
+    section
+    {
+        padding-left: 180px;
+        text-align: initial;
+    }
+}
+
+@media all and (max-width: 1150px)
+{
+    #profileInfo
+    {
+        margin-left: 80px;
+    }
+}
+
+@media all and (max-width: 1060px)
+{
+    #profileInfo
+    {
+        width: 761px;
+        height: 630px;
+        margin-top: 0px;
+        margin-left: 65px;
+    }
+
+    #butt
+    {
+        margin-top: 75px;
+    }
+
+    #retHome
+    {
+        margin-top: 25px;
+        width: 135px;
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 950px)
+{
+    nav
+    {
+        margin-top: 105px;
+        width: 175px;
+    }
+
+    ul
+    {
+        font-size: 27px;
+    }
+
+    #home
+    {
+        width: 25px;
+    }
+
+    #gallery
+    {
+        width: 25px;
+    }
+
+    #camera
+    {
+        width: 25px;
+    }
+
+    #profile
+    {
+        width: 25px;
+    }
+
+    .border
+    {
+        width: 75px;
+    }
+
+    section
+    {
+        padding-top: 120px;
+        padding-left: 195px;
+    }
+
+    #profileInfo
+    {
+        width: 552px;
+        height: 620px;
+        margin-top: 6px;
+        margin-left: 1px;
+    }
+
+    h1
+    {
+        font-size: 21px;
+    }
+
+    #warning
+    {
+        font-size: 14px;
+    }
+
+    #formBloc
+    {
+        margin-top: 28px;
+    }
+
+    input
+    {
+        width: 298px;
+        height: 34px;
+        margin-left: 16px;
+        font-size: 14px;
+    }
+
+    label
+    {
+        font-size: 15px;
+    }
+
+    .pen
+    {
+        width: 15px;
+        height: 15px;
+    }
+
+    #butt
+    {
+        margin-top: 80px;
+    }
+
+    #buttone
+    {
+        font-size: 11px;
+        width: 250px;
+        height: 44px;
+    }
+
+    #lock
+    {
+        width: 14px;
+        height: 14px;
+    }
+
+    #retHome
+    {
+        font-size: 12px;
+        margin-top: 45px;
+        width: 120px;
+    }
+
+    #error
+    {
+        padding-left: 175px;
+        padding-top: 3px;
+        font-size: 11px;
+        max-width: 325px;
+    }
+
+    #error01
+    {
+        padding-bottom: 6px;
+        font-size: 11px;
+    }
+}
+
+@media all and (max-width: 600px)
+{
+    nav
+    {
+        margin-top: 65px;
+        width: 75px;
+        box-shadow: 0px 5px 5px rgb(165, 165, 165);
+    }
+
+    ul
+    {
+        padding-left: 15px;
+        font-size: 19px;
+    }
+
+    #home
+    {
+        width: 20px;
+        padding-left: 12px;
+    }
+
+    #gallery
+    {
+        width: 20px;
+        padding-left: 12px;
+    }
+
+    #camera
+    {
+        width: 20px;
+        padding-left: 12px;
+    }
+
+    #profile
+    {
+        width: 20px;
+        padding-left: 12px;
+    }
+
+    .border
+    {
+        width: 30px;
+    }
+
+    section
+    {
+        padding-left: 85px;
+        padding-bottom: 35px;
+        padding-top: 70px;
+    }
+
+    #profileInfo
+    {
+        background-color: whitesmoke;
+        width: 279px;
+        height: 610px;
+        margin-top: -3px;
+        margin-left: -8px;
+        border: initial;
+        border-radius: initial;
+        box-shadow: initial;
+    }
+
+    h1
+    {
+        font-size: 16px;
+        text-align: left;
+        margin-top: 25px;
+        margin-left: 8px;
+    }
+
+    #warning
+    {
+        margin: 0px;
+        font-size: 10px;
+        max-width: 274px;
+    }
+
+    br
+    {
+        display: none;
+    }
+
+    #expl
+    {
+        font-size: 10px;
+        margin-top: -14px;
+    }
+
+    form
+    {
+        padding-top: 30px;
+    }
+
+    #formBloc
+    {
+        margin-top: 30px;
+    }
+
+    input
+    {
+        background-color: whitesmoke;
+        width: 225px;
+        height: 29px;
+        margin-left: 0px;
+        font-size: 10px;
+        padding-left: 5px;
+    }
+
+    label
+    {
+        font-size: 12px;
+        text-align: left;
+        margin-bottom: 0px;
+        position: relative;
+        top: 20px;
+    }
+
+    .columnWidth
+    {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+    }
+
+    .pen
+    {
+        width: 15px;
+        height: 15px;
+        margin-top: 5px;
+        margin-left: 4px;
+    }
+
+    #butt
+    {
+        margin-top: 55px;
+    }
+
+    #buttone
+    {
+        font-size: 10px;
+        padding-top: 0px;
+        width: 230px;
+        height: 32px;
+        position: relative;
+        right: 5px;
+        bottom: 0px;
+    }
+
+    #lock
+    {
+        width: 11px;
+        height: 11px;
+        margin-bottom: -1px;
+    }
+
+    #retHome
+    {
+        font-size: 11px;
+        margin-top: 42px;
+        width: 100px;
+    }
+
+    #error
+    {
+        padding-left: 11px;
+        padding-top: 3px;
+        font-size: 10px;
+        max-width: 207px;
+    }
+
+    #error01
+    {
+        padding-bottom: 5px;
+        font-size: 10px;
+    }
+}
