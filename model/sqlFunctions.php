@@ -103,6 +103,24 @@ function idf_id_take($idf)
     return $reqCtrl->fetch();
 }
 
+function mail_recuperation($id_usr)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT email FROM users WHERE id = :id_usr");
+    $reqCtrl->bindValue(':id_usr', $id_usr, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
+}
+
+function pswrd_recuperation($id_usr)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT passwordUsr FROM users WHERE id = :id_usr");
+    $reqCtrl->bindValue(':id_usr', $id_usr, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
+}
+
 //---------- Replacement ----------
 
 function replacePswrd($newPswrd, $idf)
@@ -183,6 +201,17 @@ function replaceToken($newElement, $pseudo)
     $reqPswrd = $dbc->prepare("UPDATE users SET tokenUsr = :newElement WHERE username = :pseudo");
     $reqPswrd->bindValue(':newElement', $newElement, PDO::PARAM_BOOL);
     $reqPswrd->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+    $reqPswrd->execute();
+}
+
+
+//---------- Deletion ----------
+
+function delete_usr($id_usr)
+{
+    $dbc = db_connex();
+    $reqPswrd = $dbc->prepare("DELETE FROM users WHERE id = :id_usr");
+    $reqPswrd->bindValue(':id_usr', $id_usr, PDO::PARAM_STR);
     $reqPswrd->execute();
 }
 

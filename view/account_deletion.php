@@ -51,22 +51,22 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_deletion.php"
                         <div id="lineBlocTh">
                             <label for="pseudo" id="thLabel">E-mail</label>                
                             <div class="columnWidth">
-                                <input type="email" name="old_pswrd" id="firstLine" placeholder="Saisissez votre e-mail" autofocus value="<?php if(isset($old_pswrd)) { echo $old_pswrd; } ?>">
+                                <input type="email" name="email_usr" id="firstLine" placeholder="Saisissez votre e-mail" value="<?php if(isset($email_usr)) { echo $email_usr; } ?>">
                             </div>
                         </div>
-                        <small class="error"><?php if(isset($error_password2)) { echo $error_password2; } ?></small>
+                        <small class="error"><?php if(isset($error02)) { echo $error02; } ?></small>
                         <div class="lineBlocOth">
                             <label for="email">Mot de passe</label>                
                             <div class="columnWidth">
-                                <input type="password" name="new_pswrd" id="secondLine" placeholder="Saisissez votre mot de passe" value="<?php if(isset($new_pswrd)) { echo $new_pswrd; } ?>">
+                                <input type="password" name="pswrd_usr" id="secondLine" placeholder="Saisissez votre mot de passe" value="<?php if(isset($pswrd_usr)) { echo $pswrd_usr; } ?>">
                             </div>
                         </div>
-                        <small class="error"><?php if(isset($error_password3)) { echo $error_password3; } ?></small>
+                        <small class="error"><?php if(isset($error03)) { echo $error03; } ?></small>
                     </div>
                     <div id="butt">
-                        <small id="error01"><?php if(isset($error_password1)) { echo $error_password1; } ?></small>
+                        <small id="error01"><?php if(isset($error01)) { echo $error01; } ?></small>
                         <div>
-                            <button id="buttone" type="submit" name="submit_new_pswrd"><img id="lock" src="/camagru/public/pictures/trash.png">Supprimer définitivement mon compte</button>
+                            <button id="buttone" type="submit" name="submit_deletion"><img id="lock" src="/camagru/public/pictures/trash.png">Supprimer définitivement mon compte</button>
                             <a href="/camagru/view/home.php">
                                 <p id="retHome">Retour à l'acceuil</p>
                             </a>
