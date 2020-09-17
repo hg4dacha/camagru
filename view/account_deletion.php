@@ -52,7 +52,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_deletion.php"
                             <label for="pseudo" id="thLabel">E-mail</label>                
                             <div class="columnWidth">
                                 <input type="email" name="old_pswrd" id="firstLine" placeholder="Saisissez votre e-mail" autofocus value="<?php if(isset($old_pswrd)) { echo $old_pswrd; } ?>">
-                                <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
                         </div>
                         <small class="error"><?php if(isset($error_password2)) { echo $error_password2; } ?></small>
@@ -60,7 +59,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_deletion.php"
                             <label for="email">Mot de passe</label>                
                             <div class="columnWidth">
                                 <input type="password" name="new_pswrd" id="secondLine" placeholder="Saisissez votre mot de passe" value="<?php if(isset($new_pswrd)) { echo $new_pswrd; } ?>">
-                                <img class="pen" src="/camagru/public/pictures/edit.png" alt="Edit">
                             </div>
                         </div>
                         <small class="error"><?php if(isset($error_password3)) { echo $error_password3; } ?></small>

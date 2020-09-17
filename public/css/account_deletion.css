@@ -135,12 +135,9 @@ label{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #b33939;
     font-size: 18px;
-    text-align: center;
+    text-align: left;
     margin-bottom: 5px;
-}
-
-#thLabel{
-    color: #2980b9;
+    margin-left: 8px;
 }
 
 input{
@@ -149,10 +146,9 @@ input{
     height: 37px;
     font-size: 15px;
     padding-left: 11px;
-    border: 1px #1e272e dashed;
+    border: 1px #576574 solid;
     border-radius: 4px;
     outline: 0;
-    margin-left: 27px;
 }
 
 .pen{
@@ -166,7 +162,7 @@ form{
 
 
 #formBloc{
-    margin-top: 35px;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -181,7 +177,7 @@ form{
 .lineBlocOth{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 #butt{
@@ -376,6 +372,7 @@ form{
     label
     {
         font-size: 15px;
+        margin-left: 22px;
     }
 
     .pen
@@ -479,7 +476,7 @@ form{
     {
         background-color: whitesmoke;
         width: 279px;
-        height: 610px;
+        height: 530px;
         margin-top: -3px;
         margin-left: -8px;
         border: initial;
@@ -533,13 +530,19 @@ form{
         padding-left: 5px;
     }
 
+    .lineBlocOth
+    {
+        margin-top: 0px;
+    }
+
     label
     {
         font-size: 12px;
         text-align: left;
         margin-bottom: 0px;
         position: relative;
-        top: 20px;
+        top: 22px;
+        margin-left: 5px;
     }
 
     .columnWidth
