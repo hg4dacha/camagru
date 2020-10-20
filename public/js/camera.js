@@ -1,7 +1,7 @@
 //activate the camera
 let camStatus = false;
-let $camera = document.querySelector('camera');
-$camera.onclick = statCam();
+let buttCam = document.querySelector('#camera');
+buttCam.onclick = statCam();
 
 function statCam() {
     
@@ -11,13 +11,15 @@ function statCam() {
                 video.srcObject = mediaStream;
                 video.play();
                 camStatus = true;
-                $camera.innerHTML="Désactiver la caméra"
+                buttCam.innerHTML='Désactiver la caméra';
             })
             .catch(function(err) {
                 console.log(`Error : ${err}`);
             });
     }
-    else (camStatus === true) {
-        
-    }
+    // else if (camStatus === true) {
+    //     const stream = mediaStream;
+    //     const tracks = stream.getTracks();
+    //     tracks[0].stop;
+    // }
 }

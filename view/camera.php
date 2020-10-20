@@ -2,10 +2,10 @@
 
 session_start();
 
-if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION['firstname']) || !isset($_SESSION['email']) || !isset($_SESSION['username']) || !isset($_SESSION['passwordUsr']) || !isset($_SESSION['notif']))
-{
-    header('location: /camagru/index.php');
-}
+// if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION['firstname']) || !isset($_SESSION['email']) || !isset($_SESSION['username']) || !isset($_SESSION['passwordUsr']) || !isset($_SESSION['notif']))
+// {
+//     header('location: /camagru/index.php');
+// }
 
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
         </nav>
         <section>
             <video id="video"></video>
-            <button id="camera">Activer la caméra</button>
+            <button id="buttCam">Activer la caméra</button>
             <canvas id="canvas" width="640" height="480">
             </canvas>
         </section>
