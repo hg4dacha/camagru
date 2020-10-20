@@ -33,8 +33,13 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
             </ul>
         </nav>
         <section>
+            <video id="video"></video>
+            <button id="camera">Activer la caméra</button>
+            <canvas id="canvas" width="640" height="480">
+            </canvas>
         </section>
         <?php include("includes/footer.php") ?>
     </div>
+    <script src="/camagru/public/js/camera.js"></script>
 </body>
 </html>

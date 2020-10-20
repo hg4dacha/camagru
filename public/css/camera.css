@@ -98,6 +98,11 @@ section{
     padding-bottom: 250px;
 }
 
+video{
+    width: 640;
+    height: 480;
+}
+
 @media all and (max-width: 950px)
 {
     nav
