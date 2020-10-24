@@ -37,6 +37,16 @@ session_start();
             <button id="buttCam">Activer la caméra</button>
             <canvas id="canvas" width="640" height="480">
             </canvas>
+            <ul>
+                <?php
+                    
+                    $pathDir = '/camagru/public/fitlers';
+                    $filtersArr = scandir($pathDir);
+                    foreach ($filtersArr as $filter){
+                        
+                    }
+                ?>
+            </ul>
         </section>
         <?php include("includes/footer.php") ?>
     </div>

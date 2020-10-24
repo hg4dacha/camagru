@@ -25,10 +25,10 @@ function statCam() {
             });
     }
     else if (camStatus === true) {
+        // context.clearRect(0, 0, width, height);
         const mediaStream = video.srcObject;
         const tracks = mediaStream.getTracks();
         tracks[0].stop();
-        // context.clearRect(0, 0, width, height);
         camStatus = false;
         buttCam.innerHTML='Activer la caméra';
     }
