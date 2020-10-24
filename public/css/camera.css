@@ -101,6 +101,7 @@ section{
 video{
     width: 640;
     height: 480;
+    display: none;
 }
 
 @media all and (max-width: 950px)
