@@ -37,13 +37,20 @@ session_start();
             <button id="buttCam">Activer la caméra</button>
             <canvas id="canvas" width="640" height="480">
             </canvas>
-            <ul>
+            <ul id="filters-cont">
                 <?php
                     
-                    $pathDir = '/camagru/public/fitlers';
+                    $pathDir = '../public/filters/';
                     $filtersArr = scandir($pathDir);
+                    $i = 0;
                     foreach ($filtersArr as $filter){
-                        
+                        $expArr = explode('.', $filter);
+                        if ($expArr[1] == 'png') {
+                ?>
+                <li class="filters-png"><img class="filters-img" src='<?= $pathDir.$filter ?>'></li>
+                <?php
+                    $i++;
+                        }
                     }
                 ?>
             </ul>

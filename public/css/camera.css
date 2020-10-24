@@ -104,6 +104,19 @@ video{
     display: none;
 }
 
+#filters-cont{
+    height: 200px;
+    width: 1000px;
+}
+
+.filters-png{
+    width: 10px;
+}
+
+.filters-img{
+    width: 100px;
+}
+
 @media all and (max-width: 950px)
 {
     nav
