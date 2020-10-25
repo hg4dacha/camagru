@@ -1,7 +1,9 @@
 //   activate/deactivate the camera
 let camStatus = false;
-const buttCam = document.querySelector('#buttCam');
+const buttCam = document.querySelector('#button-Cam');
 buttCam.onclick = () => { statCam(); }
+const takePict = document.querySelector('#take-picture');
+takePict.onclick = () => { takePicture(); }
 const video = document.querySelector('video');
 
 const canvas = document.querySelector('#canvas');
@@ -35,6 +37,12 @@ function statCam() {
     }
 }
 
+/**********************************************************************************/
+
+function takePicture() {
+
+}
+
 //   add and remove filter
 function add_filter(filterID) {
     
@@ -59,5 +67,5 @@ function superimposeFilter() {
 video.addEventListener('canplay', function flux() {
     context.drawImage(video, 0, 0, width, height);
     superimposeFilter();
-    setTimeout(flux, 1);
+    setTimeout(flux, 5);
 })

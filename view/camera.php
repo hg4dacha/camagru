@@ -34,7 +34,8 @@ session_start();
         </nav>
         <section>
             <video id="video"></video>
-            <button id="buttCam">Activer la caméra</button>
+            <button id="button-Cam">Activer la caméra</button>
+            <button id="take-picture">Prendre en photo</button>
             <canvas id="canvas" width="640" height="480"></canvas>
             <p id="filters-tittle">Filtres</p>
             <ul id="filters-cont">
