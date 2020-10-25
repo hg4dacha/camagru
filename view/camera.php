@@ -35,8 +35,7 @@ session_start();
         <section>
             <video id="video"></video>
             <button id="buttCam">Activer la caméra</button>
-            <canvas id="canvas" width="640" height="480">
-            </canvas>
+            <canvas id="canvas" width="640" height="480"></canvas>
             <p id="filters-tittle">Filtres</p>
             <ul id="filters-cont">
                 <?php
@@ -48,7 +47,7 @@ session_start();
                         $expArr = explode('.', $filter);
                         if ($expArr[1] == 'png') {
                 ?>
-                <li onclick="add_filter('fltr<?= $i ?>');" id="fltr<?= $i ?>" class="filters-png"><img class="filters-img" src='<?= $pathDir.$filter ?>'></li>
+                <li class="filters-png"><img onclick="add_filter('fltr<?= $i ?>');" id="fltr<?= $i ?>" class="filters-img" src='<?= $pathDir.$filter ?>'></li>
                 <?php
                     $i++;
                         }

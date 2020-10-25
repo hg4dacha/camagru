@@ -37,6 +37,8 @@ function statCam() {
 
 //   add and remove filter
 function add_filter(filterID) {
+    
+    // Checks if the filter has already been selected
     if ( (filtersArray.find(element => element == filterID)) === undefined ) {
         filtersArray.push(filterID);
     }
@@ -49,7 +51,6 @@ function add_filter(filterID) {
 function superimposeFilter() {
 
     filtersArray.forEach( (filterID) => {
-        console.log(filterID);
         context.drawImage(document.querySelector('#' + filterID), 0, 0, width, height);
     });
 }
