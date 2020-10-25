@@ -37,17 +37,18 @@ session_start();
             <button id="buttCam">Activer la caméra</button>
             <canvas id="canvas" width="640" height="480">
             </canvas>
+            <p id="filters-tittle">Filtres</p>
             <ul id="filters-cont">
                 <?php
                     
                     $pathDir = '../public/filters/';
                     $filtersArr = scandir($pathDir);
-                    $i = 0;
+                    $i = 1;
                     foreach ($filtersArr as $filter){
                         $expArr = explode('.', $filter);
                         if ($expArr[1] == 'png') {
                 ?>
-                <li class="filters-png"><img class="filters-img" src='<?= $pathDir.$filter ?>'></li>
+                <li onclick="add_filter('fltr<?= $i ?>');" id="fltr<?= $i ?>" class="filters-png"><img class="filters-img" src='<?= $pathDir.$filter ?>'></li>
                 <?php
                     $i++;
                         }
