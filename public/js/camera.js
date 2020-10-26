@@ -1,31 +1,29 @@
 //   activate/deactivate the camera
 let camStatus = false;
-const buttCam = document.querySelector('#button-Cam');
-buttCam.onclick = () => { statCam(); }
-const takePict = document.querySelector('#take-picture');
-takePict.onclick = () => { takePicture(); }
+const buttCam = document.querySelector('#button-cam');
+const takePic = document.querySelector('#take-picture');
 const video = document.querySelector('video');
-
 const canvas = document.querySelector('#canvas');
 const context = canvas.getContext('2d');
 const width = canvas.width;
 const height = canvas.height;
 let filtersArray = [];
 
-
-function statCam() {
-
+buttCam.addEventListener('click', () => {
     if (camStatus === false){
         navigator.mediaDevices.getUserMedia({video: true, audio: false})
-            .then(function(mediaStream) {
-                video.srcObject = mediaStream;
-                video.play();
-                camStatus = true;
-                buttCam.innerHTML='Désactiver la caméra';
-            })
-            .catch(function(err) {
-                console.log(`Error : ${err}`);
-            });
+        .then(function(mediaStream) {
+            video.srcObject = mediaStream;
+            video.play();
+            camStatus = true;
+            buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiver la caméra';
+            buttCam.style.width='195px';
+            buttCam.style.paddingLeft="14px";
+            takePic.style.display='initial';
+        })
+        .catch(function(err) {
+            console.log(`Error : ${err}`);
+        });
     }
     else if (camStatus === true) {
         // context.clearRect(0, 0, width, height);
@@ -33,15 +31,32 @@ function statCam() {
         const tracks = mediaStream.getTracks();
         tracks[0].stop();
         camStatus = false;
-        buttCam.innerHTML='Activer la caméra';
+        buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/rec.png">Activer la caméra';
+        buttCam.style.width='180px';
+        buttCam.style.paddingLeft="12px";
+        takePic.style.display='none';
     }
-}
+});
 
 /**********************************************************************************/
 
-function takePicture() {
+takePic.addEventListener('click', () => {
+    if (camStatus === true) { // || image
+        const canvasURL = canvas.toDataURL('image/png');
+        let pictueID = Math.random().toString(); // creer un chiffre rond
 
-}
+    }
+})
+
+takePic.addEventListener('mouseover', () => {
+    takePic.style.backgroundColor='black';
+    document.querySelector('#take-photo').src='/camagru/public/pictures/take-photo2.png';
+})
+
+takePic.addEventListener('mouseout', () => {
+    takePic.style.backgroundColor='#b33939';
+    document.querySelector('#take-photo').src='/camagru/public/pictures/take-photo.png';    
+})
 
 //   add and remove filter
 function add_filter(filterID) {

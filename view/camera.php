@@ -34,27 +34,30 @@ session_start();
         </nav>
         <section>
             <video id="video"></video>
-            <button id="button-Cam">Activer la caméra</button>
-            <button id="take-picture">Prendre en photo</button>
-            <canvas id="canvas" width="640" height="480"></canvas>
-            <p id="filters-tittle">Filtres</p>
-            <ul id="filters-cont">
-                <?php
-                    
-                    $pathDir = '../public/filters/';
-                    $filtersArr = scandir($pathDir);
-                    $i = 1;
-                    foreach ($filtersArr as $filter){
-                        $expArr = explode('.', $filter);
-                        if ($expArr[1] == 'png') {
-                ?>
-                <li class="filters-png"><img onclick="add_filter('fltr<?= $i ?>');" id="fltr<?= $i ?>" class="filters-img" src='<?= $pathDir.$filter ?>'></li>
-                <?php
-                    $i++;
+            <div id="canvas-and-photo">
+                <canvas id="canvas" width="640" height="480"></canvas>
+                <button id="take-picture"><img id="take-photo" src="/camagru/public/pictures/take-photo.png"></button>
+            </div>
+            <button id="button-cam"><img id="rec" src="/camagru/public/pictures/rec.png">Activer la caméra</button>
+            <div>
+                <p id="filters-tittle">Filtres</p>
+                <ul id="filters-cont">
+                    <?php
+                        $pathDir = '../public/filters/';
+                        $filtersArr = scandir($pathDir);
+                        $i = 1;
+                        foreach ($filtersArr as $filter){
+                            $expArr = explode('.', $filter);
+                            if ($expArr[1] == 'png') {
+                    ?>
+                    <li class="filters-png"><img onclick="add_filter('fltr<?= $i ?>');" id="fltr<?= $i ?>" class="filters-img" src='<?= $pathDir.$filter ?>'></li>
+                    <?php
+                        $i++;
+                            }
                         }
-                    }
-                ?>
-            </ul>
+                    ?>
+                </ul>
+            </div>
         </section>
         <?php include("includes/footer.php") ?>
     </div>
