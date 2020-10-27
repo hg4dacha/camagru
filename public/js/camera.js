@@ -1,6 +1,7 @@
 //   activate/deactivate the camera
 let camStatus = false;
 const buttCam = document.querySelector('#button-cam');
+buttCam.onclick = () => { stateCam(); }
 const takePic = document.querySelector('#take-picture');
 const video = document.querySelector('video');
 const canvas = document.querySelector('#canvas');
@@ -8,9 +9,8 @@ const context = canvas.getContext('2d');
 const width = canvas.width;
 const height = canvas.height;
 let filtersArray = [];
-let token = 1;
 
-buttCam.addEventListener('click', () => {
+function stateCam() {
     if (camStatus === false){
         navigator.mediaDevices.getUserMedia({video: true, audio: false})
         .then(function(mediaStream) {
@@ -21,8 +21,8 @@ buttCam.addEventListener('click', () => {
             buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiver caméra';
             buttCam.style.width='175px';
             buttCam.style.paddingLeft="8px";
-            takePic.style.display='initial';
-        })
+            setTimeout( () => { takePic.style.display='initial'; }, 1090);
+        }) 
         .catch(function(err) {
             console.log(`Error : ${err}`);
         });
@@ -38,21 +38,44 @@ buttCam.addEventListener('click', () => {
         buttCam.style.paddingLeft="12px";
         takePic.style.display='none';
     }
-});
+}
 
 /**********************************************************************************/
 
 takePic.addEventListener('click', () => {
     if (camStatus === true) { // || image
-        const canvasURL = canvas.toDataURL('image/png');
         const mediaStream = video.srcObject;
         const tracks = mediaStream.getTracks();
         tracks[0].stop();
-        let pictueID = Math.random().toString(); // creer un chiffre rond
         camStatus = false;
         buttCam.disabled = true;
         buttCam.style.opacity = '0.4';
         buttCam.style.cursor = 'initial';
+    }
+})
+
+document.querySelector('#save').addEventListener('click', () => {
+    if (camStatus === false) {
+        const canvasURL = canvas.toDataURL('image/png');
+        let pictueID = Math.random().toString(); // creer un chiffre rond
+        let img = document.createElement('img');
+        img.setAttribute('src', canvasURL);
+        img.setAttribute('id', pictueID);
+        img.setAttribute('class', 'aside-image');
+        document.querySelector('#photo-list').appendChild(img);
+        buttCam.disabled = false;
+        buttCam.style.opacity = 'initial';
+        buttCam.style.cursor = 'pointer';
+        stateCam();
+    }
+})
+
+document.querySelector('#delete').addEventListener('click', () => {
+    if (camStatus === false) {
+        buttCam.disabled = false;
+        buttCam.style.opacity = 'initial';
+        buttCam.style.cursor = 'pointer';
+        stateCam();
     }
 })
 
