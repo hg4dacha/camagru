@@ -8,17 +8,19 @@ const context = canvas.getContext('2d');
 const width = canvas.width;
 const height = canvas.height;
 let filtersArray = [];
+let token = 1;
 
 buttCam.addEventListener('click', () => {
     if (camStatus === false){
         navigator.mediaDevices.getUserMedia({video: true, audio: false})
         .then(function(mediaStream) {
+            filtersArray = [];
             video.srcObject = mediaStream;
             video.play();
             camStatus = true;
-            buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiver la caméra';
-            buttCam.style.width='195px';
-            buttCam.style.paddingLeft="14px";
+            buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiver caméra';
+            buttCam.style.width='175px';
+            buttCam.style.paddingLeft="8px";
             takePic.style.display='initial';
         })
         .catch(function(err) {
@@ -31,7 +33,7 @@ buttCam.addEventListener('click', () => {
         const tracks = mediaStream.getTracks();
         tracks[0].stop();
         camStatus = false;
-        buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/rec.png">Activer la caméra';
+        buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra';
         buttCam.style.width='180px';
         buttCam.style.paddingLeft="12px";
         takePic.style.display='none';
@@ -43,8 +45,14 @@ buttCam.addEventListener('click', () => {
 takePic.addEventListener('click', () => {
     if (camStatus === true) { // || image
         const canvasURL = canvas.toDataURL('image/png');
+        const mediaStream = video.srcObject;
+        const tracks = mediaStream.getTracks();
+        tracks[0].stop();
         let pictueID = Math.random().toString(); // creer un chiffre rond
-
+        camStatus = false;
+        buttCam.disabled = true;
+        buttCam.style.opacity = '0.4';
+        buttCam.style.cursor = 'initial';
     }
 })
 
@@ -60,13 +68,14 @@ takePic.addEventListener('mouseout', () => {
 
 //   add and remove filter
 function add_filter(filterID) {
-    
-    // Checks if the filter has already been selected
-    if ( (filtersArray.find(element => element == filterID)) === undefined ) {
-        filtersArray.push(filterID);
-    }
-    else {
-        filtersArray.splice(filtersArray.indexOf(filterID), 1);
+    if (camStatus === true){
+        // Checks if the filter has already been selected
+        if ( (filtersArray.find(element => element == filterID)) === undefined ) {
+            filtersArray.push(filterID);
+        }
+        else {
+            filtersArray.splice(filtersArray.indexOf(filterID), 1);
+        }
     }
 }
 
