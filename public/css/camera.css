@@ -98,18 +98,44 @@ section{
     padding-bottom: 240px;
 }
 
-#photo-list{
-    overflow: auto;
-    width: 150px;
-    height: 500px;
-    margin-right: 35px;
-    border: 1px black solid;
+#frame-cam{
+    border: 5px #222f3e solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
 }
 
-video{
-    width: 640;
-    height: 480;
-    display: none;
+#photo-list{
+    overflow: auto;
+    width: 180px;
+    height: 495px;
+    background-color: white;
+    border: 1px #a4b0be solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-padd-img{
+    padding-bottom: 2px;
+    padding-top: 8px;
+}
+
+.aside-image{
+    width: 150px;
+    padding: 0;
+    border: 1px #485460 solid;
+    border-radius: 6px;
+}
+
+#cont-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
 }
 
 #canvas-and-photos{
@@ -120,15 +146,38 @@ video{
     margin-bottom: 20px;
 }
 
+#album{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px;
+}
+
+#album-photo{
+    width: 23px;
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+
+#album-text{
+    font-family: 'GrandHotel';    
+    font-size: 25px;
+    color: #b33939;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
 #canvas{
     border: 5px #222f3e solid;
-    border-radius: 35px;
+    border-radius: 8px;
 }
 
 #take-picture{
     display: none;
     height: 50px;
-    width: 91px;
+    width: 65px;
     margin-left: 20px;
     border: 0;
     border-radius: 18px;
@@ -140,6 +189,13 @@ video{
     width: 35px;
     position: relative;
     top: 2px;
+}
+
+#save-butt{
+    display: none;
+    position: relative;
+    bottom: 110px;
+    left: 42px;
 }
 
 #save{
@@ -156,6 +212,10 @@ video{
     padding-left: 10px;
     margin-right: 15px;
     opacity: 0.7;
+}
+
+#save:active{
+    background: #222f3e;
 }
 
 #save-img{
@@ -179,6 +239,10 @@ video{
     padding-left: 5px;
     margin-right: 15px;
     opacity: 0.7;
+}
+
+#delete:active{
+    background: #ff7979;
 }
 
 #delete-img{
@@ -210,6 +274,10 @@ video{
     margin-right: 15px;
 }
 
+#button-cam:active{
+    background: #40739e;
+}
+
 #rec{
     width: 15px;
     position: relative;
@@ -229,6 +297,10 @@ video{
     cursor: pointer;
     padding: 0;
     padding-left: 8px;
+}
+
+#downl-file:active{
+    background: #eb4d4b;
 }
 
 #import{
@@ -252,7 +324,7 @@ video{
     height: 140px;
     width: 880px;
     background-color: white;
-    border: 1px black solid;
+    border: 1px #a4b0be solid;
     display: flex;
     flex-direction: row;
     align-items: center;

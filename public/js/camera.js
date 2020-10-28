@@ -10,6 +10,10 @@ const width = canvas.width;
 const height = canvas.height;
 let filtersArray = [];
 
+window.addEventListener('load', () => {
+    context.drawImage(document.querySelector('#backCanvas'),0 ,0 , width, height);
+});
+
 function stateCam() {
     if (camStatus === false){
         navigator.mediaDevices.getUserMedia({video: true, audio: false})
@@ -51,30 +55,51 @@ takePic.addEventListener('click', () => {
         buttCam.disabled = true;
         buttCam.style.opacity = '0.4';
         buttCam.style.cursor = 'initial';
+        document.querySelector('#save-butt').style.display = 'initial';
     }
 })
 
 document.querySelector('#save').addEventListener('click', () => {
     if (camStatus === false) {
         const canvasURL = canvas.toDataURL('image/png');
-        let pictueID = Math.random().toString(); // creer un chiffre rond
+        let pictueID = (Math.floor(Math.random() * 1000000000000)).toString();
+        let div = document.createElement('div');
+        div.setAttribute('class', 'div-padd-img');
+        document.querySelector('#photo-list').appendChild(div);
         let img = document.createElement('img');
         img.setAttribute('src', canvasURL);
         img.setAttribute('id', pictueID);
         img.setAttribute('class', 'aside-image');
-        document.querySelector('#photo-list').appendChild(img);
+        div.appendChild(img);
         buttCam.disabled = false;
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
+        document.querySelector('#save-butt').style.display = 'none';
+        savePict(img);
         stateCam();
     }
 })
+
+function savePict(img) {
+    let XHR = new XMLHttpRequest();
+    let imgData = new FormData();
+    imgData.append('imgData', img.currentSrc); // add a key and a value in formData
+    XHR.onreadystatechange = () => {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log(this.responseText);
+        } else { console.log('error'); }
+    }
+    XHR.open('POST', '../../controller/savePict.php', true);
+    XHR.setRequestHeader('Content-Type', 'multipart/form-data');
+    XHR.send(imgData);
+}
 
 document.querySelector('#delete').addEventListener('click', () => {
     if (camStatus === false) {
         buttCam.disabled = false;
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
+        document.querySelector('#save-butt').style.display = 'none';
         stateCam();
     }
 })
@@ -102,6 +127,13 @@ function add_filter(filterID) {
     }
 }
 
+//   print the flux video and the filter in the canvas
+video.addEventListener('canplay', function flux() {
+    context.drawImage(video, 0, 0, width, height);
+    superimposeFilter();
+    setTimeout(flux, 5);
+})
+
 //   Superimpose the filter in the canvas
 function superimposeFilter() {
 
@@ -109,10 +141,3 @@ function superimposeFilter() {
         context.drawImage(document.querySelector('#' + filterID), 0, 0, width, height);
     });
 }
-
-//   print the flux video and the filter in the canvas
-video.addEventListener('canplay', function flux() {
-    context.drawImage(video, 0, 0, width, height);
-    superimposeFilter();
-    setTimeout(flux, 5);
-})

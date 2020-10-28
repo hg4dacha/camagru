@@ -33,38 +33,46 @@ session_start();
             </ul>
         </nav>
         <section>
-            <video id="video"></video>
-            <div id="canvas-and-photos">
-                <aside id="photo-list"></aside>
-                <canvas id="canvas" width="640" height="480"></canvas>
-                <button id="take-picture"><img id="take-photo" src="/camagru/public/pictures/take-photo.png"></button>
-            </div>
-            <div>
-                <button id="save"><img id="save-img" src="/camagru/public/pictures/save.png">Enregis.</button>
-                <button id="delete"><img id="delete-img" src="/camagru/public/pictures/deleting.png">Suppr.</button>
-            </div>
-            <div id="buttons-div">
-                <button id="button-cam"><img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra</button>
-                <button id="downl-file"><img id="import" src="/camagru/public/pictures/import.png">Importer image</button>
-            </div>
-            <div>
-                <p id="filters-tittle">Filtres</p>
-                <ul id="filters-cont">
-                    <?php
-                        $pathDir = '../public/filters/';
-                        $filtersArr = scandir($pathDir);
-                        $i = 1;
-                        foreach ($filtersArr as $filter){
-                            $expArr = explode('.', $filter);
-                            if ($expArr[1] == 'png') {
-                    ?>
-                    <li class="filters-png"><img onclick="add_filter('fltr<?= $i ?>');" id="fltr<?= $i ?>" class="filters-img" src='<?= $pathDir.$filter ?>'></li>
-                    <?php
-                        $i++;
+            <div id="frame-cam">
+                <video id="video" style="display: none;"></video>
+                <img id="backCanvas" src="/camagru/public/pictures/backCanvas.jpg" style="display: none;">
+                <div id="cont-top">
+                    <div id="canvas-and-photos">
+                        <div id="album">
+                            <p id="album-text"><img id="album-photo" src="/camagru/public/pictures/album.png" alt="Album">Album</p>
+                            <aside id="photo-list"></aside>
+                        </div>
+                        <canvas id="canvas" width="640" height="480"></canvas>
+                        <button id="take-picture"><img id="take-photo" src="/camagru/public/pictures/take-photo.png"></button>
+                    </div>
+                    <div id="save-butt">
+                        <button id="save"><img id="save-img" src="/camagru/public/pictures/save.png">Enregis.</button>
+                        <button id="delete"><img id="delete-img" src="/camagru/public/pictures/deleting.png">Suppr.</button>
+                    </div>
+                </div>
+                <div id="buttons-div">
+                    <button id="button-cam"><img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra</button>
+                    <button id="downl-file"><img id="import" src="/camagru/public/pictures/import.png">Importer image</button>
+                </div>
+                <div>
+                    <p id="filters-tittle">Filtres</p>
+                    <ul id="filters-cont">
+                        <?php
+                            $pathDir = '../public/filters/';
+                            $filtersArr = scandir($pathDir);
+                            $i = 1;
+                            foreach ($filtersArr as $filter){
+                                $expArr = explode('.', $filter);
+                                if ($expArr[1] == 'png') {
+                        ?>
+                        <li class="filters-png"><img onclick="add_filter('fltr<?= $i ?>');" id="fltr<?= $i ?>" class="filters-img" src='<?= $pathDir.$filter ?>'></li>
+                        <?php
+                            $i++;
+                                }
                             }
-                        }
-                    ?>
-                </ul>
+                        ?>
+                    </ul>
+                </div>
             </div>
         </section>
         <?php include("includes/footer.php") ?>
