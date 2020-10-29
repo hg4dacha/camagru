@@ -25,7 +25,7 @@ function stateCam() {
             buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiver caméra';
             buttCam.style.width='175px';
             buttCam.style.paddingLeft="8px";
-            setTimeout( () => { takePic.style.display='initial'; }, 1090);
+            setTimeout( () => { takePic.style.display='initial'; }, 1500);
         }) 
         .catch(function(err) {
             console.log(`Error : ${err}`);
@@ -83,13 +83,13 @@ document.querySelector('#save').addEventListener('click', () => {
 function savePict(img) {
     let XHR = new XMLHttpRequest();
     let imgData = new FormData();
-    imgData.append('imgData', img.src); // add a key and a value in formData
-    XHR.onreadystatechange = () => {
+    imgData.append('imgData', img); // add a key and a value in formData
+    // console.log(img.src)
+    XHR.onreadystatechange = function ()  {
         if (this.readyState === 4 && this.status === 200) {
             console.log(this.responseText);
-        }else { console.log('error'); } };
-    XHR.open('POST', '../../controller/save_picture.php', true);
-    // XHR.setRequestHeader('Content-Type', 'multipart/form-data');
+        } else { console.log('error'); } };
+    XHR.open('POST', '../controller/save_picture.php', true);
     XHR.send(imgData);
 }
 
