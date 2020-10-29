@@ -75,7 +75,6 @@ document.querySelector('#save').addEventListener('click', () => {
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
         document.querySelector('#save-butt').style.display = 'none';
-        console.log(img.src);
         savePict(img);
         stateCam();
     }
@@ -84,13 +83,12 @@ document.querySelector('#save').addEventListener('click', () => {
 function savePict(img) {
     let XHR = new XMLHttpRequest();
     let imgData = new FormData();
-    imgData.append('imgData', img.currentSrc); // add a key and a value in formData
+    imgData.append('imgData', img.src); // add a key and a value in formData
     XHR.onreadystatechange = () => {
         if (this.readyState === 4 && this.status === 200) {
             console.log(this.responseText);
-        } else { console.log('error'); }
-    }
-    XHR.open('POST', '../../controller/savePict.php', true);
+        }else { console.log('error'); } };
+    XHR.open('POST', '../../controller/save_picture.php', true);
     // XHR.setRequestHeader('Content-Type', 'multipart/form-data');
     XHR.send(imgData);
 }
