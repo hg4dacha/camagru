@@ -76,8 +76,9 @@ document.querySelector('#save').addEventListener('click', () => {
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
         document.querySelector('#save-butt').style.display = 'none';
-        savePict(img);
-        stateCam();
+        createImg(img);
+        // savePict(img);
+        // stateCam();
     }
 })
 
@@ -91,6 +92,12 @@ function savePict(img) {
         } else { console.log('error'); } };
     XHR.open('POST', '../controller/save_picture.php', true);
     XHR.send(imgData);
+}
+
+function createImg (img) {
+    let image = new Image();
+    image.src = img.src;
+    console.log(image);
 }
 
 document.querySelector('#delete').addEventListener('click', () => {
