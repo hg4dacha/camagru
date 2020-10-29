@@ -75,6 +75,7 @@ document.querySelector('#save').addEventListener('click', () => {
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
         document.querySelector('#save-butt').style.display = 'none';
+        console.log(img.src);
         savePict(img);
         stateCam();
     }
@@ -90,7 +91,7 @@ function savePict(img) {
         } else { console.log('error'); }
     }
     XHR.open('POST', '../../controller/savePict.php', true);
-    XHR.setRequestHeader('Content-Type', 'multipart/form-data');
+    // XHR.setRequestHeader('Content-Type', 'multipart/form-data');
     XHR.send(imgData);
 }
 
