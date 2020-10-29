@@ -51,6 +51,7 @@ takePic.addEventListener('click', () => {
         const mediaStream = video.srcObject;
         const tracks = mediaStream.getTracks();
         tracks[0].stop();
+        takePic.style.display = 'none';
         camStatus = false;
         buttCam.disabled = true;
         buttCam.style.opacity = '0.4';
@@ -81,11 +82,10 @@ document.querySelector('#save').addEventListener('click', () => {
 })
 
 function savePict(img) {
-    let XHR = new XMLHttpRequest();
     let imgData = new FormData();
-    imgData.append('imgData', img); // add a key and a value in formData
-    // console.log(img.src)
-    XHR.onreadystatechange = function ()  {
+    imgData.append('imgData', img.src); // add a key and a value in formData
+    let XHR = new XMLHttpRequest();
+    XHR.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             console.log(this.responseText);
         } else { console.log('error'); } };
