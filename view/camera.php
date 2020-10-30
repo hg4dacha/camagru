@@ -49,13 +49,15 @@ session_start();
                         <button id="save"><img id="save-img" src="/camagru/public/pictures/save.png">Enregis.</button>
                         <button id="delete"><img id="delete-img" src="/camagru/public/pictures/deleting.png">Suppr.</button>
                     </div>
-                </div>
-                <div id="buttons-div">
-                    <button id="button-cam"><img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra</button>
-                    <button id="downl-file"><img id="import" src="/camagru/public/pictures/import.png">Importer image</button>
+                    <div id="buttons-div">
+                        <button id="button-cam"><img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra</button>
+                        <button id="downl-file"><img id="import" src="/camagru/public/pictures/import.png">Importer image</button>
+                    </div>
                 </div>
                 <div>
-                    <p id="filters-tittle">Filtres</p>
+                    <div id="filter-cont">
+                        <p id="filters-tittle"><img id="filter" src="/camagru/public/pictures/filter.png" alt="filter">Filtres</p>
+                    </div>
                     <ul id="filters-cont">
                         <?php
                             $pathDir = '../public/filters/';

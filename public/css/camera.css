@@ -308,13 +308,21 @@ section{
     right: 6px;
 }
 
+#filter-cont{
+    margin-left: 10px;
+}
+
+#filter{
+    width: 18px;
+    position: relative;
+    right: 5px;
+}
+
 #filters-tittle {
-    margin-bottom: 0;
-    margin-left: 5px;
-    margin-bottom: -5px;
     font-family: 'GrandHotel';
-    font-size: 35px;
-    color: #0984e3;
+    font-size: 25px;
+    color: #b33939;
+    margin: 0;
 }
 
 #filters-cont{
