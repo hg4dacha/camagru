@@ -99,7 +99,7 @@ section{
 }
 
 #frame-cam{
-    border: 5px #222f3e solid;
+    border: 5px #636e72 solid;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -314,7 +314,7 @@ section{
     margin-bottom: -5px;
     font-family: 'GrandHotel';
     font-size: 35px;
-    color: #0a3d62;
+    color: #0984e3;
 }
 
 #filters-cont{
