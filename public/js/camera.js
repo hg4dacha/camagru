@@ -1,4 +1,4 @@
-//   activate/deactivate the camera
+//   DOM elements
 let camStatus = false;
 const buttCam = document.querySelector('#button-cam');
 buttCam.onclick = () => { stateCam(); }
@@ -10,10 +10,12 @@ const width = canvas.width;
 const height = canvas.height;
 let filtersArray = [];
 
+//   base canvas image
 window.addEventListener('load', () => {
     context.drawImage(document.querySelector('#backCanvas'),0 ,0 , width, height);
 });
 
+//   activate or deactivate the camera
 function stateCam() {
     if (camStatus === false){
         navigator.mediaDevices.getUserMedia({video: true, audio: false})
@@ -26,17 +28,21 @@ function stateCam() {
             buttCam.style.width='175px';
             buttCam.style.paddingLeft="8px";
             setTimeout( () => { takePic.style.display='initial'; }, 1500);
+            setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
         }) 
         .catch(function(err) {
             console.log(`Error : ${err}`);
         });
     }
     else if (camStatus === true) {
-        // context.clearRect(0, 0, width, height);
         const mediaStream = video.srcObject;
         const tracks = mediaStream.getTracks();
         tracks[0].stop();
+        video.srcObject = null;
+        context.clearRect(0, 0, width, height);
+        context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
         camStatus = false;
+        document.querySelector('#buttons-div').style.marginRight='-220px';
         buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra';
         buttCam.style.width='180px';
         buttCam.style.paddingLeft="12px";
@@ -56,13 +62,14 @@ takePic.addEventListener('click', () => {
         buttCam.disabled = true;
         buttCam.style.opacity = '0.4';
         buttCam.style.cursor = 'initial';
+        document.querySelector('#buttons-div').style.marginRight='-220px';
         document.querySelector('#save-butt').style.display = 'initial';
     }
 })
 
 document.querySelector('#save').addEventListener('click', () => {
     if (camStatus === false) {
-        const canvasURL = canvas.toDataURL('image/png');
+        const canvasURL = canvas.toDataURL('image/jpeg');
         let pictueID = (Math.floor(Math.random() * 1000000000000)).toString();
         let div = document.createElement('div');
         div.setAttribute('class', 'div-padd-img');
@@ -76,15 +83,16 @@ document.querySelector('#save').addEventListener('click', () => {
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
         document.querySelector('#save-butt').style.display = 'none';
-        createImg(img);
-        // savePict(img);
-        // stateCam();
+        savePict(img);
+        stateCam();
     }
 })
 
 function savePict(img) {
     let imgData = new FormData();
-    imgData.append('imgData', img.src); // add a key and a value in formData
+    // add a key and a value in formData
+    imgData.append('imgData', img.src);
+    imgData.append('imgID', img.id);
     let XHR = new XMLHttpRequest();
     XHR.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -92,12 +100,6 @@ function savePict(img) {
         } else { console.log('error'); } };
     XHR.open('POST', '../controller/save_picture.php', true);
     XHR.send(imgData);
-}
-
-function createImg (img) {
-    let image = new Image();
-    image.src = img.src;
-    console.log(image);
 }
 
 document.querySelector('#delete').addEventListener('click', () => {
