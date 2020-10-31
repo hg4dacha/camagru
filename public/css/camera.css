@@ -155,9 +155,8 @@ section{
 
 #album-photo{
     width: 23px;
-    position: relative;
-    top: 3px;
-    right: 5px;
+    margin-right: 5px;
+    margin-bottom: -3px;
 }
 
 #album-text{
@@ -279,9 +278,8 @@ section{
 
 #rec{
     width: 15px;
-    position: relative;
-    top: 2px;
-    right: 8px;
+    margin-right: 5px;
+    margin-bottom: -2px;
 }
 
 #downl-file{
@@ -304,9 +302,8 @@ section{
 
 #import{
     width: 18px;
-    position: relative;
-    top: 2px;
-    right: 6px;
+    margin-right: 5px;
+    margin-bottom: -2px;
 }
 
 #filter-cont{
@@ -315,8 +312,7 @@ section{
 
 #filter{
     width: 18px;
-    position: relative;
-    right: 5px;
+    margin-right: 5px;
 }
 
 #filters-tittle {

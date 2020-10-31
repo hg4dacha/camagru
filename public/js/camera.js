@@ -96,8 +96,8 @@ function savePict(img) {
     let XHR = new XMLHttpRequest();
     XHR.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            console.log(this.responseText);
-        } else { console.log('error'); } };
+            console.log(this.responseText); }
+        };
     XHR.open('POST', '../controller/save_picture.php', true);
     XHR.send(imgData);
 }
