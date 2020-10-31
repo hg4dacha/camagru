@@ -98,6 +98,14 @@ section{
     padding-bottom: 240px;
 }
 
+#cont-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
 #frame-cam{
     border: 5px #636e72 solid;
     display: flex;
@@ -110,7 +118,7 @@ section{
 #photo-list{
     overflow: auto;
     width: 180px;
-    height: 495px;
+    height: 490px;
     background-color: white;
     border: 1px #a4b0be solid;
     display: flex;
@@ -130,14 +138,6 @@ section{
     border-radius: 6px;
 }
 
-#cont-top{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-}
-
 #canvas-and-photos{
     display: flex;
     flex-direction: row;
@@ -150,7 +150,8 @@ section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 35px;
+    margin-right: 45px;
+    margin-top: -35px;
 }
 
 #album-photo{
@@ -164,7 +165,6 @@ section{
     font-size: 25px;
     color: #b33939;
     margin: 0px;
-    margin-bottom: 5px;
 }
 
 #canvas{
@@ -193,7 +193,7 @@ section{
     display: none;
     margin-top: -125px;
     margin-right: -211px;
-    margin-bottom: 87px;
+    margin-bottom: 84px;
 }
 
 #save{
@@ -207,9 +207,9 @@ section{
     font-size: 15px;
     cursor: pointer;
     padding: 0;
-    padding-left: 10px;
+    padding-left: 3px;
     margin-right: 25px;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 #save:active{
@@ -218,9 +218,8 @@ section{
 
 #save-img{
     width: 15px;
-    position: relative;
-    top: 2px;
-    right: 8px;
+    margin-right: 5px;
+    margin-bottom: -1px;
 }
 
 #delete{
@@ -234,8 +233,8 @@ section{
     font-size: 15px;
     cursor: pointer;
     padding: 0;
-    padding-left: 5px;
-    opacity: 0.6;
+    padding-left: 2px;
+    opacity: 0.7;
 }
 
 #delete:active{
@@ -243,10 +242,9 @@ section{
 }
 
 #delete-img{
-    width: 17px;
-    position: relative;
-    top: 2px;
-    right: 5px;
+    width: 18px;
+    margin-right: 5px;
+    margin-bottom: -2px;
 }
 
 #buttons-div{
@@ -255,6 +253,7 @@ section{
     justify-content: center;
     align-items: center;
     margin-right: -220px;
+    margin-top: 20px;
 }
 
 #button-cam{
@@ -306,6 +305,10 @@ section{
     margin-bottom: -2px;
 }
 
+#filters-div{
+    margin-top: 40px;
+}
+
 #filter-cont{
     margin-left: 10px;
 }
@@ -325,7 +328,7 @@ section{
 #filters-cont{
     overflow: auto;
     height: 140px;
-    width: 880px;
+    width: 900px;
     background-color: white;
     border: 1px #a4b0be solid;
     display: flex;
