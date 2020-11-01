@@ -40,7 +40,7 @@ session_start();
                     <div id="canvas-and-photos">
                         <div id="album">
                             <p id="album-text"><img id="album-photo" src="/camagru/public/pictures/album.png" alt="Album">Album</p>
-                            <aside id="photo-list"></aside>
+                            <aside id="photo-list"><span id="aside-msg">Vos photos enregistrées<br>s'afficheront ici</span></aside>
                         </div>
                         <canvas id="canvas" width="640" height="480"></canvas>
                         <button id="take-picture"><img id="take-photo" src="/camagru/public/pictures/take-photo.png"></button>

@@ -83,6 +83,7 @@ document.querySelector('#save').addEventListener('click', () => {
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
         document.querySelector('#save-butt').style.display = 'none';
+        document.querySelector('#aside-msg').style.display = 'none';
         savePict(img);
         stateCam();
     }
