@@ -216,7 +216,7 @@ section{
     cursor: pointer;
     padding: 0;
     padding-left: 3px;
-    margin-right: 25px;
+    margin-right: 45px;
     opacity: 0.7;
 }
 
@@ -275,7 +275,7 @@ section{
     font-size: 15px;
     cursor: pointer;
     padding: 0;
-    padding-left: 5px;
+    padding-left: 1px;
     margin-right: 120px;
 }
 
@@ -393,7 +393,7 @@ section{
     {
         width: 25px;
     }
-
+        
     .border
     {
         width: 75px;
@@ -401,8 +401,8 @@ section{
 
     section
     {
-        padding-top: 119px;
-        padding-left: 188px;
+        padding-top: 115px;
+        padding-left: 180px;
     }
 
     #canvas-and-photos
@@ -435,8 +435,9 @@ section{
     #photo-list
     {
         width: 535px;
-        height: 90px;
+        height: 95px;
         background: whitesmoke;
+        flex-direction: row;
     }
 
     #aside-msg
@@ -446,10 +447,58 @@ section{
         font-size: 11px;
     }
 
+    .div-padd-img
+    {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .aside-image
+    {
+        width: 100px;
+    }
+
     #canvas
     {
         width: 535px;
         height: 415px;
+    }
+
+    #save-butt
+    {
+        margin-top: -70px;
+        margin-right: 0px;
+        margin-bottom: 35px;
+    }
+
+    #save-img
+    {
+        width: 13px;
+        margin-bottom: -1px;
+    }
+
+    #save
+    {
+        height: 35px;
+        width: 95px;
+        font-size: 14px;
+        margin-right: 35px;
+    }
+
+    #delete-img
+    {
+        width: 16px;
+        margin-bottom: -3px;
+    }
+
+    #delete
+    {
+        height: 35px;
+        width: 95px;
+        font-size: 14px;
+        padding-left: 0px;
     }
 
     #take-picture
@@ -524,6 +573,11 @@ section{
     {
         height: 100px;
         width: 535px;
+    }
+
+    .filters-png
+    {
+        margin-left: 10px;
     }
 
     .filters-img

@@ -25,10 +25,18 @@ function stateCam() {
             video.play();
             camStatus = true;
             buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiver caméra';
-            buttCam.style.width='175px';
-            buttCam.style.paddingLeft="8px";
+            if (screen.width <= 950){
+                buttCam.style.width='145px';
+                buttCam.style.paddingLeft="0px";
+            }
+            else {
+                buttCam.style.width='175px';
+                buttCam.style.paddingLeft="1px";
+            }
             setTimeout( () => { takePic.style.display='initial'; }, 1500);
-            setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
+            if (screen.width > 1100) {
+                setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
+            }
         }) 
         .catch(function(err) {
             console.log(`Error : ${err}`);
@@ -42,11 +50,17 @@ function stateCam() {
         context.clearRect(0, 0, width, height);
         context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
         camStatus = false;
-        document.querySelector('#buttons-div').style.marginRight='-220px';
         buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra';
-        buttCam.style.width='180px';
-        buttCam.style.paddingLeft="12px";
         takePic.style.display='none';
+        if (screen.width <= 950) {
+            buttCam.style.width='130px';
+            buttCam.style.paddingLeft="1px";
+        }
+        else {
+            document.querySelector('#buttons-div').style.marginRight='-220px';
+            buttCam.style.width='160px';
+            buttCam.style.paddingLeft="1px";
+        }
     }
 }
 
@@ -62,8 +76,10 @@ takePic.addEventListener('click', () => {
         buttCam.disabled = true;
         buttCam.style.opacity = '0.4';
         buttCam.style.cursor = 'initial';
-        document.querySelector('#buttons-div').style.marginRight='-220px';
         document.querySelector('#save-butt').style.display = 'initial';
+        if (screen.width > 1100) {
+        document.querySelector('#buttons-div').style.marginRight='-220px';
+        }
     }
 })
 
