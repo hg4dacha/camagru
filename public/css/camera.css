@@ -636,4 +636,166 @@ section{
         padding-bottom: 130px;
         padding-top: 70px;
     }
+
+    #album
+    {
+        margin-top: -65px;
+    }
+
+    #album-photo
+    {
+        width: 12px;
+        margin-right: 2px;
+        margin-left: 5px;
+    }
+
+    #album-text
+    {
+        font-size: 14px;
+    }
+
+    #photo-list
+    {
+        width: 240px;
+        height: 50px;
+    }
+
+    #aside-msg
+    {
+        font-size: 8px;
+    }
+
+    .div-padd-img
+    {
+        padding-left: 4px;
+        padding-right: 3px;
+    }
+
+    .aside-image
+    {
+        width: 45px;
+    }
+
+    #canvas
+    {
+        width: 240px;
+        height: 195px;
+    }
+
+    #save-butt
+    {
+        margin-top: -50px;
+        margin-bottom: 24px;
+    }
+
+    #save-img
+    {
+        width: 10px;
+        margin-right: 3px;
+    }
+
+    #save
+    {
+        height: 26px;
+        width: 67px;
+        font-size: 10px;
+        margin-right: 20px;
+    }
+
+    #delete-img
+    {
+        width: 12px;
+        margin-right: 3px;
+        margin-bottom: -2px;
+    }
+
+    #delete
+    {
+        height: 26px;
+        width: 67px;
+        font-size: 10px;
+    }
+
+    #take-picture
+    {
+        height: 32px;
+        width: 43px;
+        margin-left: 0px;
+        margin-top: 6px;
+    }
+
+    #take-photo
+    {
+        width: 13px;
+        margin-bottom: -1px;
+    }
+
+    #buttons-div
+    {
+        margin-right: -15px;
+        margin-top: 8px;
+    }
+
+    #rec
+    {
+        width: 9px;
+        margin-right: 3px;
+        margin-bottom: -1px;
+    }
+
+    #button-cam
+    {
+        width: 80px;
+        height: 25px;
+        font-size: 8px;
+        margin-right: 25px;
+    }
+
+    #import
+    {
+        width: 11px;
+        margin-right: 3px;
+        margin-bottom: -1px;
+    }
+
+    #downl-file
+    {
+        width: 80px;
+        height: 25px;
+        font-size: 8px;
+        margin-right: 20px;
+    }
+
+    #filter-cont
+    {
+        margin-left: 5px;
+    }
+
+    #filter
+    {
+        width: 11px;
+        margin-right: 2px;
+    }
+
+    #filters-tittle
+    {
+        font-size: 14px;
+    }
+
+    #filters-cont
+    {
+        width: 240px;
+        height: 65px;
+    }
+
+    .filters-img
+    {
+        width: 30px;
+    }
+
+    .filters-png
+    {
+        margin-left: 8px;
+        padding-right: 8px;
+    }
 }

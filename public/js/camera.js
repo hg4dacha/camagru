@@ -25,7 +25,11 @@ function stateCam() {
             video.play();
             camStatus = true;
             buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiver caméra';
-            if (screen.width <= 950){
+            if (screen.width < 600) {
+                buttCam.style.width='95px';
+                buttCam.style.paddingLeft="0px";
+            }
+            else if (screen.width <= 950 && screen.width >= 600) {
                 buttCam.style.width='145px';
                 buttCam.style.paddingLeft="0px";
             }
@@ -52,7 +56,11 @@ function stateCam() {
         camStatus = false;
         buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra';
         takePic.style.display='none';
-        if (screen.width <= 950) {
+        if (screen.width < 600) {
+            buttCam.style.width='80px';
+            buttCam.style.paddingLeft="0px";
+        }
+        else if (screen.width <= 950 && screen.width >= 600) {
             buttCam.style.width='130px';
             buttCam.style.paddingLeft="1px";
         }
