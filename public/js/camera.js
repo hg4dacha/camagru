@@ -2,6 +2,9 @@
 let camStatus = false;
 const buttCam = document.querySelector('#button-cam');
 buttCam.onclick = () => { stateCam(); }
+let importStatus = false;
+const buttImportLabel = document.querySelector('#downl-file');
+const buttImport = document.querySelector('#imprt-inpt');
 const takePic = document.querySelector('#take-picture');
 const video = document.querySelector('video');
 const canvas = document.querySelector('#canvas');
@@ -72,6 +75,29 @@ function stateCam() {
     }
 }
 
+buttImportLabel.addEventListener('click', () => {
+    if (importStatus === false) {
+        buttImport.addEventListener('change', () => {
+            importStatus = true;
+            buttCam.disabled = true;
+            buttCam.style.opacity = '0.4';
+            buttCam.style.cursor = 'initial';
+            buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/deleting.png">Annuler import.';
+            buttImportLabel.style.border='2px #EA2027 solid';
+            buttImport.type='';
+        });
+    }
+    else if (importStatus === true) {
+        importStatus = false;
+        buttCam.disabled = false;
+        buttCam.style.opacity = 'initial';
+        buttCam.style.cursor = 'pointer';
+        buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/import.png">Importer image';
+        buttImportLabel.style.border='initial';
+        setTimeout( () => { buttImport.type='file' }, 500);
+    }
+});
+
 /**********************************************************************************/
 
 takePic.addEventListener('click', () => {
@@ -84,6 +110,9 @@ takePic.addEventListener('click', () => {
         buttCam.disabled = true;
         buttCam.style.opacity = '0.4';
         buttCam.style.cursor = 'initial';
+        buttImport.disabled = true;
+        buttImportLabel.style.opacity = '0.4';
+        buttImportLabel.style.cursor = 'initial';
         document.querySelector('#save-butt').style.display = 'initial';
         if (screen.width > 1100) {
         document.querySelector('#buttons-div').style.marginRight='-220px';
@@ -132,6 +161,9 @@ document.querySelector('#delete').addEventListener('click', () => {
         buttCam.disabled = false;
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
+        document.querySelector('#imprt-inpt').disabled = false;
+        buttImport.style.opacity = 'initial';
+        buttImport.style.cursor = 'pointer';
         document.querySelector('#save-butt').style.display = 'none';
         stateCam();
     }

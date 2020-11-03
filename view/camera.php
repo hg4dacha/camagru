@@ -51,7 +51,8 @@ session_start();
                     </div>
                     <div id="buttons-div">
                         <button id="button-cam"><img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra</button>
-                        <button id="downl-file"><img id="import" src="/camagru/public/pictures/import.png">Importer image</button>
+                        <label for="imprt-inpt" id="downl-file" class="active"><img id="import" src="/camagru/public/pictures/import.png">Importer image</label>
+                        <input id="imprt-inpt" type="file" style="display: none;">
                     </div>
                 </div>
                 <div id="filters-div">
