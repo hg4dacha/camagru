@@ -67,6 +67,10 @@ buttImportLabel.addEventListener('click', () => {
             let format = buttImport.files[0].type;
             if (format == 'image/jpeg' || format == 'image/png' || format == 'image/gif') {
                 importStatus = true;
+                let uploadImg = new Image;
+                uploadImg.src = URL.createObjectURL(buttImport.files[0]);
+                context.clearRect(0, 0, width, height);
+                uploadImg.onload = () => { context.drawImage(uploadImg, 0, 0, width, height) };
                 buttCam.disabled = true;
                 buttCam.style.opacity = '0.4';
                 buttCam.style.cursor = 'initial';
@@ -89,8 +93,10 @@ buttImportLabel.addEventListener('click', () => {
         buttCam.style.cursor = 'pointer';
         buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/import.png">Importer image';
         buttImportLabel.style.border='initial';
-        setTimeout( () => { buttImport.type='file' }, 50); //   Otherwise the file download window reopens
         takePic.style.display='none';
+        context.clearRect(0, 0, width, height);
+        context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
+        setTimeout( () => { buttImport.type='file' }, 50); //   Otherwise the file download window reopens
         if (screen.width >= 950) {
             document.querySelector('#buttons-div').style.marginRight='-220px';
         }
@@ -100,12 +106,14 @@ buttImportLabel.addEventListener('click', () => {
 /**********************************************************************************/
 
 takePic.addEventListener('click', () => {
-    if (camStatus === true) { // || image
-        const mediaStream = video.srcObject;
-        const tracks = mediaStream.getTracks();
-        tracks[0].stop();
+    if (camStatus === true || importStatus === true) {
+            if (camStatus === true) {
+            const mediaStream = video.srcObject;
+            const tracks = mediaStream.getTracks();
+            tracks[0].stop();
+            camStatus = false;
+        }
         takePic.style.display = 'none';
-        camStatus = false;
         buttCam.disabled = true;
         buttCam.style.opacity = '0.4';
         buttCam.style.cursor = 'initial';
