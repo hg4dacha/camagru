@@ -64,18 +64,23 @@ function stateCam() {
 buttImportLabel.addEventListener('click', () => {
     if (importStatus === false) {
         buttImport.addEventListener('change', () => {
-            importStatus = true;
-            buttCam.disabled = true;
-            buttCam.style.opacity = '0.4';
-            buttCam.style.cursor = 'initial';
-            buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/deleting.png">Annuler import.';
-            buttImportLabel.style.border='2px #EA2027 solid';
-            buttImport.type='';
-            setTimeout( () => { takePic.style.display='initial'; }, 1500);
-            if (screen.width > 1100) {
-                setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
+            let format = buttImport.files[0].type;
+            if (format == 'image/jpeg' || format == 'image/png' || format == 'image/gif') {
+                importStatus = true;
+                buttCam.disabled = true;
+                buttCam.style.opacity = '0.4';
+                buttCam.style.cursor = 'initial';
+                buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/deleting.png">Annuler import.';
+                buttImportLabel.style.border='2px #EA2027 solid';
+                buttImport.type='';
+                setTimeout( () => { takePic.style.display='initial'; }, 1500);
+                if (screen.width > 1100) {
+                    setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
+                }
             }
-        });
+            else {
+                alert('Seul les formats [.jpeg/jpg], [.png] et [.gif] sont acceptés !');
+            } });
     }
     else if (importStatus === true) {
         importStatus = false;
@@ -85,6 +90,10 @@ buttImportLabel.addEventListener('click', () => {
         buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/import.png">Importer image';
         buttImportLabel.style.border='initial';
         setTimeout( () => { buttImport.type='file' }, 50); //   Otherwise the file download window reopens
+        takePic.style.display='none';
+        if (screen.width >= 950) {
+            document.querySelector('#buttons-div').style.marginRight='-220px';
+        }
     }
 });
 
