@@ -27,19 +27,11 @@ function stateCam() {
             video.srcObject = mediaStream;
             video.play();
             camStatus = true;
-            buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiver caméra';
-            if (screen.width < 600) {
-                buttCam.style.width='95px';
-                buttCam.style.paddingLeft="0px";
-            }
-            else if (screen.width <= 950 && screen.width >= 600) {
-                buttCam.style.width='145px';
-                buttCam.style.paddingLeft="0px";
-            }
-            else {
-                buttCam.style.width='175px';
-                buttCam.style.paddingLeft="1px";
-            }
+            buttImport.disabled = true;
+            buttImportLabel.style.opacity = '0.4';
+            buttImportLabel.style.cursor = 'initial';
+            buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiv. caméra';
+            buttCam.style.border='2px #EA2027 solid';
             setTimeout( () => { takePic.style.display='initial'; }, 1500);
             if (screen.width > 1100) {
                 setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
@@ -57,20 +49,14 @@ function stateCam() {
         context.clearRect(0, 0, width, height);
         context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
         camStatus = false;
+        buttImport.disabled = false;
+        buttImportLabel.style.opacity = 'initial';
+        buttImportLabel.style.cursor = 'pointer';
         buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra';
+        buttCam.style.border='initial';
         takePic.style.display='none';
-        if (screen.width < 600) {
-            buttCam.style.width='80px';
-            buttCam.style.paddingLeft="0px";
-        }
-        else if (screen.width <= 950 && screen.width >= 600) {
-            buttCam.style.width='130px';
-            buttCam.style.paddingLeft="1px";
-        }
-        else {
+        if (screen.width >= 950) {
             document.querySelector('#buttons-div').style.marginRight='-220px';
-            buttCam.style.width='160px';
-            buttCam.style.paddingLeft="1px";
         }
     }
 }
@@ -85,6 +71,10 @@ buttImportLabel.addEventListener('click', () => {
             buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/deleting.png">Annuler import.';
             buttImportLabel.style.border='2px #EA2027 solid';
             buttImport.type='';
+            setTimeout( () => { takePic.style.display='initial'; }, 1500);
+            if (screen.width > 1100) {
+                setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
+            }
         });
     }
     else if (importStatus === true) {
@@ -161,9 +151,9 @@ document.querySelector('#delete').addEventListener('click', () => {
         buttCam.disabled = false;
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
-        document.querySelector('#imprt-inpt').disabled = false;
-        buttImport.style.opacity = 'initial';
-        buttImport.style.cursor = 'pointer';
+        buttImport.disabled = false;
+        buttImportLabel.style.opacity = 'initial';
+        buttImportLabel.style.cursor = 'pointer';
         document.querySelector('#save-butt').style.display = 'none';
         stateCam();
     }

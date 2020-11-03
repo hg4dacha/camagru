@@ -284,7 +284,7 @@ section{
 }
 
 #rec{
-    width: 15px;
+    width: 14px;
     margin-right: 5px;
     margin-bottom: -2px;
 }
@@ -310,7 +310,7 @@ section{
 #import{
     width: 18px;
     margin-right: 5px;
-    margin-bottom: -2px;
+    margin-bottom: -3px;
     margin-left:11px;
     margin-top: 10px;
 }
@@ -541,10 +541,10 @@ section{
 
     #import
     {
-        width: 17px;
+        width: 15px;
         margin-right: 4px;
-        margin-bottom: -2px;
-        margin-top: 8px;
+        margin-bottom: -3px;
+        margin-top: 10px;
     }
 
     #downl-file
@@ -756,10 +756,10 @@ section{
 
     #import
     {
-        width: 11px;
+        width: 10px;
         margin-right: 3px;
-        margin-bottom: -1px;
-        margin-top: 6px;
+        margin-bottom: -2px;
+        margin-top: 8px;
         margin-left: 6px;
     }
 
