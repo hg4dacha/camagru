@@ -94,7 +94,7 @@ buttImportLabel.addEventListener('click', () => {
         buttCam.style.cursor = 'pointer';
         buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/import.png">Importer image';
         buttImportLabel.style.border='initial';
-        setTimeout( () => { buttImport.type='file' }, 500);
+        setTimeout( () => { buttImport.type='file' }, 50); //   Otherwise the file download window reopens
     }
 });
 
