@@ -71,15 +71,19 @@ buttImportLabel.addEventListener('click', () => {
                 uploadImg.src = URL.createObjectURL(buttImport.files[0]);
                 context.clearRect(0, 0, width, height);
                 uploadImg.onload = () => { context.drawImage(uploadImg, 0, 0, width, height) };
+                setInterval( () => {
+                    uploadImg.onload = () => { context.drawImage(uploadImg, 0, 0, width, height) };
+                    superimposeFilter();
+                }, 50);
                 buttCam.disabled = true;
                 buttCam.style.opacity = '0.4';
                 buttCam.style.cursor = 'initial';
                 buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/deleting.png">Annuler import.';
                 buttImportLabel.style.border='2px #EA2027 solid';
                 buttImport.type='';
-                setTimeout( () => { takePic.style.display='initial'; }, 1500);
+                setTimeout( () => { takePic.style.display='initial'; }, 100);
                 if (screen.width > 1100) {
-                    setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
+                    setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 100);
                 }
             }
             else {
@@ -188,7 +192,7 @@ takePic.addEventListener('mouseout', () => {
 
 //   add and remove filter
 function add_filter(filterID) {
-    if (camStatus === true){
+    if (camStatus === true || importStatus === true){
         // Checks if the filter has already been selected
         if ( (filtersArray.find(element => element == filterID)) === undefined ) {
             filtersArray.push(filterID);
@@ -208,7 +212,6 @@ video.addEventListener('canplay', function flux() {
 
 //   Superimpose the filter in the canvas
 function superimposeFilter() {
-
     filtersArray.forEach( (filterID) => {
         context.drawImage(document.querySelector('#' + filterID), 0, 0, width, height);
     });
