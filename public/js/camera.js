@@ -12,6 +12,7 @@ const context = canvas.getContext('2d');
 const width = canvas.width;
 const height = canvas.height;
 let filtersArray = [];
+let interval;
 
 //   base canvas image
 window.addEventListener('load', () => {
@@ -42,11 +43,12 @@ function stateCam() {
         });
     }
     else if (camStatus === true) {
+        filtersArray = [];
+        context.clearRect(0, 0, width, height);
         const mediaStream = video.srcObject;
         const tracks = mediaStream.getTracks();
         tracks[0].stop();
         video.srcObject = null;
-        context.clearRect(0, 0, width, height);
         context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
         camStatus = false;
         buttImport.disabled = false;
@@ -70,11 +72,10 @@ buttImportLabel.addEventListener('click', () => {
                 let uploadImg = new Image;
                 uploadImg.src = URL.createObjectURL(buttImport.files[0]);
                 context.clearRect(0, 0, width, height);
-                uploadImg.onload = () => { context.drawImage(uploadImg, 0, 0, width, height) };
-                setInterval( () => {
-                    uploadImg.onload = () => { context.drawImage(uploadImg, 0, 0, width, height) };
+                interval = setInterval( () => {
+                    context.drawImage(uploadImg, 0, 0, width, height);
                     superimposeFilter();
-                }, 50);
+                }, 5);
                 buttCam.disabled = true;
                 buttCam.style.opacity = '0.4';
                 buttCam.style.cursor = 'initial';
@@ -92,14 +93,17 @@ buttImportLabel.addEventListener('click', () => {
     }
     else if (importStatus === true) {
         importStatus = false;
+        clearInterval(interval);
+        buttImport.value = '';
+        filtersArray = [];
+        context.clearRect(0, 0, width, height);
+        context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
         buttCam.disabled = false;
         buttCam.style.opacity = 'initial';
         buttCam.style.cursor = 'pointer';
         buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/import.png">Importer image';
         buttImportLabel.style.border='initial';
         takePic.style.display='none';
-        context.clearRect(0, 0, width, height);
-        context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
         setTimeout( () => { buttImport.type='file' }, 50); //   Otherwise the file download window reopens
         if (screen.width >= 950) {
             document.querySelector('#buttons-div').style.marginRight='-220px';
@@ -111,12 +115,13 @@ buttImportLabel.addEventListener('click', () => {
 
 takePic.addEventListener('click', () => {
     if (camStatus === true || importStatus === true) {
-            if (camStatus === true) {
-            const mediaStream = video.srcObject;
-            const tracks = mediaStream.getTracks();
-            tracks[0].stop();
-            camStatus = false;
+        if (camStatus === true) {
+        const mediaStream = video.srcObject;
+        const tracks = mediaStream.getTracks();
+        tracks[0].stop();
+        camStatus = false;
         }
+        if (importStatus === true) { clearInterval(interval); }
         takePic.style.display = 'none';
         buttCam.disabled = true;
         buttCam.style.opacity = '0.4';
@@ -201,6 +206,7 @@ function add_filter(filterID) {
             filtersArray.splice(filtersArray.indexOf(filterID), 1);
         }
     }
+    console.log(filtersArray);
 }
 
 //   print the flux video and the filter in the canvas
