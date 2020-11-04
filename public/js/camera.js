@@ -13,6 +13,7 @@ const width = canvas.width;
 const height = canvas.height;
 let filtersArray = [];
 let interval;
+let uploadImg
 
 //   base canvas image
 window.addEventListener('load', () => {
@@ -69,9 +70,10 @@ buttImportLabel.addEventListener('click', () => {
             let format = buttImport.files[0].type;
             if (format == 'image/jpeg' || format == 'image/png' || format == 'image/gif') {
                 importStatus = true;
-                let uploadImg = new Image;
+                uploadImg = new Image;
                 uploadImg.src = URL.createObjectURL(buttImport.files[0]);
                 context.clearRect(0, 0, width, height);
+                context.drawImage(uploadImg, 0, 0, width, height);
                 interval = setInterval( () => {
                     context.drawImage(uploadImg, 0, 0, width, height);
                     superimposeFilter();
@@ -219,6 +221,10 @@ video.addEventListener('canplay', function flux() {
 //   Superimpose the filter in the canvas
 function superimposeFilter() {
     filtersArray.forEach( (filterID) => {
+        if (importStatus === true) {
+            context.clearRect(0, 0, width, height);
+            context.drawImage(uploadImg, 0, 0, width, height);
+        }
         context.drawImage(document.querySelector('#' + filterID), 0, 0, width, height);
     });
 }
