@@ -114,7 +114,7 @@ buttImportLabel.addEventListener('click', () => {
         buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/import.png">Importer image';
         buttImportLabel.style.border='initial';
         takePic.style.display='none';
-        setTimeout( () => { buttImport.type='file' }, 50); // Otherwise the file download window reopens
+        setTimeout( () => { buttImport.type='file'; }, 50); // Otherwise the file download window reopens
         if (screen.width >= 950) {
             document.querySelector('#buttons-div').style.marginRight='-220px';
         }
@@ -128,12 +128,9 @@ takePic.addEventListener('click', () => {
             const mediaStream = video.srcObject;
             const tracks = mediaStream.getTracks();
             tracks[0].stop();
-            camStatus = false;
         }
         else if (importStatus === true && camStatus === false) {
             clearInterval(interval);
-            importStatus = false;
-            camStatus = true;
         }
         takePic.style.display = 'none';
         buttCam.disabled = true;
@@ -150,7 +147,7 @@ takePic.addEventListener('click', () => {
 })
 
 document.querySelector('#save').addEventListener('click', () => {
-    if (camStatus === false || importStatus === false) {
+    if (camStatus === true || importStatus === true) {
         const canvasURL = canvas.toDataURL('image/jpeg');
         let pictueID = (Math.floor(Math.random() * 1000000000000)).toString();
         let div = document.createElement('div');
@@ -164,9 +161,23 @@ document.querySelector('#save').addEventListener('click', () => {
         document.querySelector('#save-butt').style.display = 'none';
         document.querySelector('#aside-msg').style.display = 'none';
         savePict(img);
-        console.log(camStatus);
-        console.log(importStatus);
-        if (camStatus === true) { stateCam(); }
+        if (camStatus === true) {
+            camStatus = false;
+            stateCam();
+        }
+        else if (importStatus === true) {
+            importStatus = false;
+            context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
+            buttCam.disabled = false;
+            buttCam.style.opacity = 'initial';
+            buttCam.style.cursor = 'pointer';
+            buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/import.png">Importer image';
+            buttImportLabel.style.border='initial';
+            buttImportLabel.style.opacity = 'initial';
+            buttImportLabel.style.cursor = 'pointer';
+            buttImport.disabled = false;
+            buttImport.type='file';
+        }
     }
 })
 
@@ -185,18 +196,21 @@ function savePict(img) {
 
 /*8888888888888888888888888888888888*/
 document.querySelector('#delete').addEventListener('click', () => {
-    if (camStatus === false) {
+    if (camStatus === true && importStatus === false) {
+        camStatus = false;
         stateCam();
     }
-    else if (importStatus === false && camStatus === true) {
-        camStatus = false;
-        importStatus = true;
-        filtersArray = [];
-        context.clearRect(0, 0, width, height);
-        context.drawImage(uploadImg, 0, 0, width, height);
+    else if (importStatus === true && camStatus === false) {
         buttImport.disabled = false;
         buttImportLabel.style.opacity = 'initial';
         buttImportLabel.style.cursor = 'pointer';
+        setTimeout( () => { takePic.style.display='initial'; }, 100);
+        filtersArray = [];
+        context.clearRect(0, 0, width, height);
+        context.drawImage(uploadImg, 0, 0, width, height);
+        interval = setInterval( () => {
+            context.drawImage(uploadImg, 0, 0, width, height);
+            superimposeFilter(); }, 5);
     }
     document.querySelector('#save-butt').style.display = 'none';
 })
@@ -222,7 +236,6 @@ function add_filter(filterID) {
             filtersArray.splice(filtersArray.indexOf(filterID), 1);
         }
     }
-    console.log(filtersArray);
 }
 
 /* --- print the flux video and the filter in the canvas --- */
