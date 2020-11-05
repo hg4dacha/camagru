@@ -220,11 +220,11 @@ video.addEventListener('canplay', function flux() {
 
 //   Superimpose the filter in the canvas
 function superimposeFilter() {
+    if (importStatus === true) {
+        context.clearRect(0, 0, width, height);
+        context.drawImage(uploadImg, 0, 0, width, height);
+    }
     filtersArray.forEach( (filterID) => {
-        if (importStatus === true) {
-            context.clearRect(0, 0, width, height);
-            context.drawImage(uploadImg, 0, 0, width, height);
-        }
         context.drawImage(document.querySelector('#' + filterID), 0, 0, width, height);
     });
 }
