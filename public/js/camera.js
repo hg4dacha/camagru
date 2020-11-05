@@ -118,12 +118,16 @@ buttImportLabel.addEventListener('click', () => {
 takePic.addEventListener('click', () => {
     if (camStatus === true || importStatus === true) {
         if (camStatus === true) {
-        const mediaStream = video.srcObject;
-        const tracks = mediaStream.getTracks();
-        tracks[0].stop();
-        camStatus = false;
+            const mediaStream = video.srcObject;
+            const tracks = mediaStream.getTracks();
+            tracks[0].stop();
+            camStatus = false;
         }
-        if (importStatus === true) { clearInterval(interval); }
+        else if (importStatus === true) {
+            clearInterval(interval);
+            importStatus = false;
+            camStatus = true;
+        }
         takePic.style.display = 'none';
         buttCam.disabled = true;
         buttCam.style.opacity = '0.4';
@@ -139,7 +143,7 @@ takePic.addEventListener('click', () => {
 })
 
 document.querySelector('#save').addEventListener('click', () => {
-    if (camStatus === false) {
+    if (camStatus === false || importStatus === false) {
         const canvasURL = canvas.toDataURL('image/jpeg');
         let pictueID = (Math.floor(Math.random() * 1000000000000)).toString();
         let div = document.createElement('div');
@@ -162,7 +166,6 @@ document.querySelector('#save').addEventListener('click', () => {
 
 function savePict(img) {
     let imgData = new FormData();
-    // add a key and a value in formData
     imgData.append('imgData', img.src);
     imgData.append('imgID', img.id);
     let XHR = new XMLHttpRequest();
@@ -176,15 +179,20 @@ function savePict(img) {
 
 document.querySelector('#delete').addEventListener('click', () => {
     if (camStatus === false) {
-        buttCam.disabled = false;
-        buttCam.style.opacity = 'initial';
-        buttCam.style.cursor = 'pointer';
-        buttImport.disabled = false;
-        buttImportLabel.style.opacity = 'initial';
-        buttImportLabel.style.cursor = 'pointer';
-        document.querySelector('#save-butt').style.display = 'none';
         stateCam();
     }
+    else if (importStatus === false) {
+        camStatus = false;
+        filtersArray = [];
+        
+    }
+    buttCam.disabled = false;
+    buttCam.style.opacity = 'initial';
+    buttCam.style.cursor = 'pointer';
+    buttImport.disabled = false;
+    buttImportLabel.style.opacity = 'initial';
+    buttImportLabel.style.cursor = 'pointer';
+    document.querySelector('#save-butt').style.display = 'none';
 })
 
 takePic.addEventListener('mouseover', () => {
