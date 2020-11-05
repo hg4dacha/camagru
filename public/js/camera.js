@@ -1,4 +1,4 @@
-//   DOM elements
+/* --- DOM elements --- */
 let camStatus = false;
 const buttCam = document.querySelector('#button-cam');
 buttCam.onclick = () => { stateCam(); }
@@ -13,14 +13,14 @@ const width = canvas.width;
 const height = canvas.height;
 let filtersArray = [];
 let interval;
-let uploadImg
+let uploadImg;
 
-//   base canvas image
+// base canvas image
 window.addEventListener('load', () => {
     context.drawImage(document.querySelector('#backCanvas'),0 ,0 , width, height);
 });
 
-//   activate or deactivate the camera
+/* --- activate or deactivate the camera --- */
 function stateCam() {
     if (camStatus === false){
         navigator.mediaDevices.getUserMedia({video: true, audio: false})
@@ -34,7 +34,15 @@ function stateCam() {
             buttImportLabel.style.cursor = 'initial';
             buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiv. caméra';
             buttCam.style.border='2px #EA2027 solid';
-            setTimeout( () => { takePic.style.display='initial'; }, 1500);
+            // To avoid instant deactivation, otherwise the "take-picture" button will be activated anyway.
+            buttCam.disabled = true;
+            buttCam.style.opacity = '0.4';
+            buttCam.style.cursor = 'initial';
+            setTimeout( () => {
+                buttCam.disabled = false;
+                buttCam.style.opacity = 'initial';
+                buttCam.style.cursor = 'pointer';
+                takePic.style.display='initial'; }, 1500);
             if (screen.width > 1100) {
                 setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
             }
@@ -64,6 +72,7 @@ function stateCam() {
     }
 }
 
+/* --- import an image --- */
 buttImportLabel.addEventListener('click', () => {
     if (importStatus === false) {
         buttImport.addEventListener('change', () => {
@@ -76,8 +85,7 @@ buttImportLabel.addEventListener('click', () => {
                 context.drawImage(uploadImg, 0, 0, width, height);
                 interval = setInterval( () => {
                     context.drawImage(uploadImg, 0, 0, width, height);
-                    superimposeFilter();
-                }, 5);
+                    superimposeFilter(); }, 5);
                 buttCam.disabled = true;
                 buttCam.style.opacity = '0.4';
                 buttCam.style.cursor = 'initial';
@@ -106,24 +114,23 @@ buttImportLabel.addEventListener('click', () => {
         buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/import.png">Importer image';
         buttImportLabel.style.border='initial';
         takePic.style.display='none';
-        setTimeout( () => { buttImport.type='file' }, 50); //   Otherwise the file download window reopens
+        setTimeout( () => { buttImport.type='file' }, 50); // Otherwise the file download window reopens
         if (screen.width >= 950) {
             document.querySelector('#buttons-div').style.marginRight='-220px';
         }
     }
 });
 
-/**********************************************************************************/
 
 takePic.addEventListener('click', () => {
     if (camStatus === true || importStatus === true) {
-        if (camStatus === true) {
+        if (camStatus === true && importStatus === false) {
             const mediaStream = video.srcObject;
             const tracks = mediaStream.getTracks();
             tracks[0].stop();
             camStatus = false;
         }
-        else if (importStatus === true) {
+        else if (importStatus === true && camStatus === false) {
             clearInterval(interval);
             importStatus = false;
             camStatus = true;
@@ -154,13 +161,12 @@ document.querySelector('#save').addEventListener('click', () => {
         img.setAttribute('id', pictueID);
         img.setAttribute('class', 'aside-image');
         div.appendChild(img);
-        buttCam.disabled = false;
-        buttCam.style.opacity = 'initial';
-        buttCam.style.cursor = 'pointer';
         document.querySelector('#save-butt').style.display = 'none';
         document.querySelector('#aside-msg').style.display = 'none';
         savePict(img);
-        stateCam();
+        console.log(camStatus);
+        console.log(importStatus);
+        if (camStatus === true) { stateCam(); }
     }
 })
 
@@ -177,21 +183,21 @@ function savePict(img) {
     XHR.send(imgData);
 }
 
+/*8888888888888888888888888888888888*/
 document.querySelector('#delete').addEventListener('click', () => {
     if (camStatus === false) {
         stateCam();
     }
-    else if (importStatus === false) {
+    else if (importStatus === false && camStatus === true) {
         camStatus = false;
+        importStatus = true;
         filtersArray = [];
-        
+        context.clearRect(0, 0, width, height);
+        context.drawImage(uploadImg, 0, 0, width, height);
+        buttImport.disabled = false;
+        buttImportLabel.style.opacity = 'initial';
+        buttImportLabel.style.cursor = 'pointer';
     }
-    buttCam.disabled = false;
-    buttCam.style.opacity = 'initial';
-    buttCam.style.cursor = 'pointer';
-    buttImport.disabled = false;
-    buttImportLabel.style.opacity = 'initial';
-    buttImportLabel.style.cursor = 'pointer';
     document.querySelector('#save-butt').style.display = 'none';
 })
 
@@ -205,7 +211,7 @@ takePic.addEventListener('mouseout', () => {
     document.querySelector('#take-photo').src='/camagru/public/pictures/take-photo.png';    
 })
 
-//   add and remove filter
+/* --- add and remove filter --- */
 function add_filter(filterID) {
     if (camStatus === true || importStatus === true){
         // Checks if the filter has already been selected
@@ -219,16 +225,17 @@ function add_filter(filterID) {
     console.log(filtersArray);
 }
 
-//   print the flux video and the filter in the canvas
+/* --- print the flux video and the filter in the canvas --- */
 video.addEventListener('canplay', function flux() {
     context.drawImage(video, 0, 0, width, height);
     superimposeFilter();
     setTimeout(flux, 5);
 })
 
-//   Superimpose the filter in the canvas
+/* --- Superimpose the filter in the canvas --- */
 function superimposeFilter() {
     if (importStatus === true) {
+        // To remove the deselected filter
         context.clearRect(0, 0, width, height);
         context.drawImage(uploadImg, 0, 0, width, height);
     }

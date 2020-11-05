@@ -34,6 +34,7 @@ session_start();
         </nav>
         <section>
             <div id="frame-cam">
+        </nav>
                 <video id="video" style="display: none;"></video>
                 <img id="backCanvas" src="/camagru/public/pictures/backCanvas.jpg" style="display: none;">
                 <div id="cont-top">
