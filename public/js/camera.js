@@ -205,6 +205,9 @@ document.querySelector('#delete').addEventListener('click', () => {
         buttImportLabel.style.opacity = 'initial';
         buttImportLabel.style.cursor = 'pointer';
         setTimeout( () => { takePic.style.display='initial'; }, 100);
+        if (screen.width > 1100) {
+            setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 100);
+        }
         filtersArray = [];
         context.clearRect(0, 0, width, height);
         context.drawImage(uploadImg, 0, 0, width, height);
@@ -247,6 +250,11 @@ video.addEventListener('canplay', function flux() {
 
 /* --- Superimpose the filter in the canvas --- */
 function superimposeFilter() {
+    // if (filtersArray == []) {
+    //     takePic.disabled = true;
+    //     takePic.style.opacity = '0.4';
+    //     takePic.style.cursor = 'initial';
+    // }
     if (importStatus === true) {
         // To remove the deselected filter
         context.clearRect(0, 0, width, height);
