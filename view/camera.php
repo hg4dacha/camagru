@@ -44,7 +44,10 @@ session_start();
                             <aside id="photo-list"><span id="aside-msg">Vos photos enregistrées<br>s'afficheront ici</span></aside>
                         </div>
                         <canvas id="canvas" width="640" height="480"></canvas>
+                        <div id="take-picture-div">
                         <button id="take-picture"><img id="take-photo" src="/camagru/public/pictures/take-photo.png"></button>
+                        <p id="select-filter">Sélectionnez au moins<br>1 filtre pour capturer<br>une photo</p>
+                        </div>
                     </div>
                     <div id="save-butt">
                         <button id="save"><img id="save-img" src="/camagru/public/pictures/save.png">Enregis.</button>

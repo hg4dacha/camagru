@@ -42,9 +42,10 @@ function stateCam() {
                 buttCam.disabled = false;
                 buttCam.style.opacity = 'initial';
                 buttCam.style.cursor = 'pointer';
-                takePic.style.display='initial'; }, 1500);
+                takePic.style.display='initial'; }, 1000);
+                passB = 0; // So that the paragraph "#select-filter" can be redisplayed if the button is disabled and no filter has been selected
             if (screen.width > 1100) {
-                setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1500);
+                setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1000);
             }
         }) 
         .catch(function(err) {
@@ -66,6 +67,7 @@ function stateCam() {
         buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra';
         buttCam.style.border='initial';
         takePic.style.display='none';
+        document.querySelector('#select-filter').style.display = 'none';
         if (screen.width >= 950) {
             document.querySelector('#buttons-div').style.marginRight='-220px';
         }
@@ -93,6 +95,7 @@ buttImportLabel.addEventListener('click', () => {
                 buttImportLabel.style.border='2px #EA2027 solid';
                 buttImport.type='';
                 setTimeout( () => { takePic.style.display='initial'; }, 100);
+                passB = 0;
                 if (screen.width > 1100) {
                     setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 100);
                 }
@@ -114,6 +117,7 @@ buttImportLabel.addEventListener('click', () => {
         buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/import.png">Importer image';
         buttImportLabel.style.border='initial';
         takePic.style.display='none';
+        document.querySelector('#select-filter').style.display = 'none';
         setTimeout( () => { buttImport.type='file'; }, 50); // Otherwise the file download window reopens
         if (screen.width >= 950) {
             document.querySelector('#buttons-div').style.marginRight='-220px';
@@ -146,6 +150,7 @@ takePic.addEventListener('click', () => {
     }
 })
 
+/* --- saving the picture, then processing it in the "back" --- */
 document.querySelector('#save').addEventListener('click', () => {
     if (camStatus === true || importStatus === true) {
         const canvasURL = canvas.toDataURL('image/jpeg');
@@ -194,7 +199,7 @@ function savePict(img) {
     XHR.send(imgData);
 }
 
-/*8888888888888888888888888888888888*/
+/* --- Cancel photo capture --- */
 document.querySelector('#delete').addEventListener('click', () => {
     if (camStatus === true && importStatus === false) {
         camStatus = false;
@@ -274,12 +279,15 @@ function superimposeFilter() {
         takePic.disabled = true;
         takePic.style.opacity = '0.4';
         takePic.style.cursor = 'initial';
+        setTimeout( () => {
+            document.querySelector('#select-filter').style.display = 'initial'; }, 1000);
         passB = 1;
     }
     else if (passA === 0 && passB === 1) {
         takePic.disabled = false;
         takePic.style.opacity = 'initial';
         takePic.style.cursor = 'pointer';
+        document.querySelector('#select-filter').style.display = 'none';
         passB = 0;
     }
     if (importStatus === true) {
