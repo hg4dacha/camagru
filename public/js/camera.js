@@ -223,16 +223,6 @@ document.querySelector('#delete').addEventListener('click', () => {
     document.querySelector('#save-butt').style.display = 'none';
 })
 
-takePic.addEventListener('mouseover', () => {
-    takePic.style.backgroundColor='black';
-    document.querySelector('#take-photo').src='/camagru/public/pictures/take-photo2.png';
-})
-
-takePic.addEventListener('mouseout', () => {
-    takePic.style.backgroundColor='#b33939';
-    document.querySelector('#take-photo').src='/camagru/public/pictures/take-photo.png';    
-})
-
 /* --- add and remove filter --- */
 function add_filter(filterID) {
     if (camStatus === true || importStatus === true){
@@ -272,6 +262,16 @@ function styleOfTakePic() {
     }
 }
 
+function overMouse() {
+    takePic.style.backgroundColor='black';
+    document.querySelector('#take-photo').src='/camagru/public/pictures/take-photo2.png';
+}
+
+function outMouse() {
+    takePic.style.backgroundColor='#b33939';
+    document.querySelector('#take-photo').src='/camagru/public/pictures/take-photo.png';
+}
+
 /* --- Superimpose the filter in the canvas --- */
 function superimposeFilter() {
     styleOfTakePic();
@@ -279,8 +279,9 @@ function superimposeFilter() {
         takePic.disabled = true;
         takePic.style.opacity = '0.4';
         takePic.style.cursor = 'initial';
-        setTimeout( () => {
-            document.querySelector('#select-filter').style.display = 'initial'; }, 1000);
+        document.querySelector('#select-filter').style.display = 'initial';
+        takePic.removeEventListener('mouseover', overMouse);
+        takePic.removeEventListener('mouseout', outMouse);
         passB = 1;
     }
     else if (passA === 0 && passB === 1) {
@@ -288,6 +289,8 @@ function superimposeFilter() {
         takePic.style.opacity = 'initial';
         takePic.style.cursor = 'pointer';
         document.querySelector('#select-filter').style.display = 'none';
+        takePic.addEventListener('mouseover', overMouse);
+        takePic.addEventListener('mouseout', outMouse);
         passB = 0;
     }
     if (importStatus === true) {
