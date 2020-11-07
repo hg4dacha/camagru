@@ -248,13 +248,40 @@ video.addEventListener('canplay', function flux() {
     setTimeout(flux, 5);
 })
 
+
+
+
+
+
+
+let passA;
+let passB = 0;
+// This function is used to avoid unnecessary repetition of the style change of
+// the "takePic" button in the "SuperimposeFilter" function.
+function styleOfTakePic() {
+    if (filtersArray.length == 0) {
+        passA = 1;
+    }
+    else if (filtersArray.length > 0) {
+        passA = 0;
+    }
+}
+
 /* --- Superimpose the filter in the canvas --- */
 function superimposeFilter() {
-    // if (filtersArray == []) {
-    //     takePic.disabled = true;
-    //     takePic.style.opacity = '0.4';
-    //     takePic.style.cursor = 'initial';
-    // }
+    styleOfTakePic();
+    if (passA === 1 && passB === 0) {
+        takePic.disabled = true;
+        takePic.style.opacity = '0.4';
+        takePic.style.cursor = 'initial';
+        passB = 1;
+    }
+    else if (passA === 0 && passB === 1) {
+        takePic.disabled = false;
+        takePic.style.opacity = 'initial';
+        takePic.style.cursor = 'pointer';
+        passB = 0;
+    }
     if (importStatus === true) {
         // To remove the deselected filter
         context.clearRect(0, 0, width, height);
