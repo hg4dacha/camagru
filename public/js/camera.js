@@ -56,7 +56,7 @@ function stateCam() {
         });
     }
     else if (camStatus === true) {
-        clearTimeout(OKR);
+        clearTimeout(fluxTimeOut);
         const mediaStream = video.srcObject;
         const tracks = mediaStream.getTracks();
         tracks[0].stop();
@@ -140,6 +140,7 @@ takePic.addEventListener('click', () => {
             const mediaStream = video.srcObject;
             const tracks = mediaStream.getTracks();
             tracks[0].stop();
+            clearTimeout(fluxTimeOut);
         }
         else if (importStatus === true && camStatus === false) {
             clearInterval(interval);
@@ -246,12 +247,12 @@ function add_filter(filterID) {
     }
 }
 
-let OKR;
+let fluxTimeOut;
 /* --- print the flux video and the filter in the canvas --- */
 video.addEventListener('canplay', function flux() {
     context.drawImage(video, 0, 0, width, height);
     superimposeFilter();
-    OKR = setTimeout(flux, 5);
+    fluxTimeOut = setTimeout(flux, 5);
 })
 
 
@@ -262,7 +263,6 @@ video.addEventListener('canplay', function flux() {
 
 let passA;
 let passB = 0;
-
 /* This function is used to avoid unnecessary repetition of the style change of
    the "takePic" button in the "SuperimposeFilter" function. */
 function styleOfTakePic() {
