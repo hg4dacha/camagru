@@ -22,8 +22,9 @@ window.addEventListener('load', () => {
 });
 
 
-let fluxTimeOut;
 /* --- print the flux video and the filter in the canvas --- */
+let fluxTimeOut;
+
 video.addEventListener('canplay', function flux() {
     context.drawImage(video, 0, 0, width, height);
     superimposeFilter();
