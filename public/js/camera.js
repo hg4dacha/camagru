@@ -42,23 +42,27 @@ function stateCam() {
                 buttCam.disabled = false;
                 buttCam.style.opacity = 'initial';
                 buttCam.style.cursor = 'pointer';
-                takePic.style.display='initial'; }, 1000);
+                takePic.style.display='initial';
+                takePic.disabled = true;
+                takePic.style.opacity = '0.4';
+                takePic.style.cursor = 'initial'; }, 200);
                 passB = 0; // So that the paragraph "#select-filter" can be redisplayed if the button is disabled and no filter has been selected
             if (screen.width > 1100) {
-                setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 1000);
+                setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 200);
             }
-        }) 
+        })
         .catch(function(err) {
             console.log(`Error : ${err}`);
         });
     }
     else if (camStatus === true) {
-        filtersArray = [];
-        context.clearRect(0, 0, width, height);
+        clearTimeout(OKR);
         const mediaStream = video.srcObject;
         const tracks = mediaStream.getTracks();
         tracks[0].stop();
         video.srcObject = null;
+        filtersArray = [];
+        context.clearRect(0, 0, width, height);
         context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
         camStatus = false;
         buttImport.disabled = false;
@@ -67,7 +71,7 @@ function stateCam() {
         buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/rec.png">Activer caméra';
         buttCam.style.border='initial';
         takePic.style.display='none';
-        document.querySelector('#select-filter').style.display = 'none';
+        document.querySelector('#select-filter').style.display='none';
         if (screen.width >= 950) {
             document.querySelector('#buttons-div').style.marginRight='-220px';
         }
@@ -94,7 +98,11 @@ buttImportLabel.addEventListener('click', () => {
                 buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/deleting.png">Annuler import.';
                 buttImportLabel.style.border='2px #EA2027 solid';
                 buttImport.type='';
-                setTimeout( () => { takePic.style.display='initial'; }, 100);
+                setTimeout( () => {
+                    takePic.style.display='initial';
+                    takePic.disabled = true;
+                    takePic.style.opacity = '0.4';
+                    takePic.style.cursor = 'initial'; }, 100);
                 passB = 0;
                 if (screen.width > 1100) {
                     setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 100);
@@ -172,6 +180,8 @@ document.querySelector('#save').addEventListener('click', () => {
         }
         else if (importStatus === true) {
             importStatus = false;
+            filtersArray = [];
+            context.clearRect(0, 0, width, height);            
             context.drawImage(document.querySelector('#backCanvas'), 0, 0, width, height);
             buttCam.disabled = false;
             buttCam.style.opacity = 'initial';
@@ -236,11 +246,12 @@ function add_filter(filterID) {
     }
 }
 
+let OKR;
 /* --- print the flux video and the filter in the canvas --- */
 video.addEventListener('canplay', function flux() {
     context.drawImage(video, 0, 0, width, height);
     superimposeFilter();
-    setTimeout(flux, 5);
+    OKR = setTimeout(flux, 5);
 })
 
 
@@ -251,8 +262,9 @@ video.addEventListener('canplay', function flux() {
 
 let passA;
 let passB = 0;
-// This function is used to avoid unnecessary repetition of the style change of
-// the "takePic" button in the "SuperimposeFilter" function.
+
+/* This function is used to avoid unnecessary repetition of the style change of
+   the "takePic" button in the "SuperimposeFilter" function. */
 function styleOfTakePic() {
     if (filtersArray.length == 0) {
         passA = 1;
