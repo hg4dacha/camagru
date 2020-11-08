@@ -8,15 +8,20 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
     if (isset($_POST['imgData']) && isset($_POST['imgID']))
     {
         if(!(empty($_POST['imgData']))) $imgData = htmlspecialchars($_POST['imgData']);
-        if(!(empty($_POST['imgID']))) $imgID = htmlspecialchars($_POST['imgID']);
-        
-        // $idUsr = $_SESSION['id'];
+        if(!(empty($_POST['imgID'])))
+        $imgID = htmlspecialchars($_POST['imgID']);
+        $imgPath = '../public/users_pictures/'.$imgID.'.jpeg';
+        $idUsr = intval($_SESSION['id']);
+
+        // creation of the picture
         $imgData = str_replace('data:image/jpeg;base64,', '', $imgData);
         $imgData = base64_decode($imgData);
         $newImg = imagecreatefromstring($imgData);
-        imagejpeg($newImg, '../public/users_pictures/'.$imgID.'.jpeg');
+        imagejpeg($newImg, $imgPath);
         imagedestroy($newImg);
-        chmod('../public/users_pictures/'.$imgID.'.jpeg', 0777);
+        chmod('../public/users_pictures/'.$imgID.'.jpeg', 0777); // line to delete if not necessary
+
+        insertNewImage($idUsr, $imgID, $imgPath);
     }
 
 ?>

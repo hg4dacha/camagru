@@ -20,6 +20,15 @@ function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $noti
     $reqIns->execute();
 }
 
+function insertNewImage($idUsr, $imgID, $imgPath) {
+    $dbc = db_connex();
+    $reqIns = $dbc->prepare("INSERT INTO user_pictures (id_user, picture_id, picture_path) VALUES (:idUsr, :imgID, :imgPath)");
+    $reqIns->bindValue(':idUsr', $idUsr, PDO::PARAM_INT);
+    $reqIns->bindValue(':imgID', $imgID, PDO::PARAM_STR);
+    $reqIns->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
+    $reqIns->execute();
+}
+
 //---------- Selection ----------
 
 function UsrCheckExist($usr)
