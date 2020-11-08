@@ -7,6 +7,8 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
     header('location: /camagru/index.php');
 }
 
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/gallery_management.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

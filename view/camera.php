@@ -2,10 +2,10 @@
 
 session_start();
 
-// if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION['firstname']) || !isset($_SESSION['email']) || !isset($_SESSION['username']) || !isset($_SESSION['passwordUsr']) || !isset($_SESSION['notif']))
-// {
-//     header('location: /camagru/index.php');
-// }
+if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION['firstname']) || !isset($_SESSION['email']) || !isset($_SESSION['username']) || !isset($_SESSION['passwordUsr']) || !isset($_SESSION['notif']))
+{
+    header('location: /camagru/index.php');
+}
 
 ?>
 <!DOCTYPE html>

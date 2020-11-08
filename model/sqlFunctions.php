@@ -130,6 +130,14 @@ function pswrd_recuperation($id_usr)
     return $reqCtrl->fetch();
 }
 
+function usr_pictr_recup($id_user) {
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT * FROM user_pictures WHERE id_user = :id_user");
+    $reqCtrl->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
+}
+
 //---------- Replacement ----------
 
 function replacePswrd($newPswrd, $idf)
