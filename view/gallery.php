@@ -42,6 +42,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/gallery_management.p
                 foreach($pictures as $pict) { ?>
                     <div class="picture-div">
                         <img class="user-pictures" id="<?= $pict['picture_id'] ?>" src="<?= $pict['picture_path'] ?>" alt="image">
+                        <img class="delete-img" src="/camagru/public/pictures/delete.png" alt="delete">
                     </div>
                 <?php
                 }

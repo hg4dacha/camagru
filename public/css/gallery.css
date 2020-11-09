@@ -119,12 +119,21 @@ section{
 .picture-div{
     margin-top: 15px;
     margin-left: 10px;
+    position: relative;
+    display: inline;
 }
 
 .user-pictures{
     width: 330px;
     border-radius: 5px;
     border: 1px black solid;
+}
+
+.delete-img{
+    width: 30px;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
 }
 
 @media all and (max-width: 950px)
