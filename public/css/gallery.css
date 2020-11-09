@@ -94,9 +94,37 @@ a{
 section{
     margin-top: auto;
     margin-left: auto;
-    padding-top: 160px;
-    padding-left: 250px;
+    padding-top: 141px;
+    padding-left: 226px;
     padding-bottom: 250px;
+}
+
+#pictures-tittle{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    margin: 0px;
+    margin-top: 35px;
+    color: #b33939;
+    text-shadow: 1px 1px 2px #1e272e, 0 0 1em #3498db, 0 0 0.2em #3498db;
+}
+
+#pictures-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.picture-div{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.user-pictures{
+    width: 330px;
+    border-radius: 5px;
+    border: 1px black solid;
 }
 
 @media all and (max-width: 950px)

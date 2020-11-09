@@ -35,6 +35,19 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/gallery_management.p
             </ul>
         </nav>
         <section>
+
+        <h1 id="pictures-tittle">Ma galerie</h1>
+        <div id="pictures-div">
+            <?php
+                foreach($pictures as $pict) { ?>
+                    <div class="picture-div">
+                        <img class="user-pictures" id="<?= $pict['picture_id'] ?>" src="<?= $pict['picture_path'] ?>" alt="image">
+                    </div>
+                <?php
+                }
+            ?>
+        </div>
+
         </section>
         <?php include("includes/footer.php") ?>
     </div>
