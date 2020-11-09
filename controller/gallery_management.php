@@ -8,5 +8,6 @@ $pictures = usr_pictr_recup($idUsr);
 // echo '<pre>';
 // echo($pictures[0]['picture_id']);
 // echo '</pre>';
-
+// filter: opacity(30%);
+// filter: brightness(25%);
 ?>
