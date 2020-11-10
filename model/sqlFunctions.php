@@ -227,9 +227,17 @@ function replaceToken($newElement, $pseudo)
 function delete_usr($id_usr)
 {
     $dbc = db_connex();
-    $reqPswrd = $dbc->prepare("DELETE FROM users WHERE id = :id_usr");
-    $reqPswrd->bindValue(':id_usr', $id_usr, PDO::PARAM_STR);
-    $reqPswrd->execute();
+    $reqDelete = $dbc->prepare("DELETE FROM users WHERE id = :id_usr");
+    $reqDelete->bindValue(':id_usr', $id_usr, PDO::PARAM_STR);
+    $reqDelete->execute();
+}
+
+function delete_img($id_usr, $id_img) {
+    $dbc = db_connex();
+    $reqDelete = $dbc->prepare("DELETE FROM user_pictures WHERE id_user = :id_usr AND picture_id = :id_img");
+    $reqDelete->bindValue(':id_usr', $id_usr, PDO::PARAM_INT);
+    $reqDelete->bindValue(':id_img', $id_img, PDO::PARAM_STR);
+    $reqDelete->execute();
 }
 
 ?>
