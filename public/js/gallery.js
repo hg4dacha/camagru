@@ -7,8 +7,13 @@ for  (let i = 0; i < imageUsrDiv.length; i++) {
     imageUsrDiv[i].addEventListener('mouseover', () => {
         imageUsr[i].style.filter = 'brightness(30%)';
         trash[i].style.display = 'initial';
-        trash[i].addEventListener('click', () => {
-            deletePict(imageUsr[i]);
+        trash[i].addEventListener('click', (e) => {
+            e.stopImmediatePropagation();
+            let answer = confirm('Êtes-vous sûr de vouloir supprimer l\'image ?');
+            if (answer) {
+                deletePict(imageUsr[i]);
+                imageUsrDiv[i].style.display = 'none';
+            }
         });
     });
 }

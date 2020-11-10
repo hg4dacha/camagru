@@ -97,6 +97,10 @@ section{
     padding-top: 141px;
     padding-left: 226px;
     padding-bottom: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #tittle-div{
@@ -124,6 +128,8 @@ section{
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
+    width: 1110px;
+    height: 550px;
 }
 
 .picture-div{
