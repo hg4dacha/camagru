@@ -96,7 +96,7 @@ section{
     margin-left: auto;
     padding-top: 141px;
     padding-left: 226px;
-    padding-bottom: 250px;
+    padding-bottom: 155px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,6 +137,8 @@ section{
     margin-left: 10px;
     position: relative;
     display: inline;
+    width: 332px;
+    height: 250px;
 }
 
 .user-pictures{
@@ -152,6 +154,33 @@ section{
     bottom: 25px;
     right: 20px;
     cursor: pointer;
+}
+
+#number-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.number{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    width: 33px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    text-decoration: none;
+    color: #1e272e;
+    border-radius: 3px;
+    background: #b33939;
+}
+
+#this-number{
+    background: #3498db;
 }
 
 @media all and (max-width: 950px)
@@ -210,6 +239,12 @@ section{
         margin-top: 55px;
     }
 
+    .picture-div
+    {
+        width: 183px;
+        height: 137px;
+    }
+
     .user-pictures
     {
         width: 180px;
@@ -220,6 +255,18 @@ section{
         width: 18px;
         bottom: 20px;
         right: 11px;
+    }
+
+    #number-div
+    {
+        margin-top: 15px;
+    }
+
+    .number
+    {
+        font-size: 19px;
+        width: 26px;
+        height: 26px;
     }
 }
 
@@ -270,7 +317,7 @@ section{
     section
     {
         padding-left: 75px;
-        padding-bottom: 130px;
+        padding-bottom: 115px;
         padding-top: 66px;
     }
 
@@ -291,6 +338,12 @@ section{
         margin-top: 25px;
     }
 
+    .picture-div
+    {
+        width: 118px;
+        height: 89px;
+    }
+
     .user-pictures
     {
         width: 115px;
@@ -298,8 +351,20 @@ section{
 
     .delete-img
     {
-        width: 15px;
-        bottom: 17px;
+        width: 14px;
+        bottom: 15px;
         right: 10px;
+    }
+
+    #number-div
+    {
+        margin-top: 13px;
+    }
+
+    .number
+    {
+        font-size: 14px;
+        width: 20px;
+        height: 18px;
     }
 }

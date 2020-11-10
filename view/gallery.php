@@ -50,6 +50,18 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/gallery_management.p
                     }
                 ?>
             </div>
+            <div id="number-div">
+            <?php
+                for ($i = 1; $i <= $totalPage; $i++) {
+                    if ($i == $currentPage) {
+                        echo ('<span class="number" id="this-number">'.$i.'</span>');
+                    }
+                    else {
+                        echo ('<a class="number" href="http://localhost:8080/camagru/view/gallery.php?page='.$i.'">'.$i.'</a> ');
+                    }
+                }
+            ?>
+            </div>
         </section>
         <?php include("includes/footer.php") ?>
     </div>
