@@ -194,8 +194,32 @@ section{
 
     section
     {
-        padding-top: 120px;
-        padding-left: 195px;
+        padding-top: 106px;
+        padding-left: 176px;
+    }
+
+    #lamp
+    {
+        width: 56px;
+    }
+
+    #pictures-div
+    {
+        width: 596px;
+        height: 315px;
+        margin-top: 55px;
+    }
+
+    .user-pictures
+    {
+        width: 180px;
+    }
+
+    .delete-img
+    {
+        width: 18px;
+        bottom: 20px;
+        right: 11px;
     }
 }
 
@@ -245,8 +269,37 @@ section{
 
     section
     {
-        padding-left: 85px;
+        padding-left: 75px;
         padding-bottom: 130px;
-        padding-top: 70px;
+        padding-top: 66px;
+    }
+
+    #lamp
+    {
+        width: 45px;
+    }
+
+    #pictures-tittle
+    {
+        font-size: 27px;
+    }
+
+    #pictures-div
+    {
+        width: 285px;
+        height: 325px;
+        margin-top: 25px;
+    }
+
+    .user-pictures
+    {
+        width: 115px;
+    }
+
+    .delete-img
+    {
+        width: 15px;
+        bottom: 17px;
+        right: 10px;
     }
 }
