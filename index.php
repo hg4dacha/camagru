@@ -70,6 +70,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/connexion.php");
                 </div>
             </div>
         </div>
+        <div>
+            
+        </div>
         <footer>
             <p id="rights">© 2020 CAMAGRU BY HG4DACHA</p>
         </footer>

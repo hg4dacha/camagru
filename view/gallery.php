@@ -40,6 +40,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/gallery_management.p
                 <h1 id="pictures-tittle">Ma galerie</h1>
             </div>
             <div id="pictures-div">
+                <p id="gallery-empty">Votre galerie est vide</p>
                 <?php
                     foreach($pictures as $pict) { ?>
                         <div class="picture-div">
@@ -52,12 +53,14 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/gallery_management.p
             </div>
             <div id="number-div">
             <?php
-                for ($i = 1; $i <= $totalPage; $i++) {
-                    if ($i == $currentPage) {
-                        echo ('<span class="number" id="this-number">'.$i.'</span>');
-                    }
-                    else {
-                        echo ('<a class="number" href="http://localhost:8080/camagru/view/gallery.php?page='.$i.'">'.$i.'</a> ');
+                if ($picturesNmbr > 6) {
+                    for ($i = 1; $i <= $totalPage; $i++) {
+                        if ($i == $currentPage) {
+                            echo ('<span class="number" id="this-number">'.$i.'</span>');
+                        }
+                        else {
+                            echo ('<a class="number" href="http://localhost:8080/camagru/view/gallery.php?page='.$i.'">'.$i.'</a> ');
+                        }
                     }
                 }
             ?>

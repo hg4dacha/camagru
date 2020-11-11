@@ -123,6 +123,16 @@ section{
     text-shadow: 1px 1px 2px #1e272e, 0 0 1em #3498db, 0 0 0.2em #3498db;
 }
 
+#gallery-empty{
+    display: none;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 23px;
+    margin: 0px;
+    margin-top: 150px;
+    color: gray;
+}
+
 #pictures-div{
     display: flex;
     flex-wrap: wrap;
@@ -181,6 +191,50 @@ section{
 
 #this-number{
     background: #3498db;
+}
+
+@media all and (max-width: 1060px)
+{
+    #lamp
+    {
+        width: 62px;
+    }
+
+    #pictures-tittle
+    {
+        font-size: 37px;
+    }
+
+    #pictures-div
+    {
+        width: 805px;
+        height: 430px;
+    }
+
+    .picture-div
+    {
+        width: 247px;
+        height: 185px;
+    }
+
+    .user-pictures
+    {
+        width: 245px;
+    }
+
+    .delete-img
+    {
+        width: 22px;
+        bottom: 22px;
+        right: 19px;
+    }
+
+    .number
+    {
+        font-size: 19px;
+        width: 28px;
+        height: 28px;
+    }
 }
 
 @media all and (max-width: 950px)

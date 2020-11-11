@@ -6,9 +6,10 @@
         height: 140px;
         display: flex;
         flex-direction: row;
-        box-shadow: 105px 1px 10px rgb(165, 165, 165);
+        box-shadow: 225px 1px 10px rgb(165, 165, 165);
         position: fixed;
-    }
+        z-index: 100;
+        }
 
     #userDiv{
         text-align: left;
@@ -82,6 +83,7 @@
         header
         {
             height: 105px;
+            box-shadow: 175px 1px 5px rgb(165, 165, 165);
         }
 
         #logo
