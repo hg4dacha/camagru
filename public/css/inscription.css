@@ -34,11 +34,11 @@ body{
     width: 285px;
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 90px;
+    margin-bottom: 25px;
 }
 
 #phrase{
-    margin-top: -65px;
+    margin: 0px;
     margin-bottom: 15px;
     text-align: center;
     color: rgb(142, 142, 142);

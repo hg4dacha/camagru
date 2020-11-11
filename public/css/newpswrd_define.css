@@ -39,18 +39,18 @@ body{
     width: 285px;
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 90px;
+    margin-bottom: 22px;
 }
 
 #locked{
     text-align: center;
     width: 77px;
-    margin-top: -70px;
-    margin-bottom: 85px;
+    margin: 0px;
+    margin-bottom: 21px;
 }
 
 #phrase{
-    margin-top: -65px;
+    margin: 0px;
     margin-bottom: 15px;
     text-align: center;
     color: rgb(142, 142, 142);
