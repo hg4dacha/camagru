@@ -59,7 +59,10 @@ function stateCam() {
                 takePic.style.opacity = '0.4';
                 takePic.style.cursor = 'initial'; }, 200);
                 passB = 0; // So that the paragraph "#select-filter" can be redisplayed if the button is disabled and no filter has been selected
-            if (screen.width > 1100) {
+            if (screen.width <= 1060 && screen.width > 950) {
+                setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-111px'; }, 200);
+            }
+            else if (screen.width > 1060) {
                 setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 200);
             }
         })
@@ -84,7 +87,10 @@ function stateCam() {
         buttCam.style.border='initial';
         takePic.style.display='none';
         document.querySelector('#select-filter').style.display='none';
-        if (screen.width >= 950) {
+        if (screen.width <= 1060 && screen.width > 950) {
+            document.querySelector('#buttons-div').style.marginRight='-170px';
+        }
+        else if (screen.width > 1060) {
             document.querySelector('#buttons-div').style.marginRight='-220px';
         }
     }
@@ -117,7 +123,10 @@ buttImportLabel.addEventListener('click', () => {
                     takePic.style.opacity = '0.4';
                     takePic.style.cursor = 'initial'; }, 100);
                 passB = 0;
-                if (screen.width > 1100) {
+                if (screen.width <= 1060 && screen.width > 950) {
+                    setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-111px'; }, 100);
+                }
+                else if (screen.width > 1060) {
                     setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 100);
                 }
             }
@@ -140,7 +149,10 @@ buttImportLabel.addEventListener('click', () => {
             takePic.style.display='none';
             document.querySelector('#select-filter').style.display = 'none';
             setTimeout( () => { buttImport.type='file'; }, 50); // Otherwise the file download window reopens
-            if (screen.width >= 950) {
+            if (screen.width <= 1060 && screen.width > 950) {
+                document.querySelector('#buttons-div').style.marginRight='-170px';
+            }
+            else if (screen.width > 1060) {
                 document.querySelector('#buttons-div').style.marginRight='-220px';
             }
         }
@@ -247,7 +259,10 @@ takePic.addEventListener('click', () => {
     buttImportLabel.style.opacity = '0.4';
     buttImportLabel.style.cursor = 'initial';
     document.querySelector('#save-butt').style.display = 'initial';
-    if (screen.width > 1100) {
+    if (screen.width <= 1060 && screen.width > 950) {
+        document.querySelector('#buttons-div').style.marginRight='-170px';
+    }
+    else if (screen.width > 1060) {
     document.querySelector('#buttons-div').style.marginRight='-220px'; }
     }
 })
@@ -264,7 +279,10 @@ document.querySelector('#delete').addEventListener('click', () => {
         buttImportLabel.style.opacity = 'initial';
         buttImportLabel.style.cursor = 'pointer';
         setTimeout( () => { takePic.style.display='initial'; }, 100);
-        if (screen.width > 1100) {
+        if (screen.width <= 1060 && screen.width > 950) {
+            setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-111px'; }, 100);
+        }
+        else if (screen.width > 1060) {
             setTimeout( () => { document.querySelector('#buttons-div').style.marginRight='-136px'; }, 100);
         }
         filtersArray = [];

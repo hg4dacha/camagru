@@ -378,6 +378,146 @@ section{
     cursor: pointer;
 }
 
+@media all and (max-width: 1060px)
+{
+    #album
+    {
+        margin-right: 20px;
+    }
+
+    #album-photo
+    {
+        width: 19px;
+        margin-right: 4px;
+    }
+
+    #album-text
+    {
+        font-size: 20px;
+    }
+
+    #photo-list
+    {
+        width: 150px;
+        height: 407px;
+    }
+
+    #aside-msg
+    {
+        font-size: 10px;
+    }
+    
+    .aside-image
+    {
+        width: 130px;
+    }
+
+    #canvas
+    {
+        width: 515px;
+        height: 400px;
+    }
+
+    #save-butt
+    {
+        margin-top: -95px;
+        margin-right: -161px;
+        margin-bottom: 55px;
+    }
+    
+    #save
+    {
+        height: 39px;
+        width: 97px;
+    }
+
+    #delete
+    {
+        height: 39px;
+        width: 97px;
+    }
+
+    #take-picture-div
+    {
+        margin-left: 5px;
+    }
+
+    #take-picture
+    {
+        width: 52px;
+        height: 43px;
+    }
+
+    #take-photo
+    {
+        width: 17px;
+    }
+
+    #select-filter
+    {
+        font-size: 6px;
+    }
+
+    #buttons-div
+    {
+        margin-top: 15px;
+        margin-right: -170px;
+    }
+
+    #rec
+    {
+        width: 13px;
+    }
+
+    #button-cam
+    {
+        font-size: 13px;
+        width: 140px;
+        height: 39px;
+        margin-right: 80px;
+    }
+
+    #import
+    {
+        width: 16px;
+        margin-top: 12px;
+    }
+
+    #downl-file
+    {
+        font-size: 13px;
+        width: 140px;
+        height: 39px;
+    }
+
+    #filter
+    {
+        width: 17px;
+        margin-right: 3px;
+        margin-bottom: -2px;
+    }
+
+    #filters-tittle
+    {
+        font-size: 20px;
+    }
+
+    #filters-cont
+    {
+        width: 700px;
+        height: 100px;
+    }
+
+    .filters-png
+    {
+        margin-left: 10px;
+    }
+
+    .filters-img
+    {
+        width: 50px;
+    }
+}
 
 @media all and (max-width: 950px)
 {
@@ -658,7 +798,7 @@ section{
     {
         padding-left: 85px;
         padding-bottom: 88px;
-        padding-top: 77px;
+        padding-top: 72px;
     }
 
     #album
