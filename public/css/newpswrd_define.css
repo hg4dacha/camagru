@@ -11,6 +11,9 @@ body{
 #contenu{
     min-height: 100%;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body{
@@ -18,8 +21,6 @@ body{
 }
 
 #on_frame{
-    padding-top: 250px;
-    padding-bottom: 100px;
     display: flex;
     justify-content: center;
 }
@@ -152,11 +153,6 @@ small{
 
 @media all and (max-width: 850px)
 {
-    #on_frame
-    {
-        padding-top: 150px;
-    }
-
     #rights
     {
         padding-left: 0px;
@@ -167,16 +163,10 @@ small{
 
 @media all and (max-width: 500px)
 {
-    #on_frame
-    {
-        padding-top: 0px;
-    }
-    
     #frame
     {
         width: 300px;
         height: 452px;
-        margin-top: 76px;
     }
 
     #logo
@@ -210,7 +200,7 @@ small{
 
     footer
     {
-        left: 0px;
+        height: 30px;
     }
 
     #rights
@@ -218,5 +208,6 @@ small{
         padding-left: 0px;
         text-align: center;
         font-size: 12px;
+        margin: 0px;
     }
 }

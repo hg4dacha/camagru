@@ -54,9 +54,36 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/submit_inscription.p
                     placeholder="Nom d'utilisateur" 
                     size="30" maxlength="250" value="<?php if(isset($username)) { echo $username; } ?>"/>
                     <small class="error"><?php if(isset($error_username)) { echo $error_username; } ?></small>
+                    <?php if(isset($error_username) && !isset($error_password)) { ?>
+                        <script> 
+                            if (screen.width <= 600) {
+                                document.querySelector('#frame').style.height = '665px';
+                            } else {
+                                document.querySelector('#frame').style.height = '730px';
+                            }
+                        </script>
+                    <?php } ?>
                     <input class="row" type="password" name="password" id="password"
                     placeholder="Mot de passe" size="30" maxlength="250"/>
                     <small class="error"><?php if(isset($error_password)) { echo $error_password; } ?></small>
+                    <?php if(isset($error_password) && !isset($error_username)) { ?>
+                        <script> 
+                            if (screen.width <= 600) {
+                                document.querySelector('#frame').style.height = '665px';
+                            } else {
+                                document.querySelector('#frame').style.height = '730px';
+                            }
+                        </script>
+                    <?php } ?>
+                    <?php if(isset($error_password) && isset($error_username)) { ?>
+                        <script> 
+                            if (screen.width <= 600) {
+                                document.querySelector('#frame').style.height = '705px';
+                            } else {
+                                document.querySelector('#frame').style.height = '770px';
+                            }
+                        </script>
+                    <?php } ?>
                     <input class="row" type="password" name="password2" id="password2"
                     placeholder="Confirmez le mot de passe" size="30" maxlength="250"/>
                     <small class="error"><?php if(isset($error_password2)) { echo $error_password2; } ?></small>
