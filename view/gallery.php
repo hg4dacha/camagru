@@ -54,6 +54,12 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/gallery_management.p
             <div id="number-div">
             <?php
                 if ($picturesNmbr > 6) {
+                    if ($currentPage == 1) {
+                        echo ('<span class="number">«</span>');
+                    }
+                    else {
+                        echo ('<a class="number" href="http://localhost:8080/camagru/view/gallery.php?page='.($currentPage - 1).'">«</a> ');
+                    }
                     for ($i = 1; $i <= $totalPage; $i++) {
                         if ($i == $currentPage) {
                             echo ('<span class="number" id="this-number">'.$i.'</span>');
@@ -61,6 +67,12 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/gallery_management.p
                         else {
                             echo ('<a class="number" href="http://localhost:8080/camagru/view/gallery.php?page='.$i.'">'.$i.'</a> ');
                         }
+                    }
+                    if ($currentPage == $totalPage) {
+                        echo ('<span class="number">»</span>');
+                    }
+                    else {
+                        echo ('<a class="number" href="http://localhost:8080/camagru/view/gallery.php?page='.($currentPage + 1).'">»</a> ');
                     }
                 }
             ?>
