@@ -18,6 +18,7 @@ if(isset($_SESSION['pass']))
 }
 
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/connexion.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php");
 
 ?>
 
@@ -70,8 +71,48 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/connexion.php");
                 </div>
             </div>
         </div>
-        <div>
-            
+        <div id="site-pictures">
+            <div id="pictures-div">
+                <?php
+                foreach($pictures as $pict) { ?>
+                    <div class="img-and-username">
+                        <div class="picture-div">
+                            <img class="user-pictures" id="<?= $pict['picture_id'] ?>" src="<?= '/camagru/public/'.$pict['picture_path'] ?>" alt="image">
+                        </div>
+                        <div>
+                            <span class="user-name">username</span>
+                        </div>
+                    </div>
+                <?php
+                    }
+                ?>
+            </div>
+            <div id="number-div">
+                <?php
+                    if ($picturesNmbr > 6) {
+                        if ($currentPage == 1) {
+                            echo ('<span class="number">«</span>');
+                        }
+                        else {
+                            echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.($currentPage - 1).'">«</a> ');
+                        }
+                        for ($i = 1; $i <= $totalPage; $i++) {
+                            if ($i == $currentPage) {
+                                echo ('<span class="number" id="this-number">'.$i.'</span>');
+                            }
+                            else {
+                                echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.$i.'">'.$i.'</a> ');
+                            }
+                        }
+                        if ($currentPage == $totalPage) {
+                            echo ('<span class="number">»</span>');
+                        }
+                        else {
+                            echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.($currentPage + 1).'">»</a> ');
+                        }
+                    }
+                ?>
+            </div>
         </div>
         <footer>
             <p id="rights">© 2020 CAMAGRU BY HG4DACHA</p>
