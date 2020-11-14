@@ -72,6 +72,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
             </div>
         </div>
         <div id="site-pictures">
+            <h1 id="user-tittle">Photos des utilisateurs de Camagru</h1>
             <div id="pictures-div">
                 <?php
                 foreach($pictures as $pict) { ?>
@@ -79,8 +80,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
                         <div class="picture-div">
                             <img class="user-pictures" id="<?= $pict['picture_id'] ?>" src="<?= '/camagru/public/'.$pict['picture_path'] ?>" alt="image">
                         </div>
-                        <div>
-                            <span class="user-name">username</span>
+                        <div class="username-username">
+                            <img class="logo-username" src="/camagru/public/pictures/logo-username.png" alt="logo-username">
+                            <span class="user-name"><?php $usrName = idUsername($pict['id_user']); echo($usrName[0]);?></span>
                         </div>
                     </div>
                 <?php
@@ -89,9 +91,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
             </div>
             <div id="number-div">
                 <?php
-                    if ($picturesNmbr > 6) {
+                    if ($picturesNmbr > 8) {
                         if ($currentPage == 1) {
-                            echo ('<span class="number">«</span>');
+                            echo ('<span class="number" id="this-arrow">«</span>');
                         }
                         else {
                             echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.($currentPage - 1).'">«</a> ');

@@ -2,7 +2,7 @@
 
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
 
-$picturesInPage = 6;
+$picturesInPage = 8;
 $picturesNmbr = pictNmbr();
 $totalPage = ceil($picturesNmbr / $picturesInPage);
 
@@ -20,5 +20,11 @@ else {
 
 $beginning = ($currentPage - 1) * $picturesInPage;
 $pictures = pictr_recup($beginning, $picturesInPage);
+
+function idUsername($id_user) {
+
+    $id_user = intval($id_user);
+    return recup_username_byID($id_user);
+}
 
 ?>

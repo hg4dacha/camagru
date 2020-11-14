@@ -166,6 +166,14 @@ function pictr_recup($beginning, $picturesInPage) {
     return $reqCtrl->fetchAll();
 }
 
+function recup_username_byID($id_user) {
+    $dbc = db_connex();
+    $reqID = $dbc->prepare("SELECT username FROM users WHERE id = :id_user");
+    $reqID->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $reqID->execute();
+    return $reqID->fetch();
+}
+
 //---------- Replacement ----------
 
 function replacePswrd($newPswrd, $idf)
