@@ -334,10 +334,34 @@ document.querySelector('#save').addEventListener('click', () => {
     }
 })
 //
+function actualTime() {
+    let time = new Date();
+    let localTime = time.toLocaleString('fr-FR', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    localTime = localTime.replace(':', 'h');
+    return(localTime);
+}
+//
+function actualDate() {
+    let date = new Date();
+    let localDate = date.toLocaleString('fr-FR', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+    });
+    return(localDate);
+}
+//
 function savePict(img) {
+    let imgHour = actualTime();
+    let imgDate = actualDate();
     let imgData = new FormData();
     imgData.append('imgData', img.src);
     imgData.append('imgID', img.id);
+    imgData.append('imgHour', imgHour);
+    imgData.append('imgDate', imgDate);
     let XHR = new XMLHttpRequest();
     XHR.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {

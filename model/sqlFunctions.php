@@ -20,12 +20,14 @@ function insertMbr($lastname, $firstname, $email, $username, $passwordUsr, $noti
     $reqIns->execute();
 }
 
-function insertNewImage($idUsr, $imgID, $imgPath) {
+function insertNewImage($idUsr, $imgID, $imgPath, $imgHour, $imgDate) {
     $dbc = db_connex();
-    $reqIns = $dbc->prepare("INSERT INTO user_pictures (id_user, picture_id, picture_path) VALUES (:idUsr, :imgID, :imgPath)");
+    $reqIns = $dbc->prepare("INSERT INTO user_pictures (id_user, picture_id, picture_path, hour_picture, date_picture) VALUES (:idUsr, :imgID, :imgPath, :imgHour, :imgDate)");
     $reqIns->bindValue(':idUsr', $idUsr, PDO::PARAM_INT);
     $reqIns->bindValue(':imgID', $imgID, PDO::PARAM_STR);
     $reqIns->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
+    $reqIns->bindValue(':imgHour', $imgHour, PDO::PARAM_STR);
+    $reqIns->bindValue(':imgDate', $imgDate, PDO::PARAM_STR);
     $reqIns->execute();
 }
 
