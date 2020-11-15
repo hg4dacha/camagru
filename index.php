@@ -72,7 +72,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
             </div>
         </div>
         <div id="site-pictures">
-            <h1 id="user-tittle">Photos des utilisateurs de Camagru</h1>
+            <h1 id="user-tittle">Photos des utilisateurs Camagru</h1>
             <div id="pictures-div">
                 <?php
                 foreach($pictures as $pict) { ?>
@@ -96,21 +96,21 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
                             echo ('<span class="number" id="this-arrow">«</span>');
                         }
                         else {
-                            echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.($currentPage - 1).'">«</a> ');
+                            echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.($currentPage - 1).'#user-tittle">«</a> ');
                         }
                         for ($i = 1; $i <= $totalPage; $i++) {
                             if ($i == $currentPage) {
                                 echo ('<span class="number" id="this-number">'.$i.'</span>');
                             }
                             else {
-                                echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.$i.'">'.$i.'</a> ');
+                                echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.$i.'#user-tittle">'.$i.'</a> ');
                             }
                         }
                         if ($currentPage == $totalPage) {
                             echo ('<span class="number">»</span>');
                         }
                         else {
-                            echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.($currentPage + 1).'">»</a> ');
+                            echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.($currentPage + 1).'#user-tittle">»</a> ');
                         }
                     }
                 ?>

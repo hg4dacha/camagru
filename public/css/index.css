@@ -162,9 +162,8 @@ p{
     justify-content: center;
     align-items: center;
     margin-top: 145px;
-    margin-bottom: 130px;
+    margin-bottom: 160px;
     align-items: center;
-    border-top: 1px #57606f solid;
 }
 
 @font-face{
@@ -186,6 +185,7 @@ p{
     justify-content: center;
     margin: 0px;
     margin-top: 70px;
+    margin-bottom: 15px;
     width: 1200px;
     height: 530px;
 }
@@ -195,10 +195,11 @@ p{
     flex-direction: column;
     margin: 5px;
     padding: 5px;
+    padding-bottom: 1px;
     width: 272px;
     height: 228px;
-    border: 1px #636e72 solid;
-    border-radius: 5px;
+    border: 1px #b2bec3 solid;
+    border-radius: 2px;
 }
 
 .picture-div{
@@ -210,15 +211,14 @@ p{
 
 .user-pictures{
     width: 270px;
-    border-radius: 5px;
-    border: 1px black solid;
+    border-radius: 2px;
 }
 
 .username-username{
     display: flex;
     flex-direction: row;
-    margin-left: 4px;
-    margin-top: 5px;
+    margin-left: 5px;
+    margin-top: 2px;
 }
 
 .logo-username{
@@ -256,7 +256,7 @@ p{
     text-decoration: none;
     color: #1e272e;
     border-radius: 3px;
-    background: white;
+    background: whitesmoke;
     margin-right: 3px;
 }
 
@@ -270,7 +270,7 @@ p{
 }
 
 #this-arrow{
-    background: white;
+    background: whitesmoke;
 }
 
 footer{
