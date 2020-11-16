@@ -176,6 +176,15 @@ function recup_username_byID($id_user) {
     return $reqID->fetch();
 }
 
+function get_picture_id($id_user)
+{
+    $dbc = db_connex();
+    $reqField = $dbc->prepare("SELECT picture_id FROM user_pictures WHERE id_user = :id_user");
+    $reqField->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $reqField->execute();
+    return $reqField->fetchAll();
+}
+
 //---------- Replacement ----------
 
 function replacePswrd($newPswrd, $idf)
@@ -275,6 +284,13 @@ function delete_img($id_usr, $id_img) {
     $reqDelete = $dbc->prepare("DELETE FROM user_pictures WHERE id_user = :id_usr AND picture_id = :id_img");
     $reqDelete->bindValue(':id_usr', $id_usr, PDO::PARAM_INT);
     $reqDelete->bindValue(':id_img', $id_img, PDO::PARAM_STR);
+    $reqDelete->execute();
+}
+
+function delete_all_usr_img($id_usr) {
+    $dbc = db_connex();
+    $reqDelete = $dbc->prepare("DELETE FROM user_pictures WHERE id_user = :id_usr");
+    $reqDelete->bindValue(':id_usr', $id_usr, PDO::PARAM_INT);
     $reqDelete->execute();
 }
 

@@ -27,6 +27,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 if($pswrdPass === TRUE)
                 {
                     delete_usr($id_usr);
+                    $pictures_id = get_picture_id($id_usr);
+                    foreach($pictures_id as $picture_id) {
+                        unlink('../public/users_pictures/'.$picture_id[0].'.jpeg');
+                    }
+                    delete_all_usr_img($id_usr);
                     $_SESSION = array();
                     session_destroy();
                     session_start();
