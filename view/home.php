@@ -7,6 +7,8 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
     header('location: /camagru/index.php');
 }
 
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -34,18 +36,58 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
             </ul>
         </nav>
         <section>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum nisi at magna ullamcorper, vel congue nisl fringilla. Aliquam ornare mollis magna, sed consectetur elit rhoncus eget. Cras sed magna vel arcu molestie suscipit vitae quis justo. Mauris cursus dui eget urna iaculis, eget feugiat odio laoreet. Nulla quis urna ut purus varius iaculis vitae et tellus. Aenean scelerisque auctor nunc sed luctus. Vivamus eleifend ligula eu ex fringilla, sit amet imperdiet orci commodo. Pellentesque nec pulvinar tellus. Suspendisse at orci tempus urna blandit ullamcorper. Phasellus ac mollis massa, non auctor orci. Quisque laoreet luctus mi, eu varius metus cursus id. Nunc vel velit interdum, sagittis tellus a, placerat nulla. Sed nulla erat, fringilla non pulvinar a, convallis vel sapien. Fusce at lorem sit amet lectus ultrices gravida. Etiam magna nisl, tempus ullamcorper arcu id, elementum efficitur nibh.<br/><br/>
+            <div id="site-pictures">
+                <h1 id="user-tittle">Photos des utilisateurs Camagru</h1>
+                <div id="pictures-div">
+                    <?php
+                    foreach($pictures as $pict) { ?>
+                        <div class="img-and-username">
+                            <div class="picture-div">
+                                <img class="user-pictures" id="<?= $pict['picture_id'] ?>" src="<?= '/camagru/public/'.$pict['picture_path'] ?>" alt="image">
+                            </div>
+                            <div class="username-username">
+                                <div class="user-2">
+                                    <img class="logo-username" src="/camagru/public/pictures/logo-username.png" alt="logo-username">
+                                    <span class="user-name"><?php $usrName = idUsername($pict['id_user']); echo($usrName[0]);?></span>
+                                </div>
+                                <div class="likes-and-comments">
+                                    <img class="like" src="/camagru/public/pictures/like00.png" alt="like">
+                                    <img class="comments" src="/camagru/public/pictures/comments.png" alt="commentaires">
+                                </div>
+                                <span class='time-picture'><?= $pict['date_picture'].' - '.$pict['hour_picture'] ?></span>
+                            </div>
+                        </div>
+                    <?php
+                        }
+                    ?>
+                </div>
+                <div id="number-div">
+                    <?php
+                        if ($picturesNmbr > 8) {
+                            if ($currentPage == 1) {
+                                echo ('<span class="number" id="this-arrow">«</span>');
+                            }
+                            else {
+                                echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.($currentPage - 1).'#user-tittle">«</a> ');
+                            }
+                            for ($i = 1; $i <= $totalPage; $i++) {
+                                if ($i == $currentPage) {
+                                    echo ('<span class="number" id="this-number">'.$i.'</span>');
+                                }
+                                else {
+                                    echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.$i.'#user-tittle">'.$i.'</a> ');
+                                }
+                            }
+                            if ($currentPage == $totalPage) {
+                                echo ('<span class="number">»</span>');
+                            }
+                            else {
+                                echo ('<a class="number" href="http://localhost:8080/camagru/index.php?page='.($currentPage + 1).'#user-tittle">»</a> ');
+                            }
+                        }
+                    ?>
+                </div>
+            </div>
         </section>
         <?php include("includes/footer.php") ?>
     </div>

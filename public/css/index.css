@@ -222,9 +222,14 @@ p{
     justify-content: space-between;
 }
 
+.user-2{
+    position: relative;
+    bottom: 1px;
+}
+
 .logo-username{
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
 }
 
 .user-name{
@@ -234,7 +239,6 @@ p{
     font-weight: bold;
     position: relative;
     right: 2px;
-    bottom: 1px;
 }
 
 .time-picture{
