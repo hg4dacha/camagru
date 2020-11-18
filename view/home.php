@@ -54,7 +54,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
                                     <img class="like" src="/camagru/public/pictures/like00.png" alt="like">
                                     <img class="comments" src="/camagru/public/pictures/comments.png" alt="commentaires">
                                 </div>
-                                <span class='time-picture'><?= $pict['date_picture'].' - '.$pict['hour_picture'] ?></span>
+                                <span class='time-picture'><?= $pict['date_picture'].' - <br class="time-br">'.$pict['hour_picture'] ?></span>
                             </div>
                         </div>
                     <?php

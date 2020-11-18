@@ -135,7 +135,7 @@ section{
     padding-bottom: 1px;
     width: 339px;
     height: 285px;
-    border: 1px #b2bec3 solid;
+    border-bottom: 1px #b2bec3 solid;
     border-radius: 2px;
 }
 
@@ -181,6 +181,7 @@ section{
 
 .likes-and-comments{
     display: flex;
+    flex-direction: row;
     width: 58px;
     justify-content: space-around;
     align-items: center;
@@ -205,6 +206,10 @@ section{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: relative;
     right: 6px;
+}
+
+.time-br{
+    display: none;
 }
 
 #number-div{
@@ -243,6 +248,47 @@ section{
 #this-arrow{
     background: whitesmoke;
 }
+
+@media all and (max-width: 1670px)
+{
+    .img-and-username
+    {
+        width: 270px;
+        height: 257px;
+    }
+
+    .picture-div
+    {
+        width: 270px;
+        height: 203px;
+    }
+
+    .user-pictures
+    {
+        width: 270px;
+    }
+
+    .user-name
+    {
+        font-size: 12px;
+    }
+
+    .likes-and-comments
+    {
+        flex-direction: column;
+        width: 35px;
+    }
+}
+
+@media all and (max-width: 1400px)
+{
+    #pictures-div
+    {
+        width: 800px;
+        height: 1200px;
+    }
+}
+
 
 @media all and (max-width: 950px)
 {
@@ -284,8 +330,67 @@ section{
 
     section
     {
-        padding-top: 120px;
-        padding-left: 195px;
+        padding-top: 105px;
+        padding-left: 175px;
+    }
+
+    .username-username
+    {
+        margin-top: 6px;
+    }
+
+    .user-name
+    {
+        font-size: 11px;
+    }
+
+    .likes-and-comments
+    {
+        width: 27px;
+        height: 38px;
+    }
+
+    .like
+    {
+        width: 17px;
+    }
+
+    .comments
+    {
+        width: 16px;
+    }
+
+    .time-picture
+    {
+        font-size: 9px;
+    }
+
+    .time-br
+    {
+        display: initial;
+    }
+
+    #pictures-div
+    {
+        width: 614px;
+        height: 1120px;
+    }
+
+    .img-and-username
+    {
+        width: 240px;
+        height: 225px;
+    }
+
+    .picture-div
+    {
+        width: 240px;
+        height: 180px;
+    }
+
+    .user-pictures
+    {
+        width: 240px;
     }
 }
 
