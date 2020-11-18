@@ -287,6 +287,11 @@ section{
         width: 800px;
         height: 1200px;
     }
+
+    #user-tittle
+    {
+        font-size: 31px;
+    }
 }
 
 
@@ -332,6 +337,11 @@ section{
     {
         padding-top: 105px;
         padding-left: 175px;
+    }
+
+    #user-tittle
+    {
+        font-size: 28px;
     }
 
     .username-username
