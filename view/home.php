@@ -91,5 +91,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
         </section>
         <?php include("includes/footer.php") ?>
     </div>
+    <script src="/camagru/public/js/home.js"></script>
 </body>
 </html>
