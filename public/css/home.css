@@ -382,7 +382,7 @@ section{
 
     #pictures-div
     {
-        width: 614px;
+        width: 592px;
         height: 1120px;
     }
 
@@ -401,6 +401,13 @@ section{
     .user-pictures
     {
         width: 240px;
+    }
+
+    .number
+    {
+        font-size: 15px;
+        width: 18px;
+        height: 30px;
     }
 }
 
@@ -450,8 +457,87 @@ section{
 
     section
     {
-        padding-left: 85px;
+        padding-left: 75px;
         padding-bottom: 130px;
-        padding-top: 70px;
+        padding-top: 65px;
+    }
+
+    #site-pictures
+    {
+        margin-top: 15px;
+    }
+
+    #user-tittle
+    {
+        font-size: 19px;
+    }
+
+    #pictures-div
+    {
+        width: 288px;
+        height: 610px;
+        margin-top: 55px;
+    }
+
+    .img-and-username
+    {
+        width: 115px;
+        height: 120px;
+    }
+
+    .picture-div
+    {
+        width: 115px;
+        height: 86px;
+    }
+
+    .user-pictures
+    {
+        width: 115px;
+    }
+
+    .username-username
+    {
+        margin-top: 3px;
+    }
+
+    .logo-username
+    {
+        width: 7px;
+        height: 7px;
+    }
+
+    .user-name
+    {
+        font-size: 5px;
+    }
+
+    .likes-and-comments
+    {
+        width: 17px;
+        height: 29px;
+    }
+
+    .like
+    {
+        width: 12px;
+    }
+
+    .comments
+    {
+        width: 11px;
+    }
+
+    .time-picture
+    {
+        font-size: 5px;
+        right: 0px;
+    }
+
+    .number
+    {
+        font-size: 10px;
+        width: 13px;
+        height: 22px;
     }
 }
