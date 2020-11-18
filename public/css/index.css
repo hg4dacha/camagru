@@ -198,7 +198,7 @@ p{
     padding-bottom: 1px;
     width: 272px;
     height: 228px;
-    border: 1px #b2bec3 solid;
+    border-bottom: 1px #b2bec3 solid;
     border-radius: 2px;
 }
 
