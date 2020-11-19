@@ -43,7 +43,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
                     foreach($pictures as $pict) { ?>
                         <div class="img-and-username">
                             <div class="picture-div">
+                                <a class="pict-link" href="/camagru/view/picture.php?username=<?php $usrName = idUsername($pict['id_user']); echo($usrName[0]);?>&amp;pictureID=<?= urlencode($pict['picture_id']) ?>">
                                 <img class="user-pictures" id="<?= $pict['picture_id'] ?>" src="<?= '/camagru/public/'.$pict['picture_path'] ?>" alt="image">
+                                </a>
                             </div>
                             <div class="username-username">
                                 <div class="user-2">

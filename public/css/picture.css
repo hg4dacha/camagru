@@ -1,0 +1,226 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+#contenu{
+    min-height: 100%;
+    position: relative;
+}
+
+nav{
+    background-color: white;
+    width: 225px;
+    height: 100%;
+    box-shadow: 1px 5px 5px rgb(165, 165, 165);
+    position: fixed;
+    left: 0;
+    border-top: 1px rgb(165, 165, 165) solid;
+    margin-top: 140px;
+}
+
+
+@font-face{
+    font-family: 'GrandHotel';
+    src: url('/camagru/public/polices/GrandHotel-Regular.otf');
+}
+
+ul{
+    list-style-type: none;
+    font-size: 35px;
+    font-family: 'GrandHotel';
+}
+
+li{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+}
+
+.border{
+    border-bottom: 1px rgb(165, 165, 165) solid;
+    width: 95px;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.this{
+    color: #1e272e;
+    padding-top: 20px;
+}
+
+.other{
+    color: #1e272e;
+    margin-top: 20px;
+}
+
+#home{
+    width: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#gallery{
+    width: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#camera{
+    width: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#profile{
+    width: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+section{
+    margin-top: auto;
+    margin-left: auto;
+    padding-top: 140px;
+    padding-left: 225px;
+    padding-bottom: 250px;
+}
+
+#left{
+    margin: 0px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#username-and-time{
+    display: flex;
+    flex-direction: row;
+}
+
+#picture-of{
+    margin: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #353b48;
+}
+
+#logo-username{
+    width: 15px;
+    height: 15px;
+}
+
+#time{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    color: #353b48;
+}
+
+.usr-image{
+    border-radius: 3px;
+}
+
+@media all and (max-width: 950px)
+{
+    nav
+    {
+        margin-top: 105px;
+        width: 175px;
+    }
+
+    ul
+    {
+        font-size: 27px;
+    }
+
+    #home
+    {
+        width: 25px;
+    }
+
+    #gallery
+    {
+        width: 25px;
+    }
+
+    #camera
+    {
+        width: 25px;
+    }
+
+    #profile
+    {
+        width: 25px;
+    }
+
+    .border
+    {
+        width: 75px;
+    }
+
+    section
+    {
+        padding-top: 105px;
+        padding-left: 175px;
+    }
+}
+
+@media all and (max-width: 600px)
+{
+    nav
+    {
+        margin-top: 65px;
+        width: 75px;
+        box-shadow: 0px 5px 5px rgb(165, 165, 165);
+    }
+
+    ul
+    {
+        padding-left: 15px;
+        font-size: 19px;
+    }
+
+    #home
+    {
+        width: 20px;
+        padding-left: 12px;
+    }
+
+    #gallery
+    {
+        width: 20px;
+        padding-left: 12px;
+    }
+
+    #camera
+    {
+        width: 20px;
+        padding-left: 12px;
+    }
+
+    #profile
+    {
+        width: 20px;
+        padding-left: 12px;
+    }
+
+    .border
+    {
+        width: 30px;
+    }
+
+    section
+    {
+        padding-left: 75px;
+        padding-bottom: 30px;
+        padding-top: 65px;
+    }
+}

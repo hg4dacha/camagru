@@ -251,6 +251,10 @@ p{
     top: 4px;
 }
 
+.time-br{
+    display: none;
+}
+
 #number-div{
     display: flex;
     flex-direction: row;
@@ -304,14 +308,104 @@ footer{
     padding-left: 40px;
 }
 
+@media all and (max-width: 1060px)
+{
+    #user-tittle
+    {
+        font-size: 32px;
+    }
 
-@media all and (max-width: 850px)
+    #site-pictures
+    {
+        margin-top: 70px;
+    }
+
+    #pictures-div
+    {
+        width: 100%;
+        height: 520px;
+    }
+
+    .img-and-username
+    {
+        width: 230px;
+        height: 200px;
+    }
+
+    .picture-div
+    {
+        width: 230px;
+        height: 173px;
+    }
+
+    .user-pictures
+    {
+        width: 230px;
+    }
+
+    .username-username
+    {
+        margin-top: 5px;
+    }
+
+    .user-name
+    {
+        font-size: 11px;
+    }
+
+    .time-picture
+    {
+        font-size: 9px;
+    }
+
+    .number
+    {
+        font-size: 15px;
+        width: 19px;
+        height: 32px;
+    }
+}
+
+
+@media all and (max-width: 950px)
 {
     #rights
     {
         padding-left: 0px;
         text-align: center;
         font-size: 12px;
+    }
+
+    #site-pictures
+    {
+        margin-top: 75px;
+    }
+
+    #user-tittle
+    {
+        font-size: 30px;
+    }
+
+    #pictures-div
+    {
+        height: 1150px;
+    }
+
+    .img-and-username
+    {
+        width: 280px;
+        height: 241px;
+    }
+
+    .picture-div
+    {
+        width: 280px;
+        height: 210px;
+    }
+
+    .user-pictures
+    {
+        width: 280px;
     }
 }
 
@@ -330,8 +424,13 @@ footer{
 
 }
 
-@media all and (max-width: 500px)
+@media all and (max-width: 600px)
 {
+    #central
+    {
+        margin-top: 35px;
+    }
+
     #connexion_frame
     {
         width: 300px;
@@ -399,5 +498,72 @@ footer{
     #messVald{
         font-size: 11px;
         margin-top: -4px;
+    }
+
+    #site-pictures
+    {
+        margin-top: 45px;
+    }
+
+    #user-tittle
+    {
+        font-size: 23px;
+    }
+
+    #pictures-div
+    {
+        height: 780px;
+        margin-top: 55px;
+        margin-bottom: 0px;
+    }
+
+    .img-and-username
+    {
+        width: 160px;
+        height: 149px;
+    }
+
+    .picture-div
+    {
+        width: 160px;
+        height: 120px;
+    }
+
+    .user-pictures
+    {
+        width: 160px;
+    }
+
+    .username-username
+    {
+        margin-top: 3px;
+    }
+
+    .logo-username
+    {
+        width: 8px;
+        height: 8px;
+    }
+
+    .user-name
+    {
+        font-size: 9px;
+    }
+
+    .time-picture
+    {
+        font-size: 8px;
+    }
+
+    .time-br
+    {
+        display: initial;
+    }
+
+    .number
+    {
+        font-size: 11px;
+        width: 13px;
+        height: 23px;
     }
 }

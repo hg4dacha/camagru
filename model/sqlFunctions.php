@@ -185,6 +185,32 @@ function get_picture_id($id_user)
     return $reqField->fetchAll();
 }
 
+function recup_idUsr_byUsrname($usrName) {
+    $dbc = db_connex();
+    $reqID = $dbc->prepare("SELECT id FROM users WHERE username = :usrName");
+    $reqID->bindValue(':usrName', $usrName, PDO::PARAM_STR);
+    $reqID->execute();
+    return $reqID->fetch();
+}
+
+function id_and_username_verif($idUsr, $pictureID) {
+    $dbc = db_connex();
+    $reqField = $dbc->prepare("SELECT id FROM user_pictures WHERE id_user = :idUsr AND picture_id = :pictureID");
+    $reqField->bindValue(':idUsr', $idUsr, PDO::PARAM_INT);
+    $reqField->bindValue(':pictureID', $pictureID, PDO::PARAM_STR);
+    $reqField->execute();
+    return $reqField->rowCount();
+}
+
+function recup_pict_info($idUsr, $idPict) {
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT * FROM user_pictures WHERE id_user = :idUsr AND picture_id = :idPict");
+    $reqCtrl->bindValue(':idUsr', $idUsr, PDO::PARAM_INT);
+    $reqCtrl->bindValue(':idPict', $idPict, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
+}
+
 //---------- Replacement ----------
 
 function replacePswrd($newPswrd, $idf)

@@ -146,6 +146,12 @@ section{
     height: 254px;
 }
 
+.pict-link{
+    display: block;
+    width: 339px;
+    height: 254px;
+}
+
 .user-pictures{
     width: 339px;
     border-radius: 2px;
@@ -263,6 +269,11 @@ section{
         height: 203px;
     }
 
+    .pict-link{
+        width: 270px;
+        height: 203px;
+    }
+
     .user-pictures
     {
         width: 270px;
@@ -291,6 +302,11 @@ section{
     #user-tittle
     {
         font-size: 31px;
+    }
+
+    section
+    {
+        padding-bottom: 50px;
     }
 }
 
@@ -398,6 +414,11 @@ section{
         height: 180px;
     }
 
+    .pict-link{
+        width: 240px;
+        height: 180px;
+    }
+
     .user-pictures
     {
         width: 240px;
@@ -458,7 +479,7 @@ section{
     section
     {
         padding-left: 75px;
-        padding-bottom: 130px;
+        padding-bottom: 30px;
         padding-top: 65px;
     }
 
@@ -487,6 +508,11 @@ section{
 
     .picture-div
     {
+        width: 115px;
+        height: 86px;
+    }
+
+    .pict-link{
         width: 115px;
         height: 86px;
     }

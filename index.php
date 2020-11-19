@@ -85,7 +85,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
                                 <img class="logo-username" src="/camagru/public/pictures/logo-username.png" alt="logo-username">
                                 <span class="user-name"><?php $usrName = idUsername($pict['id_user']); echo($usrName[0]);?></span>
                             </div>
-                            <span class='time-picture'><?= $pict['date_picture'].' - '.$pict['hour_picture'] ?></span>
+                            <span class='time-picture'><?= $pict['date_picture'].' - <br class="time-br">'.$pict['hour_picture'] ?></span>
                         </div>
                     </div>
                 <?php
