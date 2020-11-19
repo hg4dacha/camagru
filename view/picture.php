@@ -37,14 +37,19 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/picture_get.php");
         </nav>
         <section>
             <div id="left">
-                <div id="username-and-time">
-                    <h1 id="picture-of">
-                        <img id="logo-username" src="/camagru/public/pictures/logo-username.png" alt="logo-username">
-                    <?= $usrName ?></h1>
-                    <span id="time"><?= $picture['date_picture'].' - '.$picture['hour_picture'] ?></span>
-                </div>
+                <h1 id="picture-of">
+                    <img id="logo-username" src="/camagru/public/pictures/logo-username.png" alt="logo-username">
+                <?= $usrName ?></h1>
                 <img id="<?= $idPict ?>" class="usr-image" src="<?= $picture['picture_path'] ?>" alt="Photo de <?= $usrName ?>">
+                <span id="time"><?=$picture['date_picture'].' - '.$picture['hour_picture'] ?></span>
             </div>
+            <form method="action" action="/camagru/view/picture.php">
+                <div id="form-div">
+                    <label for="champs" id="comment-picture"><img id="comment-logo" src="/camagru/public/pictures/comments00.png" alt="commentaire">Commentez la photo !</label>
+                    <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici..."></textarea>
+                    <button id="button">Poster</button>
+                </div>
+            </form>
         </section>
         <?php include("includes/footer.php") ?>
     </div>
