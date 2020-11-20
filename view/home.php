@@ -94,13 +94,15 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
                 </div>
             </div>
             <div id="big-bloc-comment">
-                <span id="cancel">Annuler<img id="logo-cancel" src="/camagru/public/pictures/cancel.png" alt="Annuler"></span>
+                <a id="cancel-link" href="<?= $url.'#user-tittle' ?>">
+                    <span id="cancel">Annuler<img id="logo-cancel" src="/camagru/public/pictures/cancel.png" alt="Annuler"></span>
+                </a>
                 <div id="bloc-comment">
                     <img id="usr-img00" src="../public/users_pictures/439592762118.jpeg" alt="photo utilisateur">
-                    <form method="post" action="/camagru/view/home.php">
+                    <form id="form-submit">
                         <div id="form-div">
-                            <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici...  (255 caractères max.)"></textarea>
-                            <button id="button">Poster</button>
+                            <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici...  (250 caractères max.)" maxlength="250"></textarea>
+                            <button id="button" formmethod="post">Poster</button>
                         </div>
                     </form>
                 </div>

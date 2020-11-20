@@ -268,8 +268,16 @@ section{
     margin-right: auto;
 }
 
+#cancel-link{
+    display: block;
+    width: 81px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
 #cancel{
-    width: 90px;
+    width: 75px;
     display: block;
     padding: 5px;
     margin-left: auto;

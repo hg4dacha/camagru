@@ -34,3 +34,7 @@ for (let k = 0; k < comments.length; k++) {
         });
     });
 }
+
+document.querySelector('#button').addEventListener('click', () => {
+    document.querySelector('#big-bloc-comment').style.display = 'none';
+});
