@@ -90,6 +90,16 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
                     ?>
                 </div>
             </div>
+            <div id="bloc-comment">
+                <img id="usr-img00" src="../public/users_pictures/439592762118.jpeg" alt="photo utilisateur">
+                <form method="post" action="/camagru/view/home.php">
+                    <div id="form-div">
+                        <label for="champs" id="comment-picture"><img id="comment-logo" src="/camagru/public/pictures/comments00.png" alt="commentaire">Commentez la photo !</label>
+                        <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici..."></textarea>
+                        <button id="button">Poster</button>
+                    </div>
+                </form>
+            </div>
         </section>
         <?php include("includes/footer.php") ?>
     </div>

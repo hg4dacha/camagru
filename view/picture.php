@@ -50,6 +50,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/picture_get.php");
                     <button id="button">Poster</button>
                 </div>
             </form>
+            <div id="users-comments">
+                <h2 id="usrCom-tittle">Commentaires des utilisateurs :</h2>
+                <p id="no-photo">Cette photo n'as pas encore de commentaires</p>
+            </div>
         </section>
         <?php include("includes/footer.php") ?>
     </div>

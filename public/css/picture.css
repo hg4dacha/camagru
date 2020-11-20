@@ -134,7 +134,8 @@ section{
 #time{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
-    color: #84817a;
+    color: gray;
+    font-weight: bold;
     width: 700px;
     display: block;
     margin-right: auto;
@@ -180,10 +181,14 @@ section{
     font-weight: bold;
     background-color: white;
     color: #2d3436;
-    border: 2px #b33939 solid;
+    border: 2px #34495e solid;
     border-radius: 3px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#champs:focus{
+    border: 2px #b33939 solid;
 }
 
 #button{
@@ -202,6 +207,28 @@ section{
 
 #button:active {
     background-color: #ee928b;
+}
+
+#users-comments{
+    margin-top: 80px;
+}
+
+#usrCom-tittle{
+    margin: 0px;
+    margin-left: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 19px;
+    color: #1e272e;
+    text-align: left;
+}
+
+#no-photo{
+    margin: 0px;
+    margin-top: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    color: gray;
+    text-align: center;
 }
 
 @media all and (max-width: 950px)
