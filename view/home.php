@@ -8,6 +8,7 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
 }
 
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php");
 
 ?>
 
@@ -54,7 +55,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
                                 </div>
                                 <div class="likes-and-comments">
                                     <img class="like" src="/camagru/public/pictures/like00.png" alt="like">
-                                    <img class="comments" src="/camagru/public/pictures/comments.png" alt="commentaires">
+                                    <a class="comment-url" href="<?= $url.'#big-bloc-comment' ?>">
+                                        <img class="comments" src="/camagru/public/pictures/comments.png" alt="commentaires">
+                                    </a>
                                 </div>
                                 <span class='time-picture'><?= $pict['date_picture'].' - <br class="time-br">'.$pict['hour_picture'] ?></span>
                             </div>
@@ -90,15 +93,17 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/users_pictures.php")
                     ?>
                 </div>
             </div>
-            <div id="bloc-comment">
-                <img id="usr-img00" src="../public/users_pictures/439592762118.jpeg" alt="photo utilisateur">
-                <form method="post" action="/camagru/view/home.php">
-                    <div id="form-div">
-                        <label for="champs" id="comment-picture"><img id="comment-logo" src="/camagru/public/pictures/comments00.png" alt="commentaire">Commentez la photo !</label>
-                        <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici..."></textarea>
-                        <button id="button">Poster</button>
-                    </div>
-                </form>
+            <div id="big-bloc-comment">
+                <span id="cancel">Annuler<img id="logo-cancel" src="/camagru/public/pictures/cancel.png" alt="Annuler"></span>
+                <div id="bloc-comment">
+                    <img id="usr-img00" src="../public/users_pictures/439592762118.jpeg" alt="photo utilisateur">
+                    <form method="post" action="/camagru/view/home.php">
+                        <div id="form-div">
+                            <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici...  (255 caractères max.)"></textarea>
+                            <button id="button">Poster</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
         <?php include("includes/footer.php") ?>

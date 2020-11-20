@@ -8,6 +8,7 @@ if(!isset($_SESSION['id']) || !isset($_SESSION['lastname']) || !isset($_SESSION[
 }
 
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/picture_get.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php");
 
 ?>
 
@@ -43,7 +44,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/picture_get.php");
                 <img id="<?= $idPict ?>" class="usr-image" src="<?= $picture['picture_path'] ?>" alt="Photo de <?= $usrName ?>">
                 <span id="time"><?=$picture['date_picture'].' - '.$picture['hour_picture'] ?></span>
             </div>
-            <form method="action" action="/camagru/view/picture.php">
+            <form method="post" action="<?= $url.'#usrCom-tittle' ?>">
                 <div id="form-div">
                     <label for="champs" id="comment-picture"><img id="comment-logo" src="/camagru/public/pictures/comments00.png" alt="commentaire">Commentez la photo !</label>
                     <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici..."></textarea>
