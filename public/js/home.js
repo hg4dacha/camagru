@@ -28,13 +28,34 @@ for (let k = 0; k < comments.length; k++) {
 
     comments[k].addEventListener('click', () => {
         document.querySelector('#big-bloc-comment').style.display = 'block';
-        document.querySelector('#usr-img00').src = picture[k].src;
+        document.querySelector('.usr-img00').src = picture[k].src;
+        document.querySelector('.usr-img00').id = picture[k].id;
         document.querySelector('#cancel').addEventListener('click', () => {
         document.querySelector('#big-bloc-comment').style.display = 'none';
         });
     });
 }
 
-document.querySelector('#button').addEventListener('click', () => {
+// document.querySelector('#form-submit').addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     document.querySelector('#big-bloc-comment').style.display = 'none';
+// });
+
+document.forms['form-submit'].addEventListener('submit', (e) => {
+    e.preventDefault();
+    let comment = document.forms['form-submit']['comment'].value;
+    let error;
+    if (!comment) {
+        error = 'Le champ est vide !';
+    }
+    else if (comment.length > 250) {
+        error = 'Le commentaire doit faire 250 caractères au maximum.';
+    }
+
+    if (error) {
+        document.querySelector('#error-comment').innerHTML = error;
+        return false;
+    }
+    let id_picture = document.querySelector('.usr-img00').id;
     document.querySelector('#big-bloc-comment').style.display = 'none';
 });
