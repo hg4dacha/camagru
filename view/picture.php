@@ -47,7 +47,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
             <form method="post" action="<?= $url.'#usrCom-tittle' ?>">
                 <div id="form-div">
                     <label for="champs" id="comment-picture"><img id="comment-logo" src="/camagru/public/pictures/comments00.png" alt="commentaire">Commentez la photo !</label>
-                    <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici..."></textarea>
+                    <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici...  (250 caractères max.)" maxlength="250" required></textarea>
                     <button id="button">Poster</button>
                 </div>
             </form>

@@ -31,6 +31,16 @@ function insertNewImage($idUsr, $imgID, $imgPath, $imgHour, $imgDate) {
     $reqIns->execute();
 }
 
+function insertNewComment($picture_id, $author_id, $id_picture_user, $comment) {
+    $dbc = db_connex();
+    $reqIns = $dbc->prepare("INSERT INTO comments (picture_id, author_id, id_picture_user, comment) VALUES (:picture_id, :author_id, :id_picture_user, :comment)");
+    $reqIns->bindValue(':picture_id', $picture_id, PDO::PARAM_STR);
+    $reqIns->bindValue(':author_id', $author_id, PDO::PARAM_INT);
+    $reqIns->bindValue(':id_picture_user', $id_picture_user, PDO::PARAM_INT);
+    $reqIns->bindValue(':comment', $comment, PDO::PARAM_STR);
+    $reqIns->execute();
+}
+
 //---------- Selection ----------
 
 function UsrCheckExist($usr)
@@ -209,6 +219,15 @@ function recup_pict_info($idUsr, $idPict) {
     $reqCtrl->bindValue(':idPict', $idPict, PDO::PARAM_STR);
     $reqCtrl->execute();
     return $reqCtrl->fetch();
+}
+
+function get_user_id($picture_id)
+{
+    $dbc = db_connex();
+    $reqField = $dbc->prepare("SELECT id_user FROM user_pictures WHERE picture_id = :picture_id");
+    $reqField->bindValue(':picture_id', $picture_id, PDO::PARAM_INT);
+    $reqField->execute();
+    return $reqField->fetch();
 }
 
 //---------- Replacement ----------

@@ -1,3 +1,4 @@
+// --   likes   --  //
 let likes = document.querySelectorAll('.like');
 let likesLength = likes.length;
 let likeState = [];
@@ -21,26 +22,30 @@ for  (let i = 0; i < likes.length; i++) {
     })
 }
 
+// --   comments   --  //
 let comments = document.querySelectorAll('.comments');
 let picture = document.querySelectorAll('.user-pictures');
 
 for (let k = 0; k < comments.length; k++) {
 
     comments[k].addEventListener('click', () => {
+        document.querySelector('#error-comment').innerHTML = '';
+        document.forms['form-submit']['comment'].value = '';
         document.querySelector('#big-bloc-comment').style.display = 'block';
         document.querySelector('.usr-img00').src = picture[k].src;
         document.querySelector('.usr-img00').id = picture[k].id;
-        document.querySelector('#cancel').addEventListener('click', () => {
-        document.querySelector('#big-bloc-comment').style.display = 'none';
-        });
     });
 }
 
-// document.querySelector('#form-submit').addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     document.querySelector('#big-bloc-comment').style.display = 'none';
-// });
+// cancel comment writing
+document.querySelector('#cancel').addEventListener('click', () => {
+    document.querySelector('#big-bloc-comment').style.display = 'none';
+    let loc = document.location.href;
+    loc = loc.replace('#big-bloc-comment', '#user-tittle');
+    location = loc;
+});
 
+//  checking the comment
 document.forms['form-submit'].addEventListener('submit', (e) => {
     e.preventDefault();
     let comment = document.forms['form-submit']['comment'].value;
@@ -56,6 +61,25 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
         document.querySelector('#error-comment').innerHTML = error;
         return false;
     }
-    let id_picture = document.querySelector('.usr-img00').id;
+    let picture_id = document.querySelector('.usr-img00').id;
+
+    let newComment = new FormData();
+    newComment.append('picture_id', picture_id);
+    newComment.append('comment', comment);
+    let XHR = new XMLHttpRequest();
+    XHR.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log(this.responseText); }
+        };
+    XHR.open('POST', '../controller/new_comment.php', true);
+    XHR.send(newComment);
+
     document.querySelector('#big-bloc-comment').style.display = 'none';
+    document.querySelector('#success').style.display = 'initial';
+    let loc = document.location.href;
+    loc = loc.replace('#big-bloc-comment', '#success');
+    location = loc;
+    setTimeout( () => {
+    document.querySelector('#success').style.display = 'none';
+    }, 2500);
 });

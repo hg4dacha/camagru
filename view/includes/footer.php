@@ -51,5 +51,5 @@
 
 
 <footer>
-    <p id="rights">© 2020 CAMAGRU BY HG4DACHA</p>
+    <p id="rights">© <?= date('Y'); ?> CAMAGRU BY HG4DACHA</p>
 </footer>

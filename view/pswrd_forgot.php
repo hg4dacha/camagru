@@ -45,7 +45,7 @@ if(isset($_SESSION['id']) || isset($_SESSION['lastname']) || isset($_SESSION['fi
             </div>
         </div>
         <footer>
-            <p id="rights">© 2020 CAMAGRU BY HG4DACHA</p>
+            <p id="rights">© <?= date('Y'); ?> CAMAGRU BY HG4DACHA</p>
         </footer>
     </div>
 </body>
