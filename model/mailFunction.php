@@ -7,7 +7,7 @@ require '../lib/PHPMailer/src/Exception.php';
 require '../lib/PHPMailer/src/PHPMailer.php';
 require '../lib/PHPMailer/src/SMTP.php';
 
-function sendmail($mailAdress, $subject, $body)
+function sendmail($mailAdress, $subject, $body, $id_image)
 {
     $mail = new PHPMailer(true);
 
@@ -25,6 +25,9 @@ function sendmail($mailAdress, $subject, $body)
         $mail->CharSet = 'UTF-8';
         $mail->isHTML(true);
         $mail->AddEmbeddedImage('../public/pictures/Camagru.png', 'logo');
+        if $id_image !== NULL){
+            $mail->AddEmbeddedImage('../public/users_pictures/'.$id_image.'.jpeg', 'user_image');
+        }
         $mail->Subject = $subject;
         $mail->Body    = $body;
         $mail->send();

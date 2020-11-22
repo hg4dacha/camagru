@@ -43,7 +43,7 @@ if((isset($_GET['idf']) && isset($_GET['id'])) && (!empty($_GET['idf']) && !empt
                 <br>
                 ********Tous droits réservés********
                 </p>";
-                sendmail($mailUsr, $subject, $body);
+                sendmail($mailUsr, $subject, $body, NULL);
                 $_SESSION['messVald'] = "Un e-mail de validation vous a été renvoyé.";
                 header('location: /camagru/index.php');
                 exit;

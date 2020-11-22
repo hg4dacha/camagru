@@ -88,7 +88,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         <br>
                         ********Tous droits réservés********
                         </p>";
-                        sendmail($email, $subject, $body);
+                        sendmail($email, $subject, $body, NULL);
                         insertMbr($lastname, $firstname, $email, $username, $password, $notif, $keyUsr, $tokenUsr, $idCTRL);
                         $_SESSION['messVald'] = "Votre compte a bien été crée.</br>Un email de validation vous a été envoyé.";
                         header('location: /camagru/index.php');
