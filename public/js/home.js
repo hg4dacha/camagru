@@ -45,26 +45,6 @@ document.querySelector('#cancel').addEventListener('click', () => {
     location = loc;
 });
 
-//  date and hour
-function actualTime() {
-    let time = new Date();
-    let localTime = time.toLocaleString('fr-FR', {
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-    localTime = localTime.replace(':', 'h');
-    return(localTime);
-}
-//
-function actualDate() {
-    let date = new Date();
-    let localDate = date.toLocaleString('fr-FR', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric'
-    });
-    return(localDate);
-}
 
 //  checking the comment
 document.forms['form-submit'].addEventListener('submit', (e) => {
@@ -83,14 +63,10 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
         return false;
     }
     let picture_id = document.querySelector('.usr-img00').id;
-    let commHour = actualTime();
-    let commDate = actualDate();
 
     let newComment = new FormData();
     newComment.append('picture_id', picture_id);
     newComment.append('comment', comment);
-    newComment.append('commHour', commHour);
-    newComment.append('commDate', commDate);
     let XHR = new XMLHttpRequest();
     XHR.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {

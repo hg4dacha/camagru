@@ -21,8 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
 
         if ($mime_type == 'image/jpeg') {
 
-            $check_imgID = intval($imgID);
-            if ((strlen($imgID) <= 12) && ($check_imgID != 0)) {
+            if ((strlen($imgID) <= 12) && (intval($imgID) != 0)) {
 
                 setlocale(LC_TIME, "fr_FR");
                 $imgDate = strftime("%d %b %Y");

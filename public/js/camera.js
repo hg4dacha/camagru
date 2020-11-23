@@ -4,7 +4,7 @@ const buttCam = document.querySelector('#button-cam');
 buttCam.onclick = () => { stateCam(); }
 let importStatus = false;
 const buttImportLabel = document.querySelector('#downl-file');
-const buttImport = document.querySelector('#imprt-inpt');
+let buttImport = document.querySelector('#imprt-inpt');
 const takePic = document.querySelector('#take-picture');
 const video = document.querySelector('video');
 const canvas = document.querySelector('#canvas');
@@ -99,9 +99,13 @@ function stateCam() {
 
 /* --- import an image --- */
 buttImportLabel.addEventListener('click', () => {
+    console.log(buttImport.files); ///////////////
     if (importStatus === false) {
         buttImport.addEventListener('change', () => {
+            // if (buttImport.files == null) { console.log(typeof(buttImport.files)); }
+            if (buttImport.files == null) { buttImport.files = new Object; }
             let format = buttImport.files[0].type;
+            // console.log(buttImport.files);
             if (format == 'image/jpeg' || format == 'image/png' || format == 'image/gif') {
                 importStatus = true;
                 uploadImg = new Image;
@@ -116,7 +120,7 @@ buttImportLabel.addEventListener('click', () => {
                     buttCam.style.cursor = 'initial';
                     buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/deleting.png">Annuler import.';
                     buttImportLabel.style.border='2px #EA2027 solid';
-                    buttImport.type='';
+                    buttImport.type= '';
                     setTimeout( () => {
                         takePic.style.display='initial';
                     takePic.disabled = true;
@@ -333,6 +337,21 @@ document.querySelector('#save').addEventListener('click', () => {
         }
     }
 })
+
+function savePict(img) {
+    let imgData = new FormData();
+    imgData.append('imgData', img.src);
+    imgData.append('imgID', img.id);
+    let XHR = new XMLHttpRequest();
+    XHR.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log(this.responseText); }
+        };
+    XHR.open('POST', '../controller/save_picture.php', true);
+    XHR.send(imgData);
+}
+
+//  date an hour in js
 //
 // function actualTime() {
 //     let time = new Date();
@@ -353,16 +372,3 @@ document.querySelector('#save').addEventListener('click', () => {
 //     });
 //     return(localDate);
 // }
-//
-function savePict(img) {
-    let imgData = new FormData();
-    imgData.append('imgData', img.src);
-    imgData.append('imgID', img.id);
-    let XHR = new XMLHttpRequest();
-    XHR.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            console.log(this.responseText); }
-        };
-    XHR.open('POST', '../controller/save_picture.php', true);
-    XHR.send(imgData);
-}

@@ -5,13 +5,10 @@ session_start();
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/sqlFunctions.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/mailFunction.php");
 
-if ((isset($_POST['picture_id']) && isset($_POST['comment']) && isset($_POST['commHour']) && isset($_POST['commDate'])) && 
-(!empty($_POST['picture_id']) && !empty($_POST['comment']) && !empty($_POST['commHour']) && !empty($_POST['commDate']))) {
+if ((isset($_POST['picture_id']) && isset($_POST['comment'])) && (!empty($_POST['picture_id']) && !empty($_POST['comment']))) {
 
     if(!(empty($_POST['picture_id']))) $picture_id = htmlspecialchars($_POST['picture_id']);
     if(!(empty($_POST['comment']))) $comment = htmlspecialchars($_POST['comment']);
-    if(!(empty($_POST['commHour']))) $commHour = htmlspecialchars($_POST['commHour']);
-    if(!(empty($_POST['commDate']))) $commDate = htmlspecialchars($_POST['commDate']);
     
     if (strlen($comment) < 250) {
 
@@ -21,6 +18,10 @@ if ((isset($_POST['picture_id']) && isset($_POST['comment']) && isset($_POST['co
 
         $id_picture_user = get_user_id($picture_id);
         $id_picture_user = $id_picture_user[0];
+
+        setlocale(LC_TIME, "fr_FR");
+        $commDate = strftime("%d %b %Y");
+        $commHour = strftime("%Hh%M");
 
         insertNewComment($picture_id, $author_id, $id_picture_user, $comment, $commHour, $commDate);
 
