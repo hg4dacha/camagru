@@ -31,13 +31,15 @@ function insertNewImage($idUsr, $imgID, $imgPath, $imgHour, $imgDate) {
     $reqIns->execute();
 }
 
-function insertNewComment($picture_id, $author_id, $id_picture_user, $comment) {
+function insertNewComment($picture_id, $author_id, $id_picture_user, $comment, $hour_comment, $date_comment) {
     $dbc = db_connex();
-    $reqIns = $dbc->prepare("INSERT INTO comments (picture_id, author_id, id_picture_user, comment) VALUES (:picture_id, :author_id, :id_picture_user, :comment)");
+    $reqIns = $dbc->prepare("INSERT INTO comments (picture_id, author_id, id_picture_user, comment, hour_comment, date_comment) VALUES (:picture_id, :author_id, :id_picture_user, :comment, :hour_comment, :date_comment)");
     $reqIns->bindValue(':picture_id', $picture_id, PDO::PARAM_STR);
     $reqIns->bindValue(':author_id', $author_id, PDO::PARAM_INT);
     $reqIns->bindValue(':id_picture_user', $id_picture_user, PDO::PARAM_INT);
     $reqIns->bindValue(':comment', $comment, PDO::PARAM_STR);
+    $reqIns->bindValue(':hour_comment', $hour_comment, PDO::PARAM_STR);
+    $reqIns->bindValue(':date_comment', $date_comment, PDO::PARAM_STR);
     $reqIns->execute();
 }
 
@@ -228,6 +230,24 @@ function get_user_id($picture_id)
     $reqField->bindValue(':picture_id', $picture_id, PDO::PARAM_INT);
     $reqField->execute();
     return $reqField->fetch();
+}
+
+function mail_notif_and_username_recuperation($id_usr)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT notif, email, username FROM users WHERE id = :id_usr");
+    $reqCtrl->bindValue(':id_usr', $id_usr, PDO::PARAM_INT);
+    $reqCtrl->execute();
+    return $reqCtrl->fetchAll();
+}
+
+function get_username($id_user)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT username FROM users WHERE id = :id_user");
+    $reqCtrl->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $reqCtrl->execute();
+    return $reqCtrl->fetch();
 }
 
 //---------- Replacement ----------

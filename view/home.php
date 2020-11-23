@@ -92,7 +92,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
                         }
                     ?>
                 </div>
-                <p id="success">Votre commentaire a bien été posté.</p>
+                <p id="success"></p>
             </div>
             <div id="big-bloc-comment">
                 <span id="cancel">Annuler<img id="logo-cancel" src="/camagru/public/pictures/cancel.png" alt="Annuler"></span>

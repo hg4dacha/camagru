@@ -25,7 +25,7 @@ function sendmail($mailAdress, $subject, $body, $id_image)
         $mail->CharSet = 'UTF-8';
         $mail->isHTML(true);
         $mail->AddEmbeddedImage('../public/pictures/Camagru.png', 'logo');
-        if $id_image !== NULL){
+        if ($id_image != NULL) {
             $mail->AddEmbeddedImage('../public/users_pictures/'.$id_image.'.jpeg', 'user_image');
         }
         $mail->Subject = $subject;
