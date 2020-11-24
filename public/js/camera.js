@@ -4,7 +4,7 @@ const buttCam = document.querySelector('#button-cam');
 buttCam.onclick = () => { stateCam(); }
 let importStatus = false;
 const buttImportLabel = document.querySelector('#downl-file');
-let buttImport = document.querySelector('#imprt-inpt');
+const buttImport = document.querySelector('#imprt-inpt');
 const takePic = document.querySelector('#take-picture');
 const video = document.querySelector('video');
 const canvas = document.querySelector('#canvas');
@@ -42,8 +42,8 @@ function stateCam() {
             video.play();
             camStatus = true;
             buttImport.disabled = true;
+            buttImportLabel.style.cursor = 'not-allowed';
             buttImportLabel.style.opacity = '0.4';
-            buttImportLabel.style.cursor = 'initial';
             buttCam.innerHTML='<img id="rec" src="/camagru/public/pictures/cancel.png">Désactiv. caméra';
             buttCam.style.border='2px #EA2027 solid';
             // To avoid instant deactivation, otherwise the "take-picture" button will be activated anyway.
@@ -99,15 +99,13 @@ function stateCam() {
 
 /* --- import an image --- */
 buttImportLabel.addEventListener('click', () => {
-    console.log(buttImport.files); ///////////////
     if (importStatus === false) {
-        buttImport.addEventListener('change', () => {
-            // if (buttImport.files == null) { console.log(typeof(buttImport.files)); }
-            if (buttImport.files == null) { buttImport.files = new Object; }
+        buttImport.addEventListener('change', (e) => {
+            e.stopImmediatePropagation();
             let format = buttImport.files[0].type;
-            // console.log(buttImport.files);
             if (format == 'image/jpeg' || format == 'image/png' || format == 'image/gif') {
                 importStatus = true;
+                buttImport.disabled = true;
                 uploadImg = new Image;
                 uploadImg.src = URL.createObjectURL(buttImport.files[0]);
                 context.clearRect(0, 0, width, height);
@@ -115,14 +113,13 @@ buttImportLabel.addEventListener('click', () => {
                 interval = setInterval( () => {
                     context.drawImage(uploadImg, 0, 0, width, height);
                     superimposeFilter(); }, 5);
-                    buttCam.disabled = true;
-                    buttCam.style.opacity = '0.4';
-                    buttCam.style.cursor = 'initial';
-                    buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/deleting.png">Annuler import.';
-                    buttImportLabel.style.border='2px #EA2027 solid';
-                    buttImport.type= '';
-                    setTimeout( () => {
-                        takePic.style.display='initial';
+                buttCam.disabled = true;
+                buttCam.style.opacity = '0.4';
+                buttCam.style.cursor = 'not-allowed';
+                buttImportLabel.innerHTML='<img id="import" src="/camagru/public/pictures/deleting.png">Annuler import.';
+                buttImportLabel.style.border='2px #EA2027 solid';
+                setTimeout( () => {
+                    takePic.style.display='initial';
                     takePic.disabled = true;
                     takePic.style.opacity = '0.4';
                     takePic.style.cursor = 'initial'; }, 100);
@@ -152,7 +149,7 @@ buttImportLabel.addEventListener('click', () => {
             buttImportLabel.style.border='initial';
             takePic.style.display='none';
             document.querySelector('#select-filter').style.display = 'none';
-            setTimeout( () => { buttImport.type='file'; }, 50); // Otherwise the file download window reopens
+            setTimeout( () => { buttImport.disabled = false; }, 50); // Otherwise the file download window reopens
             if (screen.width <= 1060 && screen.width > 950) {
                 document.querySelector('#buttons-div').style.marginRight='-170px';
             }
@@ -279,7 +276,6 @@ document.querySelector('#delete').addEventListener('click', () => {
         stateCam();
     }
     else if (importStatus === true && camStatus === false) {
-        buttImport.disabled = false;
         buttImportLabel.style.opacity = 'initial';
         buttImportLabel.style.cursor = 'pointer';
         setTimeout( () => { takePic.style.display='initial'; }, 100);
