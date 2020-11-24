@@ -250,6 +250,25 @@ function get_username($id_user)
     return $reqCtrl->fetch();
 }
 
+function image_and_id_control($imgID, $id_user)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT id FROM user_pictures WHERE picture_id = :imgID AND id_user = :id_user");
+    $reqCtrl->bindValue(':imgID', $imgID, PDO::PARAM_STR);
+    $reqCtrl->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $reqCtrl->execute();
+    return $reqCtrl->rowCount();
+}
+
+function image_id_control($imgID)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT id FROM user_pictures WHERE picture_id = :imgID");
+    $reqCtrl->bindValue(':imgID', $imgID, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->rowCount();
+}
+
 //---------- Replacement ----------
 
 function replacePswrd($newPswrd, $idf)

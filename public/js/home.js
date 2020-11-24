@@ -70,15 +70,21 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
     let XHR = new XMLHttpRequest();
     XHR.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            if (this.responseText == "Le commentaire n'est pas valide.") {
+            if (this.responseText != '') {
                 document.querySelector('#success').style.display = 'initial';
                 document.querySelector('#success').style.color = '#EA2027';
-                document.querySelector('#success').innerHTML = this.responseText;
+                document.querySelector('#success').innerHTML = "Le commentaire n'est pas valide.";
                 setTimeout( () => {
                     document.querySelector('#success').style.display = 'none';
                 }, 2500);
                 return;
-            } else {
+            } else if (this.responseText == '') {
+                document.querySelector('#success').style.display = 'initial';
+                document.querySelector('#success').style.color = '#27ae60';
+                document.querySelector('#success').innerHTML = 'Votre commentaire a bien été posté !';
+                setTimeout( () => {
+                    document.querySelector('#success').style.display = 'none';
+                    }, 2500);
                 console.log(this.responseText);
             }
         } };
@@ -86,13 +92,13 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
     XHR.send(newComment);
 
     document.querySelector('#big-bloc-comment').style.display = 'none';
-    document.querySelector('#success').style.display = 'initial';
-    document.querySelector('#success').style.color = '#27ae60';
-    document.querySelector('#success').innerHTML = 'Votre commentaire a bien été posté !';
+    // document.querySelector('#success').style.display = 'initial';
+    // document.querySelector('#success').style.color = '#27ae60';
+    // document.querySelector('#success').innerHTML = 'Votre commentaire a bien été posté !';
     let loc = document.location.href;
     loc = loc.replace('#big-bloc-comment', '#success');
     location = loc;
-    setTimeout( () => {
-    document.querySelector('#success').style.display = 'none';
-    }, 2500);
+    // setTimeout( () => {
+    // document.querySelector('#success').style.display = 'none';
+    // }, 2500);
 });
