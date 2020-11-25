@@ -44,12 +44,13 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
                 <img id="<?= $idPict ?>" class="usr-image" src="<?= $picture['picture_path'] ?>" alt="Photo de <?= $usrName ?>">
                 <span id="time"><?=$picture['date_picture'].' - '.$picture['hour_picture'] ?></span>
             </div>
-            <form method="post" action="<?= $url.'#usrCom-tittle' ?>">
+            <form id="form-submit">
                 <div id="form-div">
                     <label for="champs" id="comment-picture"><img id="comment-logo" src="/camagru/public/pictures/comments00.png" alt="commentaire">Commentez la photo !</label>
                     <textarea id="champs" name="comment" placeholder="Écrivez votre commentaire ici...  (250 caractères max.)" maxlength="250" required></textarea>
                     <button id="button">Poster</button>
                 </div>
+                <p id="success"></p>
             </form>
             <div id="users-comments">
                 <h2 id="usrCom-tittle">Commentaires des utilisateurs :</h2>
@@ -58,6 +59,6 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
         </section>
         <?php include("includes/footer.php") ?>
     </div>
-    <script src="/camagru/public/js/home.js"></script>
+    <script src="/camagru/public/js/picture.js"></script>
 </body>
 </html>
