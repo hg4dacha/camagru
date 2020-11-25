@@ -15,7 +15,7 @@ if ((isset($_POST['picture_id']) && isset($_POST['comment'])) && (!empty($_POST[
         $imgID_control = image_id_control($picture_id);
         if ($imgID_control == 1) {
 
-            if (strlen($comment) <= 250) {
+            if (iconv_strlen($comment) <= 250) {
         
                 $author_id = intval($_SESSION['id']);
                 $author_username = get_username($author_id);
@@ -30,6 +30,7 @@ if ((isset($_POST['picture_id']) && isset($_POST['comment'])) && (!empty($_POST[
                 $commHour = strftime("%Hh%M");
         
                 insertNewComment($picture_id, $author_id, $id_picture_user, $comment, $commHour, $commDate);
+                echo('success');
         
                 //  e-mail part
                 $info_picture_user = mail_notif_and_username_recuperation($id_picture_user);
@@ -41,13 +42,13 @@ if ((isset($_POST['picture_id']) && isset($_POST['comment'])) && (!empty($_POST[
                     $body = "
                     <img src=\"cid:logo\" alt=\"logo\" style=\"display:block;margin-left:auto;margin-right:auto;width:30%;\">
                     <br><br>
-                    <p style=\"color:#1e272e;font-weight:bold;font-size:17px;border:0;\">Vous avec reçu un nouveau commentaire de ".$author_username.", sur votre photo-montage :
-                    <br>
-                    <img src=\"cid:user_image\" alt=\"user_image\" style=\"display:block;margin-left:auto;margin-right:auto;width:20%;\">
+                    <p style=\"color:#1e272e;font-weight:bold;font-size:17px;border:0;\">Vous avec reçu un nouveau commentaire de <span style=\"font-weight:normal;color:#487eb0;\">".$author_username."</span> sur votre photo-montage :
+                    <br><br>
+                    <img src=\"cid:user_image\" alt=\"user_image\" style=\"display:block;margin-left:auto;margin-right:auto;width:30%;\">
                     <br>
                     <span style=\"text-align:center;\">Commentaire :</span>
                     <br>
-                    <span style=\"text-align:center;font-weight:normal;color:#192a56;\">".$comment."</span>
+                    <span style=\"text-align:center;font-weight:normal;color:#487eb0;\">".$comment."</span>
                     </p>
                     <br><br><br><br>
                     <p style=\"color:#b33939;font-weight:bold;font-size:13px;border:0;\">_____________________________
@@ -60,19 +61,19 @@ if ((isset($_POST['picture_id']) && isset($_POST['comment'])) && (!empty($_POST[
                 }
             }
             else {
-                echo ("Erreur");
+                echo ("Error");
             }
         }
         else {
-            echo ("Erreur");
+            echo ("Error");
         }
     }
     else {
-        echo ("Erreur");
+        echo ("Error");
     }
 }
 else {
-    echo ("Erreur");
+    echo ("Error");
 }
 
 ?>
