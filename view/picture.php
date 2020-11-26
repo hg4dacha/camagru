@@ -56,13 +56,19 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
                 <h2 id="usrCom-tittle">Commentaires des utilisateurs :</h2>
                 <?php if ($comments == NULL) { ?>
                 <p id="no-photo">Cette photo n'as pas encore de commentaires</p>
-                <?php } else {
-                    foreach($comments as $comm) { ?>
-                        <h3 class="author-comm"><?php $autho_comment = idUsername($comm['author_id']); echo($autho_comment[0]); ?></h3>
-                        <p class="comment_author"><?= $comm['comment'] ?></p>
-                        <small class="comment-time"><?= $comm['date_comment'].' - '.$comm['hour_comment'] ?></small>
-                <?php }
-                } ?>
+                <?php } else { ?>
+                <div id="com-com">
+                    <?php foreach($comments as $comm) { ?>
+                        <div class="comment-div">
+                            <div class="logo-user-div">
+                                <img class="logo-username2" src="/camagru/public/pictures/logo-username2.png" alt="logo">
+                                <h3 class="author-comm"><?php $autho_comment = idUsername($comm['author_id']); echo($autho_comment[0]); ?></h3>
+                            </div>
+                            <p class="comment_author"><?= $comm['comment'] ?></p>
+                            <small class="comment-time"><?= $comm['date_comment'].' - '.$comm['hour_comment'] ?></small>
+                        </div>
+                    <?php } } ?>
+                </div>
             </div>
         </section>
         <?php include("includes/footer.php") ?>
