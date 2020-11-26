@@ -54,7 +54,15 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
             </form>
             <div id="users-comments">
                 <h2 id="usrCom-tittle">Commentaires des utilisateurs :</h2>
+                <?php if ($comments == NULL) { ?>
                 <p id="no-photo">Cette photo n'as pas encore de commentaires</p>
+                <?php } else {
+                    foreach($comments as $comm) { ?>
+                        <h3 class="author-comm"><?php $autho_comment = idUsername($comm['author_id']); echo($autho_comment[0]); ?></h3>
+                        <p class="comment_author"><?= $comm['comment'] ?></p>
+                        <small class="comment-time"><?= $comm['date_comment'].' - '.$comm['hour_comment'] ?></small>
+                <?php }
+                } ?>
             </div>
         </section>
         <?php include("includes/footer.php") ?>

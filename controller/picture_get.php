@@ -16,6 +16,14 @@ if((isset($_GET['username']) && isset($_GET['pictureID'])) && (!empty($_GET['use
         $picture = recup_pict_info($idUsr, $pictureID);
         $usrName = $username;
         $idPict = $pictureID;
+
+        $comments = get_comments($pictureID);
+
+        function idUsername($id_user) {
+
+            $id_user = intval($id_user);
+            return recup_username_byID($id_user);
+        }
     }
     else {
         header('location: /camagru/view/404.html');

@@ -18,6 +18,7 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
     let picture_id = document.querySelector('.usr-image').id;
     document.querySelector('body').style.pointerEvents='none';
     document.querySelector('body').style.backgroundColor='rgba(0, 0, 0, .3)';
+    document.querySelector('#champs').style.backgroundColor='rgba(0, 0, 0, .1)';
     let newComment = new FormData();
     newComment.append('picture_id', picture_id);
     newComment.append('comment', comment);
@@ -27,6 +28,7 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
             if (this.responseText != 'success') {
                 document.querySelector('body').style.pointerEvents='auto';
                 document.querySelector('body').style.backgroundColor='whitesmoke';
+                document.querySelector('#champs').style.backgroundColor='white';
                 document.querySelector('#success').style.display = 'initial';
                 document.querySelector('#success').style.color = '#EA2027';
                 document.querySelector('#success').innerHTML = "Le commentaire n'est pas valide.";
@@ -37,6 +39,7 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
             } else if (this.responseText == 'success') {
                 document.querySelector('body').style.pointerEvents='auto';
                 document.querySelector('body').style.backgroundColor='whitesmoke';
+                document.querySelector('#champs').style.backgroundColor='white';
                 document.querySelector('#success').style.display = 'initial';
                 document.querySelector('#success').style.color = '#27ae60';
                 document.querySelector('#success').innerHTML = 'Votre commentaire a bien été posté !';
