@@ -278,6 +278,15 @@ function get_comments($picture_id)
     return $reqCtrl->fetchAll();
 }
 
+function get_comments_number($picture_id)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT id FROM comments WHERE picture_id = :picture_id");
+    $reqCtrl->bindValue(':picture_id', $picture_id, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->rowCount();
+}
+
 //---------- Replacement ----------
 
 function replacePswrd($newPswrd, $idf)

@@ -38,11 +38,25 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
         </nav>
         <section>
             <div id="left">
-                <h1 id="picture-of">
-                    <img id="logo-username" src="/camagru/public/pictures/logo-username.png" alt="logo-username">
-                <?= $usrName ?></h1>
+                <div id="usrname-and-likes">
+                    <div>
+                        <h1 id="picture-of">
+                            <img id="logo-username" src="/camagru/public/pictures/logo-username.png" alt="logo-username">
+                        <?= $usrName ?></h1>
+                    </div>
+                    <div id="likes-number">
+                    <img id="likes-likes" src="/camagru/public/pictures/like02.png" alt="likes">
+                    <p id="number-of-likes">100</p>
+                    </div>
+                </div>
                 <img id="<?= $idPict ?>" class="usr-image" src="<?= $picture['picture_path'] ?>" alt="Photo de <?= $usrName ?>">
-                <span id="time"><?=$picture['date_picture'].' - '.$picture['hour_picture'] ?></span>
+                <div id="time-and-like">
+                    <span id="time"><?=$picture['date_picture'].' - '.$picture['hour_picture'] ?></span>
+                    <div id="liker-and-heart">
+                        <p id="liker">J'aime</p>
+                        <img id="heart" src="/camagru/public/pictures/like00.png" alt="like">
+                    </div>
+                </div>
             </div>
             <form id="form-submit">
                 <div id="form-div">
@@ -53,7 +67,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
                 <p id="success"></p>
             </form>
             <div id="users-comments">
-                <h2 id="usrCom-tittle">Commentaires des utilisateurs :</h2>
+                <h2 id="usrCom-tittle">Commentaires des utilisateurs<span id="number-of-com"><?php if ($numbComments > 0) { echo(' ('.$numbComments.')'); } ?></span> :</h2>
                 <?php if ($comments == NULL) { ?>
                 <p id="no-photo">Cette photo n'as pas encore de commentaires</p>
                 <?php } else { ?>
