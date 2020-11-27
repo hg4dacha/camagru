@@ -55,3 +55,8 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
         document.forms['form-submit']['comment'].value = '';
 
 });
+
+let no_photo = document.querySelector('#no-photo');
+if (no_photo.length != 0) {
+    document.querySelector('footer').style.bottom='initial';
+}

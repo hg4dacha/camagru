@@ -272,7 +272,7 @@ function image_id_control($imgID)
 function get_comments($picture_id)
 {
     $dbc = db_connex();
-    $reqCtrl = $dbc->prepare("SELECT author_id, comment, hour_comment, date_comment FROM comments WHERE picture_id = :picture_id");
+    $reqCtrl = $dbc->prepare("SELECT author_id, comment, hour_comment, date_comment FROM comments WHERE picture_id = :picture_id ORDER BY id DESC");
     $reqCtrl->bindValue(':picture_id', $picture_id, PDO::PARAM_STR);
     $reqCtrl->execute();
     return $reqCtrl->fetchAll();
