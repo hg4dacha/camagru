@@ -404,4 +404,12 @@ function delete_all_usr_img($id_usr) {
     $reqDelete->execute();
 }
 
+function deleteLike($picture_id, $id_user) {
+    $dbc = db_connex();
+    $reqDelete = $dbc->prepare("DELETE FROM likes WHERE picture_id = :picture_id AND id_user = :id_user");
+    $reqDelete->bindValue(':picture_id', $picture_id, PDO::PARAM_STR);
+    $reqDelete->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $reqDelete->execute();
+}
+
 ?>

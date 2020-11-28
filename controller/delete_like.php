@@ -15,7 +15,7 @@ if ((isset($_POST['picture_id'])) && (!empty($_POST['picture_id']))) {
         
             $id_user = intval($_SESSION['id']);
 
-            insertNewComment($picture_id, $author_id, $id_picture_user, $comment, $commHour, $commDate);
+            deleteLike($picture_id, $id_user);
         }
     }
 }
