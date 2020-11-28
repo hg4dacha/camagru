@@ -1,11 +1,16 @@
 // --   likes   --  //
 let likes = document.querySelectorAll('.like');
-let likesLength = likes.length;
 let likeState = [];
-likeState.length = likesLength;
+likeState.length = likes.length;
 
 for (let j = 0; j < likeState.length; j++) {
-    likeState[j] = false;
+    
+    if (likes[j].src == 'http://localhost:8080/camagru/public/pictures/like00.png') {
+        likeState[j] = false;
+    }
+    else if (likes[j].src == 'http://localhost:8080/camagru/public/pictures/like01.png') {
+        likeState[j] = true;
+    }
 }
 
 for  (let i = 0; i < likes.length; i++) {
