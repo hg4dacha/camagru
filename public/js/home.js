@@ -14,10 +14,32 @@ for  (let i = 0; i < likes.length; i++) {
         if (likeState[i] === false) {
             likes[i].src = '/camagru/public/pictures/like01.png';
             likeState[i] = true;
+            let picture_id = picture[i].id;
+            let newLike = new FormData();
+            newLike.append('picture_id', picture_id);
+            let XHR = new XMLHttpRequest();
+            XHR.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    console.log(this.responseText);
+                }
+            }
+            XHR.open('POST', '../controller/new_like.php', true);
+            XHR.send(newLike);
         }
         else if (likeState[i] === true) {
             likes[i].src = '/camagru/public/pictures/like00.png';
             likeState[i] = false;
+            let picture_id0 = picture[i].id;
+            let newLike = new FormData();
+            newLike.append('picture_id', picture_id0);
+            let XHR = new XMLHttpRequest();
+            XHR.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    console.log(this.responseText);
+                }
+            }
+            XHR.open('POST', '../controller/delete_like.php', true);
+            XHR.send(newLike);
         }
     })
 }
@@ -90,14 +112,14 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
                 setTimeout( () => {
                     document.querySelector('#success').style.display = 'none';
                 }, 2500);
-                console.log(this.responseText);
             }
-        } };
-        XHR.open('POST', '../controller/new_comment.php', true);
-        XHR.send(newComment);
-        
-        document.querySelector('#big-bloc-comment').style.display = 'none';
-        let loc = document.location.href;
-        loc = loc.replace('#big-bloc-comment', '#success');
-        location = loc;
+        }
+    };
+    XHR.open('POST', '../controller/new_comment.php', true);
+    XHR.send(newComment);
+    
+    document.querySelector('#big-bloc-comment').style.display = 'none';
+    let loc = document.location.href;
+    loc = loc.replace('#big-bloc-comment', '#success');
+    location = loc;
 });

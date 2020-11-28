@@ -43,6 +43,14 @@ function insertNewComment($picture_id, $author_id, $id_picture_user, $comment, $
     $reqIns->execute();
 }
 
+function insertNewLike($picture_id, $id_user) {
+    $dbc = db_connex();
+    $reqIns = $dbc->prepare("INSERT INTO likes (picture_id, id_user) VALUES (:picture_id, :id_user)");
+    $reqIns->bindValue(':picture_id', $picture_id, PDO::PARAM_STR);
+    $reqIns->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $reqIns->execute();
+}
+
 //---------- Selection ----------
 
 function UsrCheckExist($usr)
