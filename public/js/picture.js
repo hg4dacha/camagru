@@ -1,3 +1,6 @@
+// likes
+
+
 //  checking the comment and submit
 document.forms['form-submit'].addEventListener('submit', (e) => {
     e.preventDefault();

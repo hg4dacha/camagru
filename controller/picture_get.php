@@ -17,8 +17,8 @@ if((isset($_GET['username']) && isset($_GET['pictureID'])) && (!empty($_GET['use
         $usrName = $username;
         $idPict = $pictureID;
 
-        $comments = get_comments($pictureID);
-        $numbComments = get_comments_number($pictureID);
+        $comments = get_comments($idPict);
+        $numbComments = get_comments_number($idPict);
 
         function idUsername($id_user) {
 

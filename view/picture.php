@@ -54,7 +54,12 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
                     <span id="time"><?=$picture['date_picture'].' - '.$picture['hour_picture'] ?></span>
                     <div id="liker-and-heart">
                         <p id="liker">J'aime</p>
+                        <?php $like_state = checkLike($_SESSION['id'], $idPict);
+                              if ($like_state == 0) { ?>
                         <img id="heart" src="/camagru/public/pictures/like00.png" alt="like">
+                        <?php } else if ($like_state == 1) { ?>
+                        <img id="heart" src="/camagru/public/pictures/like01.png" alt="like">
+                        <?php } ?>
                     </div>
                 </div>
             </div>
