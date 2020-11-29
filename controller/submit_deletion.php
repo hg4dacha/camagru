@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             $id_usr = NULL;
             if(isset($_SESSION['id']))
             {
-                $id_usr = $_SESSION['id'];
+                $id_usr = intval($_SESSION['id']);
             }
             $mail_recup = mail_recuperation($id_usr);
             $mail_recup = $mail_recup[0];
@@ -32,6 +32,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         unlink('../public/users_pictures/'.$picture_id[0].'.jpeg');
                     }
                     delete_all_usr_img($id_usr);
+                    delete_all_usr_com($id_usr);
+                    delete_all_usr_lik($id_usr);
                     $_SESSION = array();
                     session_destroy();
                     session_start();

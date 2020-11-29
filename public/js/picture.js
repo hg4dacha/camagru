@@ -97,7 +97,6 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
         XHR.send(newComment);
 
         document.forms['form-submit']['comment'].value = '';
-
 });
 
 if (document.querySelector('#no-photo')) {

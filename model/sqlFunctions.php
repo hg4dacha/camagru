@@ -431,4 +431,18 @@ function deleteLike($picture_id, $id_user) {
     $reqDelete->execute();
 }
 
+function delete_all_usr_com($author_id) {
+    $dbc = db_connex();
+    $reqDelete = $dbc->prepare("DELETE FROM comments WHERE author_id = :author_id");
+    $reqDelete->bindValue(':author_id', $author_id, PDO::PARAM_INT);
+    $reqDelete->execute();
+}
+
+function delete_all_usr_lik($id_user) {
+    $dbc = db_connex();
+    $reqDelete = $dbc->prepare("DELETE FROM likes WHERE id_user = :id_user");
+    $reqDelete->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $reqDelete->execute();
+}
+
 ?>
