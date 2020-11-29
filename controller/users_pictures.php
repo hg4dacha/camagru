@@ -27,4 +27,9 @@ function idUsername($id_user) {
     return recup_username_byID($id_user);
 }
 
+function checkLike($id_user, $picture_id) {
+    $id_user = intval($id_user);
+    return check_like_user($id_user, $picture_id);
+}
+
 ?>

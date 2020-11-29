@@ -295,6 +295,25 @@ function get_comments_number($picture_id)
     return $reqCtrl->rowCount();
 }
 
+function check_like_user($id_user, $picture_id)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT id FROM likes WHERE picture_id = :picture_id AND id_user = :id_user");
+    $reqCtrl->bindValue(':picture_id', $picture_id, PDO::PARAM_STR);
+    $reqCtrl->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $reqCtrl->execute();
+    return $reqCtrl->rowCount();
+}
+
+function check_numb_like($picture_id)
+{
+    $dbc = db_connex();
+    $reqCtrl = $dbc->prepare("SELECT id FROM likes WHERE picture_id = :picture_id");
+    $reqCtrl->bindValue(':picture_id', $picture_id, PDO::PARAM_STR);
+    $reqCtrl->execute();
+    return $reqCtrl->rowCount();
+}
+
 //---------- Replacement ----------
 
 function replacePswrd($newPswrd, $idf)

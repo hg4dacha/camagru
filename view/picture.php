@@ -46,7 +46,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
                     </div>
                     <div id="likes-number">
                     <img id="likes-likes" src="/camagru/public/pictures/like02.png" alt="likes">
-                    <p id="number-of-likes">100</p>
+                    <p id="number-of-likes"><?php echo(checkNumbLikes($idPict)); ?></p>
                     </div>
                 </div>
                 <img id="<?= $idPict ?>" class="usr-image" src="<?= $picture['picture_path'] ?>" alt="Photo de <?= $usrName ?>">

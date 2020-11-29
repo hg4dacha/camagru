@@ -25,6 +25,15 @@ if((isset($_GET['username']) && isset($_GET['pictureID'])) && (!empty($_GET['use
             $id_user = intval($id_user);
             return recup_username_byID($id_user);
         }
+
+        function checkLike($id_user, $picture_id) {
+            $id_user = intval($id_user);
+            return check_like_user($id_user, $picture_id);
+        }
+
+        function checkNumbLikes($picture_id) {
+            return check_numb_like($picture_id);
+        }
     }
     else {
         header('location: /camagru/view/404.html');

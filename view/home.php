@@ -54,7 +54,12 @@ require_once($_SERVER['DOCUMENT_ROOT']."/camagru/controller/URL_current_page.php
                                     <span class="user-name"><?php $usrName = idUsername($pict['id_user']); echo($usrName[0]);?></span>
                                 </div>
                                 <div class="likes-and-comments">
+                                    <?php $like_state = checkLike($_SESSION['id'], $pict['picture_id']);
+                                          if ($like_state == 0) { ?>
                                     <img class="like" src="/camagru/public/pictures/like00.png" alt="like">
+                                    <?php } else if ($like_state == 1) { ?>
+                                    <img class="like" src="/camagru/public/pictures/like01.png" alt="like">
+                                    <?php }?>
                                     <a class="comment-url" href="<?= $url.'#big-bloc-comment' ?>">
                                         <img class="comments" src="/camagru/public/pictures/comments.png" alt="commentaires">
                                     </a>
