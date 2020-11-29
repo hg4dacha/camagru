@@ -1,5 +1,46 @@
 // likes
+let like = document.querySelector('#liker-and-heart');
+let heart = document.querySelector('#heart');
+let likeState;
+if (heart.src == 'http://localhost:8080/camagru/public/pictures/like00.png') {
+    likeState = false;
+}
+else if (heart.src == 'http://localhost:8080/camagru/public/pictures/like01.png') {
+    likeState = true;
+}
 
+like.addEventListener('click', () => {
+    if (likeState === false) {
+        heart.src = 'http://localhost:8080/camagru/public/pictures/like01.png';
+        likeState = true;
+        let picture_id = document.querySelector('.usr-image').id;
+        let newLike = new FormData();
+        newLike.append('picture_id', picture_id);
+        let XHR = new XMLHttpRequest();
+        XHR.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log(this.responseText);
+            }
+        }
+        XHR.open('POST', '../controller/new_like.php', true);
+        XHR.send(newLike);
+    }
+    else if (likeState === true) {
+        heart.src = 'http://localhost:8080/camagru/public/pictures/like00.png';
+        likeState = false;
+        let picture_id0 = document.querySelector('.usr-image').id;
+        let newLike = new FormData();
+        newLike.append('picture_id', picture_id0);
+        let XHR = new XMLHttpRequest();
+        XHR.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log(this.responseText);
+            }
+        }
+        XHR.open('POST', '../controller/delete_like.php', true);
+        XHR.send(newLike);
+    }
+})
 
 //  checking the comment and submit
 document.forms['form-submit'].addEventListener('submit', (e) => {
@@ -59,7 +100,6 @@ document.forms['form-submit'].addEventListener('submit', (e) => {
 
 });
 
-let no_photo = document.querySelector('#no-photo');
-if (no_photo.length != 0) {
+if (document.querySelector('#no-photo')) {
     document.querySelector('footer').style.bottom='initial';
 }
