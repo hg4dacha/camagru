@@ -413,6 +413,11 @@ section{
 
 @media all and (max-width: 1400px)
 {
+    #site-pictures
+    {
+        margin-bottom: 120px;
+    }
+
     #pictures-div
     {
         width: 800px;
@@ -427,6 +432,35 @@ section{
     section
     {
         padding-bottom: 50px;
+    }
+
+    #big-bloc-comment
+    {
+        width: 704px;
+        margin-bottom: 60px;
+    }
+
+    #cancel
+    {
+        margin-right: 22px;
+    }
+
+    #bloc-comment
+    {
+        width: 650px;
+        padding: 15px;
+    }
+
+    .usr-img00
+    {
+        width: 220px;
+    }
+
+    #champs
+    {
+        width: 370px;
+        height: 120px;
+        font-size: 11px;
     }
 }
 
@@ -494,6 +528,7 @@ section{
     {
         width: 27px;
         height: 38px;
+        align-items: initial;
     }
 
     .like
@@ -549,6 +584,57 @@ section{
         font-size: 15px;
         width: 18px;
         height: 30px;
+    }
+
+    #big-bloc-comment
+    {
+        width: 562px;
+    }
+
+    #cancel
+    {
+        font-size: 14px;
+        margin-right: 0px;
+        margin-bottom: 2px;
+    }
+
+    #logo-cancel
+    {
+        width: 18px;
+        margin-bottom: -4px;
+    }
+
+    #bloc-comment
+    {
+        padding: 9px;
+        width: 540px;
+    }
+
+    .usr-img00
+    {
+        width: 200px;
+    }
+
+    #champs
+    {
+        width: 300px;
+        height: 100px;
+        padding-top: 10px;
+        padding-left: 11px;
+        font-size: 10px;
+    }
+
+    #button
+    {
+        width: 110px;
+        height: 32px;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    #success
+    {
+        font-size: 12px;
     }
 }
 
@@ -606,6 +692,7 @@ section{
     #site-pictures
     {
         margin-top: 15px;
+        margin-bottom: 60px;
     }
 
     #user-tittle
@@ -662,6 +749,7 @@ section{
     {
         width: 17px;
         height: 29px;
+        bottom: -2px;
     }
 
     .like
@@ -685,5 +773,63 @@ section{
         font-size: 10px;
         width: 13px;
         height: 22px;
+    }
+
+    #cancel
+    {
+        font-size: 11px;
+        width: 60px;
+        padding: 4px;
+    }
+
+    #logo-cancel
+    {
+        width: 14px;
+        margin-bottom: -3px;
+        margin-left: 2px;
+    }
+    
+    #big-bloc-comment
+    {
+        width: 258px;
+    }
+
+    #bloc-comment
+    {
+        flex-direction: column;
+        width: 240px;
+        padding: 7px;
+    }
+
+    .usr-img00
+    {
+        width: 100px;
+    }
+
+    #form-div
+    {
+        margin-top: 10px;
+    }
+
+    #champs
+    {
+        width: 215px;
+        height: 55px;
+        font-size: 7px;
+        padding-top: 7px;
+    }
+
+    #button
+    {
+        width: 85px;
+        height: 24px;
+        font-size: 9px;
+        margin-top: 7px;
+    }
+
+    #success
+    {
+        font-size: 9px;
+        margin-top: 50px;
     }
 }

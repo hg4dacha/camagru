@@ -263,6 +263,7 @@ section{
     border: 3px #1e272e solid;
     background: #b33939;
     color: whitesmoke;
+    font-size: 15px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     cursor: pointer;
@@ -401,6 +402,127 @@ section{
         padding-top: 105px;
         padding-left: 175px;
     }
+
+    #usrname-and-likes
+    {
+        width: 520px;
+    }
+
+    #logo-username
+    {
+        width: 15px;
+        height: 15px;
+    }
+
+    #picture-of
+    {
+        font-size: 17px;
+        margin-left: 8px;
+    }
+
+    #likes-number
+    {
+        margin-right: 20px;
+    }
+
+    #likes-likes
+    {
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+    }
+
+    #number-of-likes
+    {
+        font-size: 18px;
+    }
+
+    .usr-image
+    {
+        width: 520px;
+    }
+
+    #time-and-like
+    {
+        width: 520px;
+    }
+
+    #time
+    {
+        font-size: 13px;
+        padding-left: 7px;
+    }
+
+    #liker
+    {
+        font-size: 17px;
+    }
+
+    #heart
+    {
+        width: 20px;
+    }
+
+    #comment-logo
+    {
+        width: 15px;
+    }
+
+    #comment-picture
+    {
+        width: 450px;
+        font-size: 16px;
+    }
+
+    #champs
+    {
+        width: 450px;
+        height: 150px;
+        padding-top: 13px;
+        padding-left: 16px;
+        font-size: 13px;
+    }
+
+    #button
+    {
+        width: 125px;
+        height: 35px;
+        margin-top: 12px;
+        font-size: 12px;
+    }
+
+    #usrCom-tittle
+    {
+        margin-left: 0px;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .comment-div
+    {
+        width: 80%;
+    }
+
+    .logo-username2
+    {
+        width: 12px;
+        margin-right: 4px;
+    }
+
+    .author-comm
+    {
+        font-size: 14px;
+    }
+
+    .comment_author
+    {
+        font-size: 13px;
+    }
+
+    .comment-time
+    {
+        font-size: 10px;
+    }
 }
 
 @media all and (max-width: 600px)
@@ -452,5 +574,145 @@ section{
         padding-left: 75px;
         padding-bottom: 30px;
         padding-top: 65px;
+    }
+
+    #left
+    {
+        margin-top: 50px;
+    }
+
+    #usrname-and-likes
+    {
+        width: 250px;
+        margin-bottom: 4px;
+    }
+
+    #logo-username
+    {
+        width: 11px;
+        height: 11px;
+    }
+
+    #picture-of
+    {
+        font-size: 13px;
+        margin-left: 7px;
+    }
+
+    #likes-likes
+    {
+        width: 12px;
+        height: 12px;
+    }
+
+    #number-of-likes
+    {
+        font-size: 14px;
+    }
+
+    .usr-image
+    {
+        width: 250px;
+    }
+
+    #time-and-like
+    {
+        width: 250px;
+    }
+
+    #time
+    {
+        font-size: 8px;
+        padding-left: 6px;
+    }
+
+    #liker-and-heart
+    {
+        margin-right: 7px;
+    }
+
+    #liker
+    {
+        font-size: 12px;
+        margin-right: 2px;
+    }
+
+    #heart
+    {
+        width: 14px;
+    }
+
+    #comment-logo
+    {
+        width: 11px;
+    }
+
+    #comment-picture
+    {
+        width: 230px;
+        font-size: 12px;
+    }
+
+    #champs
+    {
+        width: 230px;
+        height: 65px;
+        padding-top: 9px;
+        padding-left: 9px;
+        font-size: 7px;
+    }
+
+    #button
+    {
+        width: 80px;
+        height: 25px;
+        margin-top: 6px;
+        font-size: 9px;
+    }
+
+    #usrCom-tittle
+    {
+        font-size: 13px;
+    }
+
+    #com-com
+    {
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+
+    .logo-user-div
+    {
+        margin-left: 20px;
+    }
+
+    .logo-username2
+    {
+        width: 8px;
+        margin-right: 3px;
+    }
+
+    .comment-div
+    {
+        width: 85%;
+    }
+
+    .author-comm
+    {
+        font-size: 11px;
+    }
+
+    .comment_author
+    {
+        font-size: 9px;
+        margin-top: 24px;
+        margin-bottom: 12px;
+        margin-left: 40px;
+    }
+
+    .comment-time
+    {
+        font-size: 7px;
+        margin-left: 10px;
     }
 }
