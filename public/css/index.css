@@ -27,6 +27,7 @@ body{
     width: 340px;
     height: 565px;
     margin-right: 3px;
+    z-index: -1;
 }
 
 #bloc
