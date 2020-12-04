@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/camagru/model/dbConnexion.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/camagru/config/database.php");
 
 //---------- Insertion ----------
 
