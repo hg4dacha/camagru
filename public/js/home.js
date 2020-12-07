@@ -14,7 +14,6 @@ for (let j = 0; j < likeState.length; j++) {
     }
 }
 
-
 for  (let i = 0; i < likes.length; i++) {
 
     likes[i].addEventListener('click', () => {

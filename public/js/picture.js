@@ -2,16 +2,17 @@
 let like = document.querySelector('#liker-and-heart');
 let heart = document.querySelector('#heart');
 let likeState;
-if (heart.src == 'http://localhost:8080/camagru/public/pictures/like00.png') {
+
+if (heart.src.includes('/camagru/public/pictures/like00.png')) {
     likeState = false;
 }
-else if (heart.src == 'http://localhost:8080/camagru/public/pictures/like01.png') {
+else if (heart.src.includes('/camagru/public/pictures/like01.png')) {
     likeState = true;
 }
 
 like.addEventListener('click', () => {
     if (likeState === false) {
-        heart.src = 'http://localhost:8080/camagru/public/pictures/like01.png';
+        heart.src = '/camagru/public/pictures/like01.png';
         likeState = true;
         let picture_id = document.querySelector('.usr-image').id;
         let newLike = new FormData();
@@ -26,7 +27,7 @@ like.addEventListener('click', () => {
         XHR.send(newLike);
     }
     else if (likeState === true) {
-        heart.src = 'http://localhost:8080/camagru/public/pictures/like00.png';
+        heart.src = '/camagru/public/pictures/like00.png';
         likeState = false;
         let picture_id0 = document.querySelector('.usr-image').id;
         let newLike = new FormData();
