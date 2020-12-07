@@ -7,9 +7,10 @@ $checkconn = fsockopen($host, $port, $errno, $errstr, 5);
 if(!$checkconn) {
 
     echo "($errno) $errstr";
-} else {
+}
+else {
     
-    echo 'ok';
+    echo 'OK';
 }
 
 ?>
