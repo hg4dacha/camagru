@@ -3,15 +3,17 @@ let likes = document.querySelectorAll('.like');
 let likeState = [];
 likeState.length = likes.length;
 
+
 for (let j = 0; j < likeState.length; j++) {
     
-    if (likes[j].src == 'http://localhost:8080/camagru/public/pictures/like00.png') {
+    if (likes[j].src.includes('/camagru/public/pictures/like00.png')) {
         likeState[j] = false;
     }
-    else if (likes[j].src == 'http://localhost:8080/camagru/public/pictures/like01.png') {
+    else if (likes[j].src.includes('/camagru/public/pictures/like01.png')) {
         likeState[j] = true;
     }
 }
+
 
 for  (let i = 0; i < likes.length; i++) {
 
