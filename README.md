@@ -24,3 +24,5 @@ Camagru a été dévellopé en :
 ![camagru-04](https://user-images.githubusercontent.com/55346395/176748167-23552033-2423-4d9f-a4b8-2e1197ad9da3.png)
 
 ![camagru-05](https://user-images.githubusercontent.com/55346395/176748244-75c78971-b1f2-4b44-8c27-b13780f4c6de.png)
+
+![camagru-06](https://user-images.githubusercontent.com/55346395/176748682-aba510b8-ba21-4d8b-85c5-bcc6dc5b85f4.png)
