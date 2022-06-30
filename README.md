@@ -8,7 +8,7 @@ Toutes les images prises sont publiques. Elles sont aussi "likeables" et "commen
 L'utilisateur reçoit un mail de confirmation lors de son inscription. Il a aussi la possibilité de réinitialiser son mot de passe en cas d'oubli.
 
 Pour plus de précisions sur les consignes du projet :
-https://github.com/hg4dacha/camagru/blob/master/camagru-sujet.pdf
+- https://github.com/hg4dacha/camagru/blob/master/camagru-sujet.pdf
 
 Camagru a été dévellopé en :
 - PHP, MYSQL pour le Backend
