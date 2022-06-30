@@ -1,4 +1,4 @@
-# camagru
+# CAMAGRU
 Camagru est un projet qui a pour but de créer une application web permettant de réaliser des photos montages à l’aide de la webcam de l'ordinateur ou d'une image téléchargée et de filtres prédéfinis.
 
 Un utilisateur du site est capable de sélectionner un filtre dans une liste de filtres superposables (ex: un cadre, un objet ou une représentation), prendre une photo depuis sa webcam ou de l'image téléchargée, et de sauvegarder l'image.
