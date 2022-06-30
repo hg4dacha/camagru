@@ -14,6 +14,9 @@ Camagru a été dévellopé en :
 - PHP, MYSQL pour le Backend
 - JavaScript, HTML, CSS pour le Frontend
 
+CAMAGRU EN VIDEO :
+- https://youtu.be/XTYynHAH9-8
+
 
 ![camagru-00](https://user-images.githubusercontent.com/55346395/176746099-2f05068e-c9c4-41b1-900e-17cff4b3c483.png)
 
