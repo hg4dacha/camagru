@@ -15,4 +15,4 @@ Camagru a été dévellopé en :
 - JavaScript, HTML, CSS pour le Frontend
 
 
-![camagru-00](https://github.com/hg4dacha/camagru/issues/1#issuecomment-1171517436)
+![camagru-00](https://user-images.githubusercontent.com/55346395/176746099-2f05068e-c9c4-41b1-900e-17cff4b3c483.png)
